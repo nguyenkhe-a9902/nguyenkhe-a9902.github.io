@@ -723,7 +723,7 @@
 </section>
 
 <footer>
-  Lớp A · Niên khóa 1999–2002 · Trang do Lê Hữu Hùng quản lý
+  Lớp A · Niên khóa 1999–2002 · Trang do Lớp trưởng quản lý
   <div><button class="footer-link" data-tab="quantri">Quản trị</button></div>
 </footer>
 
@@ -734,7 +734,7 @@
 
 <!-- Nhạc nền — thay src bằng link bài hát khi có -->
 <audio id="bgm" loop preload="none">
-  <!-- <source src="ten-bai-hat.mp3" type="audio/mpeg"> -->
+  <source src="tinhtho.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -879,7 +879,12 @@ const rcMsg = document.getElementById('rc-msg');
 
 function showGreeting(nick){
   document.getElementById('greeting-toast').innerHTML =
-    `<div class="greeting-toast">👋 Chào <b>${nick}</b>, mừng bạn quay lại!</div>`;
+    `<div class="greeting-toast">👋 Chào <b>${nick}</b>, mừng bạn quay lại! <button class="footer-link" onclick="signOut()" style="margin-left:2px;">Đăng xuất</button></div>`;
+}
+function signOut(){
+  localStorage.removeItem('lopA-whoami');
+  localStorage.removeItem('lopA-skip');
+  location.reload();
 }
 
 const saved = localStorage.getItem('lopA-whoami');
