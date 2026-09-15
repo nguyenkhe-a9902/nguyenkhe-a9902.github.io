@@ -1048,6 +1048,8 @@ document.getElementById('rc-submit').addEventListener('click', function(){
     localStorage.setItem('lopA-whoami', JSON.stringify({nick:match[5]}));
     overlay.classList.add('hidden');
     showGreeting(match[5]);
+    const nameField = document.getElementById('msg-name');
+    if(nameField) nameField.value = match[5];
   } else {
     rcMsg.textContent = 'Không tìm thấy trong danh sách lớp — thử lại tên/ngày sinh khác, hoặc bấm "Xem trang, khỏi điểm danh".';
   }
