@@ -437,6 +437,10 @@
     font-size:0.9rem;margin-bottom:12px;
   }
   .admin-login input:focus{outline:none;border-color:var(--margin);}
+  .admin-subtitle{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;
+    font-weight:700;color:var(--wood-dark);margin-bottom:10px;
+  }
   .pending-item{
     border:1px solid var(--rule);background:var(--card);
     padding:14px 16px;margin-bottom:12px;
@@ -826,7 +830,11 @@
   </div>
 
   <div id="admin-panel" style="display:none;">
+    <div class="admin-subtitle">🕓 Đang chờ duyệt</div>
     <div id="pending-list"></div>
+
+    <div class="admin-subtitle" style="margin-top:28px;">✅ Đã đăng công khai</div>
+    <div id="approved-list"></div>
   </div>
 </section>
 
@@ -1150,8 +1158,7 @@ function loadPending(){
       const box = document.getElementById('pending-list');
       if(res.pending.length === 0){
         box.innerHTML = '<div class="empty-state"><p>Không có lời nhắn nào đang chờ duyệt 🎉</p></div>';
-        return;
-      }
+      } else {
       box.innerHTML = res.pending.map(m => `
         <div class="pending-item">
           <p>${escapeHtml(m.content)}</p>
@@ -1161,6 +1168,21 @@ function loadPending(){
             <button class="btn-delete" onclick="adminAction('delete','${encodeURIComponent(m.time)}')">✕ Xoá</button>
           </div>
         </div>`).join('');
+      }
+
+      const approvedBox = document.getElementById('approved-list');
+      if(!res.approved || res.approved.length === 0){
+        approvedBox.innerHTML = '<div class="empty-state"><p>Chưa có lời nhắn nào được đăng.</p></div>';
+      } else {
+        approvedBox.innerHTML = res.approved.map(m => `
+          <div class="pending-item">
+            <p>${escapeHtml(m.content)}</p>
+            <div class="who">— ${escapeHtml(m.name)} · ${escapeHtml(m.time)}</div>
+            <div class="pending-actions">
+              <button class="btn-delete" style="flex:1;" onclick="adminAction('delete','${encodeURIComponent(m.time)}')">✕ Xoá</button>
+            </div>
+          </div>`).join('');
+      }
     })
     .catch(() => {
       document.getElementById('admin-login-msg').textContent = 'Không kết nối được, thử lại.';
