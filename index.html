@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lớp A · Niên khóa 1999–2002</title>
+<meta name="description" content="Trang lưu giữ kỷ niệm, danh sách và kết nối của Lớp A - THCS Nguyên Khê, niên khóa 1999–2002.">
+<meta property="og:title" content="Lớp A · Niên khóa 1999–2002">
+<meta property="og:description" content="Kỷ niệm, danh sách lớp, lưu bút và sự kiện của Lớp A - THCS Nguyên Khê.">
+<meta property="og:image" content="https://nguyenkhe-a9902.github.io/images/kyniem-20nam-2.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#c85a52">
+<link rel="apple-touch-icon" href="images/kyniem-20nam-2.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#fbf9f2;
@@ -121,14 +133,14 @@
   }
   .nl-k{color:var(--ink-soft);letter-spacing:0.05em;white-space:nowrap;}
   .nl-v{
-    font-family:'Segoe Script','Bradley Hand',cursive;
+    font-family:'Caveat','Segoe Script','Bradley Hand',cursive;
     font-size:1rem;color:var(--margin);
     border-bottom:1px dotted var(--wood);padding:0 3px 1px;
   }
 
   h1{
     font-size:2.6rem;color:var(--ink);margin:0 0 6px;font-weight:400;
-    font-family:'Segoe Script','Bradley Hand','Comic Sans MS',Georgia,cursive;
+    font-family:'Caveat','Segoe Script','Bradley Hand','Comic Sans MS',Georgia,cursive;
   }
   .tagline{
     max-width:460px;margin:0 auto 24px;color:var(--ink-soft);
@@ -291,7 +303,7 @@
     font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.7rem;
     padding:2px 9px;border-radius:10px;
   }
-  .photo .yr{font-family:'Segoe Script','Bradley Hand',cursive;color:var(--margin);font-size:1rem;margin-top:6px;}
+  .photo .yr{font-family:'Caveat','Segoe Script','Bradley Hand',cursive;color:var(--margin);font-size:1rem;margin-top:6px;}
   .photo img{cursor:zoom-in;}
 
   /* ===== Lightbox xem ảnh phóng to ===== */
@@ -356,7 +368,7 @@
     letter-spacing:0.04em;color:var(--wood-dark);margin-bottom:8px;
   }
   .kyluc-card .winner{
-    font-family:'Segoe Script','Bradley Hand',cursive;
+    font-family:'Caveat','Segoe Script','Bradley Hand',cursive;
     font-size:1.1rem;color:var(--ink-soft);opacity:0.6;
   }
 
@@ -389,7 +401,7 @@
   .msg p{margin:0 0 10px;font-size:0.92rem;line-height:1.55;color:#33291a;}
   .msg .who{
     text-align:right;font-size:0.88rem;color:#5a4a2e;
-    font-family:'Segoe Script','Bradley Hand','Comic Sans MS',Georgia,cursive;
+    font-family:'Caveat','Segoe Script','Bradley Hand','Comic Sans MS',Georgia,cursive;
     font-style:italic;
   }
   #messages-list .empty-state{grid-column:1/-1;}
@@ -519,7 +531,7 @@
   }
   .greeting-hero{text-align:center;margin:0 auto 20px;}
   .greeting-hero .g-line{
-    font-family:'Segoe Script','Bradley Hand','Comic Sans MS',Georgia,cursive;
+    font-family:'Caveat','Segoe Script','Bradley Hand','Comic Sans MS',Georgia,cursive;
     font-size:1.7rem;color:var(--ink);line-height:1.3;
   }
   .greeting-hero .g-line b{color:var(--margin);}
@@ -591,7 +603,7 @@
 <!-- ===== TRANG CHỦ ===== -->
 <section id="trangchu">
   <div class="notebook-label">
-    <div class="nl-row"><span class="nl-k">Trường:</span><span class="nl-v">THCS Nguyễn Khê</span></div>
+    <div class="nl-row"><span class="nl-k">Trường:</span><span class="nl-v">THCS Nguyên Khê</span></div>
     <div class="nl-row"><span class="nl-k">Niên khóa:</span><span class="nl-v">1999 – 2002</span></div>
   </div>
   <h1>Lớp A</h1>
@@ -656,10 +668,10 @@
   <h2>Quỹ lớp</h2>
   <p class="sub">Thu – chi công khai, cập nhật mỗi khi có biến động.</p>
   <div class="stats">
-    <div class="stat"><div class="label">Tổng thu 2025</div><div class="val">2.000.000đ</div></div>
-    <div class="stat"><div class="label">Tổng thu 2026</div><div class="val">2.000.000đ</div></div>
-    <div class="stat"><div class="label">Đã chi</div><div class="val">800.000đ</div></div>
-    <div class="stat ton"><div class="label">Tồn quỹ</div><div class="val">3.200.000đ</div></div>
+    <div class="stat"><div class="label">Tổng thu 2025</div><div class="val" id="stat-2025">—</div></div>
+    <div class="stat"><div class="label">Tổng thu 2026</div><div class="val" id="stat-2026">—</div></div>
+    <div class="stat"><div class="label">Đã chi</div><div class="val" id="stat-chi">800.000đ</div></div>
+    <div class="stat ton"><div class="label">Tồn quỹ</div><div class="val" id="stat-ton">—</div></div>
   </div>
   <p class="fund-note">Chi tiết khoản đã chi: <em>Vòng hoa phúng viếng — 2 lần × 400.000đ = 800.000đ</em></p>
   <p class="fund-note" style="margin-top:8px;">📌 Từ năm nay, quỹ lớp chuyển sang <em>phong bì viếng 500.000đ</em> thay cho vòng hoa.</p>
@@ -683,8 +695,8 @@
       <tfoot>
         <tr>
           <td colspan="3" class="center">Tổng cộng</td>
-          <td class="num">2.000.000đ</td>
-          <td class="num">2.000.000đ</td>
+          <td class="num" id="tfoot-2025">—</td>
+          <td class="num" id="tfoot-2026">—</td>
         </tr>
       </tfoot>
     </table>
@@ -747,16 +759,16 @@
 
   <div class="gallery-label">🎓 Kỷ niệm 20 năm ra trường</div>
   <div class="gallery">
-    <div class="photo"><img src="images/kyniem-hoplop-2024.jpg" alt="Kỷ niệm 20 năm ra trường" loading="lazy"></div>
-    <div class="photo"><img src="images/kyniem-20nam-2.jpg" alt="Kỷ niệm 20 năm ra trường" loading="lazy"></div>
-    <div class="photo"><img src="images/kyniem-20nam-3.jpg" alt="Kỷ niệm 20 năm ra trường" loading="lazy"></div>
+    <div class="photo"><img src="images/kyniem-hoplop-2024.jpg" width="1000" height="666" alt="Kỷ niệm 20 năm ra trường" loading="lazy"></div>
+    <div class="photo"><img src="images/kyniem-20nam-2.jpg" width="1000" height="666" alt="Kỷ niệm 20 năm ra trường" loading="lazy"></div>
+    <div class="photo"><img src="images/kyniem-20nam-3.jpg" width="1000" height="666" alt="Kỷ niệm 20 năm ra trường" loading="lazy"></div>
   </div>
 
   <div class="gallery-label" style="margin-top:26px;">📅 Họp lớp thường niên</div>
   <div class="gallery">
-    <div class="photo"><img src="images/kyniem-hoplop-2023.jpg" alt="Họp lớp 2023" loading="lazy"><div class="yr-badge">2023</div></div>
-    <div class="photo"><img src="images/kyniem-20nam-1.jpg" alt="Họp lớp 2024" loading="lazy"><div class="yr-badge">2024</div></div>
-    <div class="photo"><img src="images/kyniem-hoplop-2026.jpg" alt="Họp lớp 2026" loading="lazy"><div class="yr-badge">2026</div></div>
+    <div class="photo"><img src="images/kyniem-hoplop-2023.jpg" width="1000" height="750" alt="Họp lớp 2023" loading="lazy"><div class="yr-badge">2023</div></div>
+    <div class="photo"><img src="images/kyniem-20nam-1.jpg" width="750" height="1000" alt="Họp lớp 2024" loading="lazy"><div class="yr-badge">2024</div></div>
+    <div class="photo"><img src="images/kyniem-hoplop-2026.jpg" width="562" height="1000" alt="Họp lớp 2026" loading="lazy"><div class="yr-badge">2026</div></div>
   </div>
 </section>
 
@@ -769,6 +781,7 @@
   <div class="msg-form">
     <input type="text" id="msg-name" placeholder="Tên hoặc biệt danh của bạn">
     <textarea id="msg-content" rows="3" placeholder="Viết lời nhắn... (tối đa 500 ký tự)" maxlength="500"></textarea>
+    <input type="text" id="msg-website" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;" aria-hidden="true">
     <div class="msg-formrow">
       <button class="rc-btn" id="msg-submit" style="flex:0 0 auto;">Gửi lời nhắn</button>
       <span class="msg-status" id="msg-status"></span>
@@ -862,45 +875,45 @@
 const data = [
 ["1","Trần Thị Hương","06/06/1987","Cán Khê","","Hương Baby",0,0],
 ["2","Nguyễn Phương Quang","29/04/1987","Tiên Hùng","","Quang Nghé",0,200000],
-["3","Lê Văn Thắng","28/01/1987","Tiên Hùng","0977715369","Thắng Ma",0,100000],
+["3","Lê Văn Thắng","28/01/1987","Tiên Hùng","•••369","Thắng Ma",0,100000],
 ["4","Nguyễn Trọng Quang","02/01/1987","Xóm Đường","","Quang 7",0,0],
-["5","Lê Đình Hùng","21/08/1987","Nguyên Khê","0967353287","Hùng Sinh",100000,100000],
-["6","Nguyễn Duy Linh","11/10/1987","Cán Khê","0985650591","Linh Salala",0,0],
-["7","Nguyễn Quang Cường","","Nguyên Khê","0946664505","Cường Luận",0,0],
-["8","Tô Thị Lan","","Sơn Du","0989987186","Lan Còi",100000,0],
-["9","Tô Quang Hoành","12/03/1987","Sơn Du","0389982387","Hoành Đường",0,0],
+["5","Lê Đình Hùng","21/08/1987","Nguyên Khê","•••287","Hùng Sinh",100000,100000],
+["6","Nguyễn Duy Linh","11/10/1987","Cán Khê","•••591","Linh Salala",0,0],
+["7","Nguyễn Quang Cường","","Nguyên Khê","•••505","Cường Luận",0,0],
+["8","Tô Thị Lan","","Sơn Du","•••186","Lan Còi",100000,0],
+["9","Tô Quang Hoành","12/03/1987","Sơn Du","•••387","Hoành Đường",0,0],
 ["10","Vương Thị Định","11/03/1987","Sơn Du","","Định",100000,0],
-["11","Nguyễn Thị An Na","06/12/1987","Cán Khê","0986894566","Na Na",100000,100000],
-["12","Hà Ngọc Điệp","","Cán Khê","0974709763","Điệp Đen",100000,100000],
-["13","Nguyễn Thị Thảo","08/04/1987","Tiên Hùng","0981202088","Thảo Âu",200000,200000],
-["14","Nguyễn Sơn Ca","03/11/1987","Tiên Hùng","0962955469","Ca Ca",100000,100000],
-["15","Nguyễn Thị Huyên","22/06/1987","Tổ 26","0945412739","Huyên Náo",0,0],
-["16","Nguyễn Thị Thu Hà","07/02/1987","Tiên Hùng","0833667986","Hà Mối",100000,100000],
-["17","Nguyễn Quang Quân","","Tiên Hùng","0947888861","Quân Còi",0,0],
+["11","Nguyễn Thị An Na","06/12/1987","Cán Khê","•••566","Na Na",100000,100000],
+["12","Hà Ngọc Điệp","","Cán Khê","•••763","Điệp Đen",100000,100000],
+["13","Nguyễn Thị Thảo","08/04/1987","Tiên Hùng","•••088","Thảo Âu",200000,200000],
+["14","Nguyễn Sơn Ca","03/11/1987","Tiên Hùng","•••469","Ca Ca",100000,100000],
+["15","Nguyễn Thị Huyên","22/06/1987","Tổ 26","•••739","Huyên Náo",0,0],
+["16","Nguyễn Thị Thu Hà","07/02/1987","Tiên Hùng","•••986","Hà Mối",100000,100000],
+["17","Nguyễn Quang Quân","","Tiên Hùng","•••861","Quân Còi",0,0],
 ["18","Nguyễn Văn Quân","22/10/1987","Xóm Núi","","Quân Béo",100000,100000],
-["19","Nguyễn Trọng Giang","25/01/1985","Đại Bằng","0973279467","Giang Hách",100000,100000],
-["20","Nguyễn Đức Giang","22/08/1987","Cán Khê","0978297687","Giang Còi",0,0],
-["21","Nguyễn Hồng Đông","30/01/1987","Tiên Hùng","0943866809","Đông",0,0],
-["22","Nguyễn Trọng Mạnh","","Tiên Hùng","0362195719","Mạnh Béo",100000,100000],
-["23","Phạm Thị Hợp","08/10/1987","Nguyên Khê","0982234078","Hợp",0,0],
-["24","Nguyễn Thị Hằng","09/07/1987","Nguyên Khê","0983572166","Hằng Đào",100000,100000],
-["25","Nguyễn Trọng Chương","","Xóm Đường","0974570686","Chương Tí",100000,100000],
-["26","Đoàn Thị Bích Hường","03/10/1987","Sơn Du","0968155287","Hường Vịt",100000,0],
+["19","Nguyễn Trọng Giang","25/01/1985","Đại Bằng","•••467","Giang Hách",100000,100000],
+["20","Nguyễn Đức Giang","22/08/1987","Cán Khê","•••687","Giang Còi",0,0],
+["21","Nguyễn Hồng Đông","30/01/1987","Tiên Hùng","•••809","Đông",0,0],
+["22","Nguyễn Trọng Mạnh","","Tiên Hùng","•••719","Mạnh Béo",100000,100000],
+["23","Phạm Thị Hợp","08/10/1987","Nguyên Khê","•••078","Hợp",0,0],
+["24","Nguyễn Thị Hằng","09/07/1987","Nguyên Khê","•••166","Hằng Đào",100000,100000],
+["25","Nguyễn Trọng Chương","","Xóm Đường","•••686","Chương Tí",100000,100000],
+["26","Đoàn Thị Bích Hường","03/10/1987","Sơn Du","•••287","Hường Vịt",100000,0],
 ["27","Ngô Thị Minh Loan","09/11/1987","Cán Khê","","Loan Tin",0,0],
-["28","Lê Văn Thật","","Xóm Núi","0966688987","Thật Tái",0,100000],
-["29","Phạm Thị Hưng","","Nguyên Khê","0396444024","Hưng",100000,100000],
+["28","Lê Văn Thật","","Xóm Núi","•••987","Thật Tái",0,100000],
+["29","Phạm Thị Hưng","","Nguyên Khê","•••024","Hưng",100000,100000],
 ["30","Nguyễn Hoàng Hà","27/12/1987","Tổ 26","","Hà Mập",0,0],
-["31","Giang Văn Minh","16/02/1987","Cán Khê","0862160287","Minh Tí",0,0],
-["32","Nguyễn Thế Mạnh","16/04/1987","Tiên Hùng","0976955811","Mạnh Gầy",100000,100000],
-["33","Tô Minh Hải","","Sơn Du","0979363272","Hải Mập",100000,100000],
-["34","Trần Văn Thái","19/10/1987","Tiên Hùng","0983372563","Thái Trúc",100000,0],
+["31","Giang Văn Minh","16/02/1987","Cán Khê","•••287","Minh Tí",0,0],
+["32","Nguyễn Thế Mạnh","16/04/1987","Tiên Hùng","•••811","Mạnh Gầy",100000,100000],
+["33","Tô Minh Hải","","Sơn Du","•••272","Hải Mập",100000,100000],
+["34","Trần Văn Thái","19/10/1987","Tiên Hùng","•••563","Thái Trúc",100000,0],
 ["35","Ngô Văn Hà","19/01/1986","Nguyên Khê","","Hà Cong",0,0],
 ["36","Lê Văn Kiên","","Tổ 26","","Kiên Chỉnh",0,0],
 ["37","Hà Hải Văn","","Tổ 26","","Văn Veo",0,0],
 ["38","Nguyễn Xuân Tuyến","","Cán Khê","","Tuyến",0,0],
 ["39","Nguyễn Văn Quyết","","Làng Đồng","","Quyết",0,0],
 ["40","Nguyễn Thị Dung","","Làng Đồng","","Dung Ma Ma",0,0],
-["41","Lê Hữu Hùng","03/04/1987","Nguyên Khê","0979892138","Hùng Lớp Trưởng",100000,100000],
+["41","Lê Hữu Hùng","03/04/1987","Nguyên Khê","•••138","Hùng Lớp Trưởng",100000,100000],
 ];
 
 /* ===== Tab navigation ===== */
@@ -964,6 +977,21 @@ function renderFund(rows){
   document.getElementById('count2').textContent = rows.length + ' người';
 }
 renderFund(data);
+
+/* ===== Tính quỹ tự động từ data (không hardcode) ===== */
+function renderQuySummary(){
+  const CHI_DA_CHI = 800000; // khoản đã chi - không nằm trong data, ghi cố định
+  const tong2025 = data.reduce((s,r) => s + (r[6]||0), 0);
+  const tong2026 = data.reduce((s,r) => s + (r[7]||0), 0);
+  const ton = tong2025 + tong2026 - CHI_DA_CHI;
+  const fmtVnd = n => n.toLocaleString('vi-VN') + 'đ';
+  document.getElementById('stat-2025').textContent = fmtVnd(tong2025);
+  document.getElementById('stat-2026').textContent = fmtVnd(tong2026);
+  document.getElementById('stat-ton').textContent = fmtVnd(ton);
+  document.getElementById('tfoot-2025').textContent = fmtVnd(tong2025);
+  document.getElementById('tfoot-2026').textContent = fmtVnd(tong2026);
+}
+renderQuySummary();
 document.getElementById('search2').addEventListener('input', function(){
   const q = this.value.trim().toLowerCase();
   renderFund(q ? data.filter(r => (r[1]+' '+r[5]).toLowerCase().includes(q)) : data);
@@ -1101,6 +1129,14 @@ document.getElementById('msg-submit').addEventListener('click', function(){
   const content = document.getElementById('msg-content').value.trim();
   const status = document.getElementById('msg-status');
   const btn = this;
+
+  // Honeypot — bot thường tự điền hết mọi ô kể cả ô ẩn, người thật thì không thấy nên bỏ trống
+  if(document.getElementById('msg-website').value.trim()){
+    status.textContent = 'Đã gửi! Chờ admin duyệt là hiện lên nhé 🙏';
+    status.className = 'msg-status ok';
+    document.getElementById('msg-content').value = '';
+    return; // âm thầm không gửi thật, tránh bot biết bị chặn
+  }
 
   if(!name || !content){
     status.textContent = 'Nhập đủ tên và nội dung nhé.';
