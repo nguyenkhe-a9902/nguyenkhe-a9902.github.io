@@ -1112,7 +1112,6 @@ document.getElementById('msg-submit').addEventListener('click', function(){
       if(res.success){
         status.textContent = 'Đã gửi! Chờ admin duyệt là hiện lên nhé 🙏';
         status.className = 'msg-status ok';
-        document.getElementById('msg-name').value = '';
         document.getElementById('msg-content').value = '';
       } else {
         status.textContent = res.error || 'Có lỗi, thử lại nhé.';
