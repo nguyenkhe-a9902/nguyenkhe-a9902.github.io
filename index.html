@@ -281,14 +281,24 @@
 
   /* ===== Kỷ niệm ===== */
   .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;}
+  .gallery-label{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;
+    color:var(--wood-dark);font-weight:700;margin-bottom:12px;
+  }
   .photo{
     aspect-ratio:1/1;background:var(--card);border:1px solid var(--rule);
     box-shadow:0 2px 6px var(--shadow);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    color:var(--ink-soft);font-size:0.76rem;text-align:center;padding:10px;
+    position:relative;overflow:hidden;padding:0;
     transform:rotate(-1deg);
   }
   .photo:nth-child(even){transform:rotate(1deg);}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo .yr-badge{
+    position:absolute;bottom:6px;right:6px;
+    background:rgba(20,17,12,0.62);color:#fff;
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.7rem;
+    padding:2px 9px;border-radius:10px;
+  }
   .photo .yr{font-family:'Segoe Script','Bradley Hand',cursive;color:var(--margin);font-size:1rem;margin-top:6px;}
 
   /* ===== Sự kiện ===== */
@@ -440,13 +450,24 @@
     font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.78rem;
     text-decoration:underline;cursor:pointer;padding:4px;
   }
-  .greeting-toast{
-    display:inline-flex;align-items:center;gap:6px;
-    margin:0 auto 18px;padding:7px 16px;
-    border:1px solid var(--rule);background:var(--card);
-    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;color:var(--ink);
+  .greeting-hero{text-align:center;margin:0 auto 20px;}
+  .greeting-hero .g-line{
+    font-family:'Segoe Script','Bradley Hand','Comic Sans MS',Georgia,cursive;
+    font-size:1.7rem;color:var(--ink);line-height:1.3;
   }
-  .greeting-toast b{color:var(--margin);}
+  .greeting-hero .g-line b{color:var(--margin);}
+  .greeting-hero .g-wish{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.84rem;color:var(--ink-soft);font-style:italic;margin-top:4px;
+  }
+
+  .auth-row{display:flex;justify-content:center;gap:10px;margin:0 auto 16px;}
+  .auth-btn{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.78rem;
+    border:1px solid var(--wood);background:transparent;color:var(--ink);
+    padding:7px 14px;cursor:pointer;
+  }
+  .auth-btn:hover{border-color:var(--margin);color:var(--margin);}
 
   /* ===== Floating controls ===== */
   .fab-group{
@@ -470,6 +491,7 @@
     section:not(#trangchu){padding-left:26px;}
     section:not(#trangchu)::before{left:14px;}
     h1{font-size:1.9rem;}
+    .greeting-hero .g-line{font-size:1.35rem;}
     .tagline{font-size:0.92rem;}
     .stats{grid-template-columns:repeat(2,1fr);gap:14px;}
     .tn-card{grid-template-columns:1fr;}
@@ -508,6 +530,10 @@
     <div class="nl-row"><span class="nl-k">Niên khóa:</span><span class="nl-v">1999 – 2002</span></div>
   </div>
   <h1>Lớp A</h1>
+  <div class="auth-row">
+    <button class="auth-btn" id="signin-btn">🙋 Đăng nhập</button>
+    <button class="auth-btn" id="signout-btn">🚪 Đăng xuất</button>
+  </div>
   <div id="greeting-toast"></div>
   <p class="tagline">Một góc nhỏ để lớp mình giữ lại kỷ niệm và những tấm ảnh của một thời áo trắng — cho những người bạn giờ đã đi khắp bốn phương.</p>
   <div id="birthday-banner"></div>
@@ -569,7 +595,8 @@
     <div class="stat"><div class="label">Đã chi</div><div class="val">800.000đ</div></div>
     <div class="stat ton"><div class="label">Tồn quỹ</div><div class="val">3.200.000đ</div></div>
   </div>
-  <p class="fund-note">Chi tiết khoản đã chi: <em>(anh gửi nội dung — VD: hoa thăm cô giáo, liên hoan họp lớp… — em sẽ điền vào đây)</em></p>
+  <p class="fund-note">Chi tiết khoản đã chi: <em>Vòng hoa phúng viếng — 2 lần × 400.000đ = 800.000đ</em></p>
+  <p class="fund-note" style="margin-top:8px;">📌 Từ năm nay, quỹ lớp chuyển sang <em>phong bì viếng 500.000đ</em> thay cho vòng hoa.</p>
 
   <div class="toolbar" style="margin-top:28px;">
     <input type="text" id="search2" placeholder="Tìm theo tên, biệt danh…">
@@ -642,12 +669,20 @@
 <section id="kyniem">
   <div class="eyebrow">Album</div>
   <h2>Kỷ niệm</h2>
-  <p class="sub">Ảnh lớp ngày xưa và các lần họp lớp — gửi ảnh để em ghép vào đây kèm chú thích năm, dịp.</p>
+  <p class="sub">Ảnh các lần họp lớp và mốc 20 năm ra trường — sẽ cập nhật thêm dần.</p>
+
+  <div class="gallery-label">🎓 Kỷ niệm 20 năm ra trường</div>
   <div class="gallery">
-    <div class="photo">Ảnh lớp ngày xưa<div class="yr">đang chờ...</div></div>
-    <div class="photo">Họp lớp<div class="yr">2020</div></div>
-    <div class="photo">Họp lớp<div class="yr">2023</div></div>
-    <div class="photo">Ảnh sẽ cập nhật<div class="yr">—</div></div>
+    <div class="photo"><img src="images/kyniem-20nam-2.jpg" alt="Kỷ niệm 20 năm ra trường" loading="lazy"></div>
+    <div class="photo"><img src="images/kyniem-20nam-3.jpg" alt="Kỷ niệm 20 năm ra trường" loading="lazy"></div>
+  </div>
+
+  <div class="gallery-label" style="margin-top:26px;">📅 Họp lớp thường niên</div>
+  <div class="gallery">
+    <div class="photo"><img src="images/kyniem-hoplop-2023.jpg" alt="Họp lớp 2023" loading="lazy"><div class="yr-badge">2023</div></div>
+    <div class="photo"><img src="images/kyniem-hoplop-2024.jpg" alt="Họp lớp 2024" loading="lazy"><div class="yr-badge">2024</div></div>
+    <div class="photo"><img src="images/kyniem-20nam-1.jpg" alt="Họp lớp 2024" loading="lazy"><div class="yr-badge">2024</div></div>
+    <div class="photo"><img src="images/kyniem-hoplop-2026.jpg" alt="Họp lớp 2026" loading="lazy"><div class="yr-badge">2026</div></div>
   </div>
 </section>
 
@@ -877,15 +912,31 @@ function findClassmate(nameInput, day, month){
 const overlay = document.getElementById('rollcall-overlay');
 const rcMsg = document.getElementById('rc-msg');
 
+function timeGreeting(){
+  const h = new Date().getHours();
+  if (h >= 5 && h < 11)  return { label:"Chào buổi sáng", wish:"Chúc cậu một ngày mới tràn đầy năng lượng!" };
+  if (h >= 11 && h < 13) return { label:"Chào buổi trưa", wish:"Nhớ nghỉ ngơi một chút nhé!" };
+  if (h >= 13 && h < 18) return { label:"Chào buổi chiều", wish:"Chúc buổi chiều nhẹ nhàng, vui vẻ!" };
+  if (h >= 18 && h < 22) return { label:"Chào buổi tối", wish:"Chúc cậu buổi tối thư giãn bên người thân!" };
+  return { label:"Khuya rồi đó", wish:"Đừng thức khuya quá, giữ sức khỏe nhé!" };
+}
 function showGreeting(nick){
-  document.getElementById('greeting-toast').innerHTML =
-    `<div class="greeting-toast">👋 Chào <b>${nick}</b>, mừng bạn quay lại! <button class="footer-link" onclick="signOut()" style="margin-left:2px;">Đăng xuất</button></div>`;
+  const g = timeGreeting();
+  document.getElementById('greeting-toast').innerHTML = `
+    <div class="greeting-hero">
+      <div class="g-line">${g.label}, <b>${nick}</b> 👋</div>
+      <div class="g-wish">${g.wish}</div>
+    </div>`;
 }
 function signOut(){
   localStorage.removeItem('lopA-whoami');
   localStorage.removeItem('lopA-skip');
   location.reload();
 }
+document.getElementById('signin-btn').addEventListener('click', function(){
+  overlay.classList.remove('hidden');
+});
+document.getElementById('signout-btn').addEventListener('click', signOut);
 
 const saved = localStorage.getItem('lopA-whoami');
 const skipped = localStorage.getItem('lopA-skip');
@@ -903,7 +954,7 @@ document.getElementById('rc-submit').addEventListener('click', function(){
   const day = parseInt(document.getElementById('rc-day').value,10);
   const month = parseInt(document.getElementById('rc-month').value,10);
   if(!name || !day || !month){
-    rcMsg.textContent = 'Anh/em nhập đủ tên và ngày/tháng sinh giúp em nhé.';
+    rcMsg.textContent = 'Cậu nhập tên và ngày tháng sinh nhật giúp tớ nhé!';
     return;
   }
   const match = findClassmate(name, day, month);
