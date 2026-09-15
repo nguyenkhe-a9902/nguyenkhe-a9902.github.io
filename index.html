@@ -947,13 +947,18 @@ function fmt(v){
   if(!v) return '<span class="unpaid">–</span>';
   return '<span class="paid">'+v.toLocaleString('vi-VN')+'đ</span>';
 }
+function maskDay(dob){
+  const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(dob);
+  if(!m) return dob || '';
+  return `**/${m[2]}/${m[3]}`;
+}
 function renderList(rows){
   document.getElementById('tbody').innerHTML = rows.map(r => `
     <tr>
       <td class="center">${r[0]}</td>
       <td class="nick">${r[5]}</td>
       <td class="ten">${r[1]}</td>
-      <td>${r[2]}</td>
+      <td>${maskDay(r[2])}</td>
       <td>${r[3]}</td>
       <td>${r[4]}</td>
     </tr>`).join('');
