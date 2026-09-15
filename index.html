@@ -8,6 +8,22 @@
 <meta property="og:title" content="Lớp A · Niên khóa 1999–2002">
 <meta property="og:description" content="Kỷ niệm, danh sách lớp, lưu bút và sự kiện của Lớp A - THCS Nguyên Khê.">
 <meta property="og:image" content="https://nguyenkhe-a9902.github.io/images/kyniem-20nam-2.jpg">
+<meta property="og:image:alt" content="Ảnh kỷ niệm 20 năm ra trường của Lớp A, THCS Nguyên Khê">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Kỷ niệm 25 năm ngày ra trường - Lớp A THCS Nguyên Khê",
+  "startDate": "2027",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "description": "Mốc kỷ niệm 25 năm ngày ra trường của Lớp A, niên khóa 1999–2002, THCS Nguyên Khê.",
+  "organizer": {
+    "@type": "Person",
+    "name": "Lớp trưởng Lớp A"
+  }
+}
+</script>
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="manifest" href="manifest.json">
@@ -921,7 +937,14 @@ const tabs = ["trangchu","danhsach","kyniem","luubut","quy","khac","quantri"];
 function showTab(id){
   if(!tabs.includes(id)) id = "trangchu";
   tabs.forEach(t => document.getElementById(t).classList.toggle('active', t===id));
-  document.querySelectorAll('[data-tab]').forEach(a => a.classList.toggle('active', a.dataset.tab===id));
+  document.querySelectorAll('[data-tab]').forEach(a => {
+    const isActive = a.dataset.tab===id;
+    a.classList.toggle('active', isActive);
+    if(a.tagName === 'A'){
+      if(isActive) a.setAttribute('aria-current','page');
+      else a.removeAttribute('aria-current');
+    }
+  });
   window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
 }
 function showSubtab(subId){
@@ -1205,8 +1228,8 @@ function loadPending(){
           <p>${escapeHtml(m.content)}</p>
           <div class="who">— ${escapeHtml(m.name)} · ${escapeHtml(m.time)}</div>
           <div class="pending-actions">
-            <button class="btn-approve" onclick="adminAction('approve','${encodeURIComponent(m.time)}')">✓ Duyệt</button>
-            <button class="btn-delete" onclick="adminAction('delete','${encodeURIComponent(m.time)}')">✕ Xoá</button>
+            <button class="btn-approve" data-action="approve" data-time="${escapeHtml(m.time)}">✓ Duyệt</button>
+            <button class="btn-delete" data-action="delete" data-time="${escapeHtml(m.time)}">✕ Xoá</button>
           </div>
         </div>`).join('');
       }
@@ -1220,7 +1243,7 @@ function loadPending(){
             <p>${escapeHtml(m.content)}</p>
             <div class="who">— ${escapeHtml(m.name)} · ${escapeHtml(m.time)}</div>
             <div class="pending-actions">
-              <button class="btn-delete" style="flex:1;" onclick="adminAction('delete','${encodeURIComponent(m.time)}')">✕ Xoá</button>
+              <button class="btn-delete" style="flex:1;" data-action="delete" data-time="${escapeHtml(m.time)}">✕ Xoá</button>
             </div>
           </div>`).join('');
       }
@@ -1230,15 +1253,22 @@ function loadPending(){
     });
 }
 
-function adminAction(action, timeEnc){
+function adminAction(action, time){
   const params = new URLSearchParams();
   params.append('action', action);
   params.append('password', adminPass);
-  params.append('time', decodeURIComponent(timeEnc));
+  params.append('time', time);
   fetch(WEBAPP_URL, { method:'POST', body:params })
     .then(r => r.json())
     .then(() => { loadPending(); loadMessages(); });
 }
+
+// Event delegation cho nút Duyệt/Xoá trong Quản trị (thay cho inline onclick)
+document.getElementById('admin-panel').addEventListener('click', function(e){
+  const btn = e.target.closest('[data-action]');
+  if(!btn) return;
+  adminAction(btn.dataset.action, btn.dataset.time);
+});
 
 document.getElementById('admin-login-btn').addEventListener('click', function(){
   adminPass = document.getElementById('admin-pass').value.trim();
