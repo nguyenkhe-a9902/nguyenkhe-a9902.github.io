@@ -189,14 +189,6 @@
   .next-event .ttl{font-size:0.9rem;color:var(--ink);}
   .next-event:hover{background:rgba(200,90,82,0.06);}
 
-  .quicklinks{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;}
-  .quicklinks a{
-    font-family:'Helvetica Neue',Arial,sans-serif;
-    border:1px solid var(--wood);color:var(--ink);
-    padding:8px 14px;text-decoration:none;font-size:0.8rem;
-  }
-  .quicklinks a:hover{border-color:var(--margin);color:var(--margin);}
-
   /* ===== Hôm nay ở lớp mình ===== */
   .today-strip{
     display:grid;grid-template-columns:repeat(3,1fr);
@@ -300,6 +292,22 @@
     padding:2px 9px;border-radius:10px;
   }
   .photo .yr{font-family:'Segoe Script','Bradley Hand',cursive;color:var(--margin);font-size:1rem;margin-top:6px;}
+  .photo img{cursor:zoom-in;}
+
+  /* ===== Lightbox xem ảnh phóng to ===== */
+  #lightbox{
+    position:fixed;inset:0;z-index:200;
+    background:rgba(10,8,6,0.9);
+    display:none;align-items:center;justify-content:center;
+    padding:24px;cursor:zoom-out;
+  }
+  #lightbox.open{display:flex;}
+  #lightbox img{max-width:100%;max-height:90vh;box-shadow:0 10px 40px rgba(0,0,0,0.5);}
+  #lightbox .lb-close{
+    position:absolute;top:16px;right:20px;
+    color:#fff;font-size:2rem;line-height:1;
+    background:none;border:none;cursor:pointer;
+  }
 
   /* ===== Sự kiện ===== */
   .events{list-style:none;margin:0;padding:0;}
@@ -313,6 +321,17 @@
   .empty-state{border:1px dashed var(--rule);padding:20px 18px;background:var(--card);}
   .empty-state p{margin:0 0 8px;color:var(--ink-soft);font-size:0.9rem;}
   .empty-state p.hint{margin:0;font-size:0.82rem;font-style:italic;}
+
+  /* ===== Menu con trong tab gộp ===== */
+  .subnav{display:flex;gap:6px;margin-bottom:22px;flex-wrap:wrap;}
+  .subnav-btn{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.78rem;
+    border:1px solid var(--rule);background:var(--card);color:var(--ink-soft);
+    padding:8px 14px;cursor:pointer;
+  }
+  .subnav-btn.active{border-color:var(--margin);color:var(--margin);font-weight:700;}
+  .subpanel{display:none;}
+  .subpanel.active{display:block;}
 
   /* ===== Bản đồ (khung chờ dữ liệu) ===== */
   .map-frame{
@@ -341,10 +360,54 @@
     font-size:1.1rem;color:var(--ink-soft);opacity:0.6;
   }
 
-  .messages{display:flex;flex-direction:column;gap:14px;}
-  .msg{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--margin);padding:14px 16px;}
-  .msg p{margin:0 0 6px;color:var(--ink);font-size:0.92rem;line-height:1.6;}
-  .msg .who{font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.74rem;color:var(--margin);font-weight:700;}
+  .luubut-page{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+    gap:22px 18px;
+    padding:6px 2px;
+  }
+  .msg{
+    position:relative;
+    background:var(--note-color, #fff3b0);
+    padding:18px 16px 14px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.18);
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    color:#33291a;
+    transition:transform .15s, box-shadow .15s;
+  }
+  .msg:hover{transform:rotate(0deg) translateY(-4px) !important;box-shadow:0 8px 16px rgba(0,0,0,0.24);}
+  .msg::before{
+    content:'📌';
+    position:absolute;top:-12px;left:50%;
+    transform:translateX(-50%);
+    font-size:1.1rem;
+  }
+  .msg:nth-child(4n+1){--note-color:#fff3b0;transform:rotate(-1.6deg);}
+  .msg:nth-child(4n+2){--note-color:#ffd6e0;transform:rotate(1.3deg);}
+  .msg:nth-child(4n+3){--note-color:#c9f2e0;transform:rotate(-0.8deg);}
+  .msg:nth-child(4n)  {--note-color:#cfe3ff;transform:rotate(1.8deg);}
+  .msg p{margin:0 0 10px;font-size:0.92rem;line-height:1.55;color:#33291a;}
+  .msg .who{
+    text-align:right;font-size:0.88rem;color:#5a4a2e;
+    font-family:'Segoe Script','Bradley Hand','Comic Sans MS',Georgia,cursive;
+    font-style:italic;
+  }
+  #messages-list .empty-state{grid-column:1/-1;}
+  .pinned-wrap{margin-bottom:22px;}
+  .msg.pinned{
+    --note-color:#ffe8b0;
+    transform:none !important;
+    grid-column:1/-1;
+    border:2px solid #e0a83c;
+    max-width:420px;
+  }
+  .msg.pinned::before{content:none;}
+  .msg.pinned .pin-tag{
+    position:absolute;top:-11px;left:14px;
+    background:#e0a83c;color:#fff;font-size:0.68rem;
+    padding:2px 10px;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;
+  }
+  .msg.pinned p{margin-top:6px;}
 
   .msg-form{
     border:1px solid var(--rule);background:var(--card);
@@ -503,6 +566,7 @@
     .today-item .num{font-size:1.05rem;}
     .featured-quote{padding:14px 16px;}
     .bday-widget{flex-wrap:wrap;justify-content:center;text-align:center;padding:14px 16px;}
+    .subnav-btn{font-size:0.74rem;padding:7px 11px;}
     .bday-info{flex:1 1 100%;text-align:left;}
     .next-event{flex-wrap:wrap;}
     .rollcall-card{padding:22px 18px 18px;}
@@ -514,13 +578,10 @@
 <nav id="tabnav">
   <a href="#trangchu" data-tab="trangchu">Trang chủ</a>
   <a href="#danhsach" data-tab="danhsach">Danh sách lớp</a>
-  <a href="#quy" data-tab="quy">Quỹ lớp</a>
-  <a href="#nganay" data-tab="nganay">Ngày ấy – Bây giờ</a>
-  <a href="#bando" data-tab="bando">Bản đồ</a>
-  <a href="#kyluc" data-tab="kyluc">Kỷ lục vui</a>
   <a href="#kyniem" data-tab="kyniem">Kỷ niệm</a>
-  <a href="#loinhan" data-tab="loinhan">Lời nhắn</a>
-  <a href="#sukien" data-tab="sukien">Sự kiện</a>
+  <a href="#luubut" data-tab="luubut">Lưu bút</a>
+  <a href="#quy" data-tab="quy">Quỹ lớp</a>
+  <a href="#khac" data-tab="khac">Khác</a>
 </nav>
 
 <!-- ===== TRANG CHỦ ===== -->
@@ -536,24 +597,25 @@
   </div>
   <div id="greeting-toast"></div>
   <p class="tagline">Một góc nhỏ để lớp mình giữ lại kỷ niệm và những tấm ảnh của một thời áo trắng — cho những người bạn giờ đã đi khắp bốn phương.</p>
-  <div id="birthday-banner"></div>
 
-  <a href="#sukien" data-tab="sukien" class="next-event" id="next-event"></a>
+  <a href="#khac" data-tab="khac" data-subtab="sukien" class="next-event" id="next-event"></a>
 
   <div class="today-strip">
     <a href="#danhsach" data-tab="danhsach" class="today-item">
       <div class="num">41</div>
       <div class="lbl">THÀNH VIÊN</div>
     </a>
-    <a href="#loinhan" data-tab="loinhan" class="today-item">
+    <a href="#luubut" data-tab="luubut" class="today-item">
       <div class="num">💬</div>
-      <div class="lbl">LỜI NHẮN</div>
+      <div class="lbl">LƯU BÚT</div>
     </a>
     <a href="#kyniem" data-tab="kyniem" class="today-item">
       <div class="num">📷</div>
       <div class="lbl">XEM KỶ NIỆM</div>
     </a>
   </div>
+
+  <div id="birthday-banner"></div>
 
   <div class="featured-quote" id="featured-quote"></div>
 </section>
@@ -625,43 +687,51 @@
   </div>
 </section>
 
-<!-- ===== NGÀY ẤY - BÂY GIỜ ===== -->
-<section id="nganay">
-  <div class="eyebrow">Ngày ấy — Bây giờ</div>
-  <h2>Ngày ấy – Bây giờ</h2>
-  <p class="sub">Ngày xưa ngồi cùng lớp, giờ mỗi người một phương — anh gửi thông tin, em ghép thành từng cặp so sánh ở đây.</p>
-  <div class="thennow" id="thennow">
-    <div class="empty-state">
-      <p>Chưa có thông tin "bây giờ" của các thành viên.</p>
-      <p class="hint">Anh gửi cho em theo mẫu: Biệt danh — ngày ấy (lớp mình nhớ gì) — bây giờ (nghề nghiệp, nơi ở). VD: "Hùng Bá — ngồi bàn cuối hay trốn học — nay mở tiệm sửa máy tính ở Hà Nội".</p>
+<!-- ===== KHÁC (gộp: Ngày ấy-Bây giờ, Bản đồ, Kỷ lục vui) ===== -->
+<section id="khac">
+  <div class="eyebrow">Thêm nữa</div>
+  <h2>Khác</h2>
+  <div class="subnav">
+    <button class="subnav-btn active" data-subtab="nganay">Ngày ấy – Bây giờ</button>
+    <button class="subnav-btn" data-subtab="bando">Bản đồ</button>
+    <button class="subnav-btn" data-subtab="kyluc">Kỷ lục vui</button>
+    <button class="subnav-btn" data-subtab="sukien">Sự kiện</button>
+  </div>
+
+  <div class="subpanel active" id="sub-nganay">
+    <p class="sub">Ngày xưa ngồi cùng lớp, giờ mỗi người một phương — anh gửi thông tin, em ghép thành từng cặp so sánh ở đây.</p>
+    <div class="thennow" id="thennow">
+      <div class="empty-state">
+        <p>Chưa có thông tin "bây giờ" của các thành viên.</p>
+        <p class="hint">Anh gửi cho em theo mẫu: Biệt danh — ngày ấy (lớp mình nhớ gì) — bây giờ (nghề nghiệp, nơi ở). VD: "Hùng Bá — ngồi bàn cuối hay trốn học — nay mở tiệm sửa máy tính ở Hà Nội".</p>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- ===== BẢN ĐỒ ===== -->
-<section id="bando">
-  <div class="eyebrow">Lớp mình ở đâu</div>
-  <h2>Bản đồ</h2>
-  <p class="sub">Mỗi người một phương — ghim vị trí hiện tại của từng thành viên lên đây.</p>
-  <div class="map-frame">
-    <div class="pins">📍 📍 📍</div>
-    <p>Chưa có dữ liệu vị trí của các thành viên.</p>
-    <p class="hint">Anh gửi theo mẫu: Biệt danh — Tỉnh/thành phố đang sống. Đủ vài người là em dựng bản đồ ngay.</p>
+  <div class="subpanel" id="sub-bando">
+    <p class="sub">Mỗi người một phương — ghim vị trí hiện tại của từng thành viên lên đây.</p>
+    <div class="map-frame">
+      <div class="pins">📍 📍 📍</div>
+      <p>Chưa có dữ liệu vị trí của các thành viên.</p>
+      <p class="hint">Anh gửi theo mẫu: Biệt danh — Tỉnh/thành phố đang sống. Đủ vài người là em dựng bản đồ ngay.</p>
+    </div>
   </div>
-</section>
 
-<!-- ===== KỶ LỤC VUI ===== -->
-<section id="kyluc">
-  <div class="eyebrow">Vui là chính</div>
-  <h2>Kỷ lục vui của lớp</h2>
-  <p class="sub">Những danh hiệu tự phong dí dỏm — không ai chấm điểm, chỉ để cười với nhau.</p>
-  <div class="kyluc-grid">
-    <div class="kyluc-card"><div class="medal">🏆</div><div class="title">ĐI XA NHẤT</div><div class="winner">đang chờ đề cử…</div></div>
-    <div class="kyluc-card"><div class="medal">👶</div><div class="title">ĐÔNG CON NHẤT</div><div class="winner">đang chờ đề cử…</div></div>
-    <div class="kyluc-card"><div class="medal">✨</div><div class="title">ÍT ĐỔI NGOẠI HÌNH NHẤT</div><div class="winner">đang chờ đề cử…</div></div>
-    <div class="kyluc-card"><div class="medal">📞</div><div class="title">HAY LIÊN LẠC LỚP NHẤT</div><div class="winner">đang chờ đề cử…</div></div>
-    <div class="kyluc-card"><div class="medal">😴</div><div class="title">HAY NGỦ GẬT TRONG LỚP NGÀY XƯA</div><div class="winner">đang chờ đề cử…</div></div>
-    <div class="kyluc-card"><div class="medal">🎤</div><div class="title">HÁT HAY NHẤT LỚP</div><div class="winner">đang chờ đề cử…</div></div>
+  <div class="subpanel" id="sub-kyluc">
+    <p class="sub">Những danh hiệu tự phong dí dỏm — không ai chấm điểm, chỉ để cười với nhau.</p>
+    <div class="kyluc-grid">
+      <div class="kyluc-card"><div class="medal">🏆</div><div class="title">ĐI XA NHẤT</div><div class="winner">đang chờ đề cử…</div></div>
+      <div class="kyluc-card"><div class="medal">👶</div><div class="title">ĐÔNG CON NHẤT</div><div class="winner">đang chờ đề cử…</div></div>
+      <div class="kyluc-card"><div class="medal">✨</div><div class="title">ÍT ĐỔI NGOẠI HÌNH NHẤT</div><div class="winner">đang chờ đề cử…</div></div>
+      <div class="kyluc-card"><div class="medal">📞</div><div class="title">HAY LIÊN LẠC LỚP NHẤT</div><div class="winner">đang chờ đề cử…</div></div>
+      <div class="kyluc-card"><div class="medal">😴</div><div class="title">HAY NGỦ GẬT TRONG LỚP NGÀY XƯA</div><div class="winner">đang chờ đề cử…</div></div>
+      <div class="kyluc-card"><div class="medal">🎤</div><div class="title">HÁT HAY NHẤT LỚP</div><div class="winner">đang chờ đề cử…</div></div>
+    </div>
+  </div>
+
+  <div class="subpanel" id="sub-sukien">
+    <p class="sub">Họp lớp, ngày lễ, ngày đóng góp quỹ — anh gửi thông tin, em cập nhật.</p>
+    <ul class="events" id="events-list"></ul>
   </div>
 </section>
 
@@ -686,11 +756,11 @@
   </div>
 </section>
 
-<!-- ===== LỜI NHẮN ===== -->
-<section id="loinhan">
-  <div class="eyebrow">Nhắn gửi</div>
-  <h2>Lời nhắn</h2>
-  <p class="sub">Viết vài dòng cho lớp — sau khi admin duyệt sẽ hiện công khai ở đây.</p>
+<!-- ===== LƯU BÚT ===== -->
+<section id="luubut">
+  <div class="eyebrow">Trang lưu bút</div>
+  <h2>Lưu bút</h2>
+  <p class="sub">Viết vài dòng cho lớp — như ngày xưa truyền tay nhau cuốn lưu bút cuối năm.</p>
 
   <div class="msg-form">
     <input type="text" id="msg-name" placeholder="Tên hoặc biệt danh của bạn">
@@ -701,17 +771,20 @@
     </div>
   </div>
 
-  <div class="messages" id="messages-list">
+  <div class="luubut-page pinned-wrap">
+    <div class="msg pinned">
+      <div class="pin-tag">📌 Ghim</div>
+      <p><b>9A · 1999–2002</b><br>
+      Một thời chung lớp, một đời nhớ mãi.<br>
+      Năm tháng có thể đổi thay,<br>
+      nhưng 9A và những ngày tháng ấy — mãi là thanh xuân.</p>
+      <div class="who">— Hùng Bá</div>
+    </div>
+  </div>
+
+  <div class="luubut-page" id="messages-list">
     <div class="empty-state"><p>Đang tải lời nhắn…</p></div>
   </div>
-</section>
-
-<!-- ===== SỰ KIỆN ===== -->
-<section id="sukien">
-  <div class="eyebrow">Lịch lớp</div>
-  <h2>Sự kiện</h2>
-  <p class="sub">Họp lớp, ngày lễ, ngày đóng góp quỹ — anh gửi thông tin, em cập nhật.</p>
-  <ul class="events" id="events-list"></ul>
 </section>
 
 <div id="rollcall-overlay" class="hidden">
@@ -756,6 +829,11 @@
     <div id="pending-list"></div>
   </div>
 </section>
+
+<div id="lightbox">
+  <button class="lb-close">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
 <footer>
   Lớp A · Niên khóa 1999–2002 · Trang do Lớp trưởng quản lý
@@ -818,12 +896,16 @@ const data = [
 ];
 
 /* ===== Tab navigation ===== */
-const tabs = ["trangchu","danhsach","quy","nganay","bando","kyluc","kyniem","loinhan","sukien","quantri"];
+const tabs = ["trangchu","danhsach","kyniem","luubut","quy","khac","quantri"];
 function showTab(id){
   if(!tabs.includes(id)) id = "trangchu";
   tabs.forEach(t => document.getElementById(t).classList.toggle('active', t===id));
   document.querySelectorAll('[data-tab]').forEach(a => a.classList.toggle('active', a.dataset.tab===id));
   window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+}
+function showSubtab(subId){
+  document.querySelectorAll('.subpanel').forEach(p => p.classList.toggle('active', p.id === 'sub-'+subId));
+  document.querySelectorAll('.subnav-btn').forEach(b => b.classList.toggle('active', b.dataset.subtab === subId));
 }
 document.querySelectorAll('[data-tab]').forEach(a=>{
   a.addEventListener('click', function(e){
@@ -831,7 +913,11 @@ document.querySelectorAll('[data-tab]').forEach(a=>{
     const id = this.dataset.tab;
     history.replaceState(null,'','#'+id);
     showTab(id);
+    if(this.dataset.subtab) showSubtab(this.dataset.subtab);
   });
+});
+document.querySelectorAll('.subnav-btn').forEach(btn=>{
+  btn.addEventListener('click', function(){ showSubtab(this.dataset.subtab); });
 });
 showTab(location.hash ? location.hash.slice(1) : 'trangchu');
 
@@ -878,8 +964,8 @@ document.getElementById('search2').addEventListener('input', function(){
 /* ===== Câu nói về tuổi học trò — đổi ngẫu nhiên mỗi lần vào trang ===== */
 const quotes = [
   { text:"Hàng ghế đá xanh tàng cây góc sân trường\nHành lang ấy xa dần xa bước chân người\nBạn thân hỡi ta khắc ghi trong lòng\nNhững ước mơ hồng ngày tháng chờ mong", who:'Trích "Tình thơ" — Hoài An' },
-  { text:"Dòng lưu bút chưa kịp ghi đã ướt nhòa\nNhành hoa thắm chưa kịp trao tay một lần\nKỷ niệm đó trong chiều mưa tan trường\nHai đứa chung đường sao nghe vấn vương", who:'Trích "Tình thơ" — Hoài An' },
-  { text:"Bao yêu thương trong ta tìm về\nMột thoáng trường xưa đã nghe thời gian trôi xa\nNghe bâng khuâng trong tim một thời\nTìm bước ngày xưa ướt mưa người còn đâu nữa", who:'Trích "Tình thơ" — Hoài An' },
+  { text:"Dòng lưu bút chưa kịp ghi đã ướt nhòe\nNhành hoa thắm chưa kịp trao tay một lần\nKỷ niệm đó trong chiều mưa tan trường\nHai đứa chung trường sao nghe vấn vương", who:'Trích "Tình thơ" — Hoài An' },
+  { text:"Bao yêu thương trong ta tìm về\nMột thoáng trường xưa đã nghe thời gian thoi đưa\nNghe bâng khuâng trong ta một thời\nTìm bước ngày xưa ước mơ người còn đâu nữa", who:'Trích "Tình thơ" — Hoài An' },
   { text:"Ai thương ai quen ai giận hờn\nBuồn cánh phượng rơi khi ta chờ người không tới\nCho hôm nay miên man bồi hồi\nNhặt lá vàng mơ khi xưa một mối tình thơ", who:'Trích "Tình thơ" — Hoài An' },
 ];
 function renderQuote(){
@@ -1099,6 +1185,22 @@ document.getElementById('admin-login-btn').addEventListener('click', function(){
 });
 
 if(adminPass) loadPending();
+
+/* ===== Lightbox xem ảnh phóng to ===== */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.addEventListener('click', function(){
+    lightboxImg.src = this.src;
+    lightboxImg.alt = this.alt;
+    lightbox.classList.add('open');
+  });
+});
+lightbox.addEventListener('click', function(){ lightbox.classList.remove('open'); });
+document.querySelector('.lb-close').addEventListener('click', function(e){
+  e.stopPropagation();
+  lightbox.classList.remove('open');
+});
 
 const events = [
   {title:"Kỷ niệm 25 năm ngày ra trường", note:"2002 – 2027 · thời gian cụ thể sẽ thông báo", highlight:true, emoji:"🎉"},
