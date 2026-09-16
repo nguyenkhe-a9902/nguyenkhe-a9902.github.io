@@ -205,6 +205,27 @@
   .bt-labels{display:flex;justify-content:space-between;font-size:0.65rem;color:var(--ink-soft);
     margin-top:4px;font-family:'Helvetica Neue',Arial,sans-serif;}
 
+  /* ===== Khối gộp trang chủ: Sự kiện + Thành viên + Sinh nhật ===== */
+  .home-panel{
+    max-width:560px;margin:0 auto 22px;
+    border:1px solid var(--rule);background:var(--card);
+    overflow:hidden;
+  }
+  .home-panel .next-event{
+    max-width:none;margin:0;border:none;border-bottom:1px dashed var(--rule);
+    border-radius:0;padding:14px 18px;
+  }
+  .home-panel .today-strip{
+    max-width:none;margin:0;border:none;border-bottom:1px solid var(--rule);
+    border-radius:0;
+  }
+  .home-panel #birthday-banner .bday-widget{
+    border:none;background:transparent;margin:0;max-width:none;
+  }
+  .home-panel #birthday-banner .bday-banner.empty{
+    border:none;margin:0;max-width:none;padding:16px 20px;text-align:center;
+  }
+
   .next-event{
     max-width:520px;margin:0 auto 22px;padding:12px 18px;
     border:1px dashed var(--margin);text-align:left;
@@ -545,7 +566,7 @@
     font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.78rem;
     text-decoration:underline;cursor:pointer;padding:4px;
   }
-  .greeting-hero{text-align:center;margin:0 auto 20px;}
+  .greeting-hero{text-align:center;margin:0 auto;}
   .greeting-hero .g-line{
     font-family:'Caveat','Segoe Script','Bradley Hand','Comic Sans MS',Georgia,cursive;
     font-size:1.7rem;color:var(--ink);line-height:1.3;
@@ -556,13 +577,7 @@
     font-size:0.84rem;color:var(--ink-soft);font-style:italic;margin-top:4px;
   }
 
-  .auth-row{display:flex;justify-content:center;gap:10px;margin:0 auto 16px;}
-  .auth-btn{
-    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.78rem;
-    border:1px solid var(--wood);background:transparent;color:var(--ink);
-    padding:7px 14px;cursor:pointer;
-  }
-  .auth-btn:hover{border-color:var(--margin);color:var(--margin);}
+  .identity-block{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:18px;}
 
   /* ===== Floating controls ===== */
   .fab-group{
@@ -597,6 +612,7 @@
     .today-item{padding:12px 6px;}
     .today-item .num{font-size:1.05rem;}
     .featured-quote{padding:14px 16px;}
+    .home-panel{max-width:100%;}
     .bday-widget{flex-wrap:wrap;justify-content:center;text-align:center;padding:14px 16px;}
     .subnav-btn{font-size:0.74rem;padding:7px 11px;}
     .bday-info{flex:1 1 100%;text-align:left;}
@@ -623,31 +639,29 @@
     <div class="nl-row"><span class="nl-k">Niên khóa:</span><span class="nl-v">1999 – 2002</span></div>
   </div>
   <h1>Lớp A</h1>
-  <div class="auth-row">
-    <button class="auth-btn" id="signin-btn">🙋 Đăng nhập</button>
-    <button class="auth-btn" id="signout-btn">🚪 Đăng xuất</button>
+  <div id="greeting-toast" class="identity-block"></div>
+  <p class="tagline">Một góc nhỏ lưu giữ một thời áo trắng, những kỷ niệm thân thương và những người bạn năm nào — giờ đã đi khắp bốn phương.</p>
+
+  <div class="home-panel">
+    <a href="#khac" data-tab="khac" data-subtab="sukien" class="next-event" id="next-event"></a>
+
+    <div class="today-strip">
+      <a href="#danhsach" data-tab="danhsach" class="today-item">
+        <div class="num">41</div>
+        <div class="lbl">THÀNH VIÊN</div>
+      </a>
+      <a href="#luubut" data-tab="luubut" class="today-item">
+        <div class="num">💬</div>
+        <div class="lbl">LƯU BÚT</div>
+      </a>
+      <a href="#kyniem" data-tab="kyniem" class="today-item">
+        <div class="num">📷</div>
+        <div class="lbl">XEM KỶ NIỆM</div>
+      </a>
+    </div>
+
+    <div id="birthday-banner"></div>
   </div>
-  <div id="greeting-toast"></div>
-  <p class="tagline">Một góc nhỏ để lớp mình giữ lại kỷ niệm và những tấm ảnh của một thời áo trắng — cho những người bạn giờ đã đi khắp bốn phương.</p>
-
-  <a href="#khac" data-tab="khac" data-subtab="sukien" class="next-event" id="next-event"></a>
-
-  <div class="today-strip">
-    <a href="#danhsach" data-tab="danhsach" class="today-item">
-      <div class="num">41</div>
-      <div class="lbl">THÀNH VIÊN</div>
-    </a>
-    <a href="#luubut" data-tab="luubut" class="today-item">
-      <div class="num">💬</div>
-      <div class="lbl">LƯU BÚT</div>
-    </a>
-    <a href="#kyniem" data-tab="kyniem" class="today-item">
-      <div class="num">📷</div>
-      <div class="lbl">XEM KỶ NIỆM</div>
-    </a>
-  </div>
-
-  <div id="birthday-banner"></div>
 
   <div class="featured-quote" id="featured-quote"></div>
 </section>
@@ -878,6 +892,7 @@
 </footer>
 
 <div class="fab-group">
+  <button class="fab" id="identityToggle" title="Điểm danh">🙋</button>
   <button class="fab" id="themeToggle" title="Chuyển sáng/tối">🌙</button>
   <button class="fab" id="musicToggle" title="Bật/tắt nhạc">♪</button>
 </div>
@@ -1083,16 +1098,28 @@ function signOut(){
   localStorage.removeItem('lopA-skip');
   location.reload();
 }
-document.getElementById('signin-btn').addEventListener('click', function(){
-  overlay.classList.remove('hidden');
+const identityBtn = document.getElementById('identityToggle');
+function updateIdentityBtn(nick){
+  if(nick){
+    identityBtn.textContent = '🚪';
+    identityBtn.title = `Đăng xuất (${nick})`;
+  } else {
+    identityBtn.textContent = '🙋';
+    identityBtn.title = 'Điểm danh';
+  }
+}
+identityBtn.addEventListener('click', function(){
+  const cur = localStorage.getItem('lopA-whoami');
+  if(cur){ signOut(); }
+  else { overlay.classList.remove('hidden'); }
 });
-document.getElementById('signout-btn').addEventListener('click', signOut);
 
 const saved = localStorage.getItem('lopA-whoami');
 const skipped = localStorage.getItem('lopA-skip');
 if(saved){
   const myNick = JSON.parse(saved).nick;
   showGreeting(myNick);
+  updateIdentityBtn(myNick);
   const nameField = document.getElementById('msg-name');
   if(nameField) nameField.value = myNick;
 } else if(!skipped){
@@ -1112,6 +1139,7 @@ document.getElementById('rc-submit').addEventListener('click', function(){
     localStorage.setItem('lopA-whoami', JSON.stringify({nick:match[5]}));
     overlay.classList.add('hidden');
     showGreeting(match[5]);
+    updateIdentityBtn(match[5]);
     const nameField = document.getElementById('msg-name');
     if(nameField) nameField.value = match[5];
   } else {
