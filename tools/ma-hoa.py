@@ -5,7 +5,8 @@ Cách dùng:  python3 tools/ma-hoa.py <duong-dan/lopA-du-lieu-goc.json> [index.h
 
 - Dữ liệu gốc (danh sách lớp, ngày sinh, quỹ, sự kiện) nằm trong file JSON riêng,
   lưu ở Google Drive của Lớp trưởng — KHÔNG đưa lên GitHub.
-- Mỗi lần chạy tạo khoá mới → mọi người phải điểm danh lại một lần.
+- Khoá chung lưu trong file dữ liệu gốc (trường "_khoaChung"); giữ nguyên khoá này thì
+  cập nhật nội dung xong mọi người KHÔNG phải điểm danh lại. Xoá trường đó = buộc mọi máy đăng nhập lại.
 - Khoá vào trang của mỗi bạn = (tên | họ tên | biệt danh) + ngày, tháng sinh.
   Bạn nào chưa có ngày sinh trong dữ liệu thì chưa vào được.
 Cần: pip install cryptography
@@ -40,7 +41,13 @@ def seal(key, obj):
 def main(src, html='index.html'):
     goc = json.load(open(src, encoding='utf-8'))
     payload = {k: goc[k] for k in ('members', 'khoanChi', 'events', 'dsSub', 'quyNote2')}
-    K = AESGCM.generate_key(256)
+    if goc.get('_khoaChung'):
+        K = base64.b64decode(goc['_khoaChung'])
+    else:
+        K = AESGCM.generate_key(256)
+        goc['_khoaChung'] = b64(K)
+        json.dump(goc, open(src, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        print('Tạo khoá chung mới và lưu vào file dữ liệu gốc (nhớ cập nhật bản trên Drive).')
     salt = os.urandom(16)
     iv, ct = seal(K, payload)
     keys, owner, thieu = {}, {}, []

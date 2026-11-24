@@ -5,12 +5,18 @@
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#fbf9f2",
-  "theme_color": "#c85a52",
+  "theme_color": "#1c332a",
   "icons": [
     {
-      "src": "images/kyniem-20nam-2.jpg",
-      "sizes": "1000x666",
-      "type": "image/jpeg"
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
