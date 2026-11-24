@@ -1125,6 +1125,10 @@ identityBtn.addEventListener('click', function(){
   if(confirm('Đăng xuất khỏi trang lớp trên máy này?')) signOut();
 });
 
+function goKyNiem(){
+  if(location.hash !== '#kyniem') history.replaceState(null,'','#kyniem');
+  showTab('kyniem');
+}
 function initApp(payload, idx){
   data = payload.members; khoanChi = payload.khoanChi; events = payload.events;
   document.getElementById('ds-sub').textContent = payload.dsSub;
@@ -1143,7 +1147,7 @@ localStorage.removeItem('lopA-whoami'); localStorage.removeItem('lopA-skip'); //
   let saved = null;
   try{ saved = JSON.parse(localStorage.getItem('lopA-key')); }catch(e){}
   if(saved && saved.k){
-    try{ initApp(await openPayload(saved.k), saved.i); return; }
+    try{ initApp(await openPayload(saved.k), saved.i); if(!location.hash) goKyNiem(); return; }
     catch(e){ localStorage.removeItem('lopA-key'); } // nội dung đã mã hoá lại → điểm danh lại
   }
   overlay.classList.remove('hidden');
@@ -1166,6 +1170,7 @@ async function doRollcall(){
     localStorage.setItem('lopA-key', JSON.stringify(r));
     rcMsg.textContent = '';
     initApp(payload, r.i);
+    goKyNiem();
   }catch(e){
     rcMsg.textContent = 'Có lỗi khi mở trang — thử lại hoặc dùng trình duyệt khác nhé.';
   }finally{ rcBtn.disabled = false; }
@@ -1468,6 +1473,29 @@ musicBtn.addEventListener('click', function(){
   if(playing){ bgm.pause(); musicBtn.textContent='♪'; }
   else { bgm.play().catch(()=>{}); musicBtn.textContent='⏸'; }
   playing = !playing;
+});
+
+/* ===== Chỉ một nguồn âm thanh: bật video nào thì dừng nhạc nền + video khác ===== */
+let bgmResumeAfterVideo = false;
+document.querySelectorAll('video').forEach(v => {
+  v.addEventListener('play', () => {
+    document.querySelectorAll('video').forEach(o => { if(o !== v && !o.paused) o.pause(); });
+    if(playing){
+      bgm.pause(); playing = false; musicBtn.textContent = '♪';
+      bgmResumeAfterVideo = true;
+    }
+  });
+  v.addEventListener('ended', () => {
+    // xem hết video thì nhạc nền tự bật lại (nếu trước đó đang bật)
+    if(bgmResumeAfterVideo && ![...document.querySelectorAll('video')].some(o => !o.paused)){
+      bgm.play().catch(()=>{}); playing = true; musicBtn.textContent = '⏸';
+      bgmResumeAfterVideo = false;
+    }
+  });
+});
+// Bật nhạc nền thì dừng mọi video đang chạy
+musicBtn.addEventListener('click', () => {
+  if(playing){ document.querySelectorAll('video').forEach(o => o.pause()); bgmResumeAfterVideo = false; }
 });
 </script>
 </body>
