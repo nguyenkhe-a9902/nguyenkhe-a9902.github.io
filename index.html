@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lớp A · Niên khóa 1999–2002</title>
+<meta name="description" content="Trang lưu giữ kỷ niệm, danh sách và kết nối của Lớp A - THCS Nguyên Khê, niên khóa 1999–2002.">
+<meta property="og:title" content="Lớp A · Niên khóa 1999–2002">
+<meta property="og:description" content="Kỷ niệm, danh sách lớp, lưu bút và sự kiện của Lớp A - THCS Nguyên Khê.">
+<meta property="og:image" content="https://nguyenkhe-a9902.github.io/images/kyniem-20nam-2.jpg">
+<meta property="og:image:alt" content="Ảnh kỷ niệm 20 năm ra trường của Lớp A, THCS Nguyên Khê">
+<meta name="robots" content="noindex, nofollow, noimageindex">
+<script>
+/* Áp dụng chế độ sáng/tối ngay từ đầu để không bị chớp trắng */
+try{ if(localStorage.getItem('lopA-theme')==='dark') document.documentElement.setAttribute('data-theme','dark'); }catch(e){}
+</script>
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#c85a52">
+<link rel="apple-touch-icon" href="images/kyniem-20nam-2.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf9f2;
+    --card:#fffdf6;
+    --rule:#c9d9e6;
+    --margin:#c85a52;
+    --margin-strong:#b8453c;
+    --ink:#2c3a5e;
+    --ink-soft:#5c6478;
+    --board:#28453a;
+    --board-dark:#1c332a;
+    --chalk:#f1eee2;
+    --wood:#8a6240;
+    --wood-dark:#6b4a2e;
+    --shadow:rgba(44,58,94,0.08);
+  }
+  [data-theme="dark"]{
+    --paper:#1c1a16;
+    --card:#26241e;
+    --rule:#3b382e;
+    --margin:#e0857a;
+    --margin-strong:#a8453b;
+    --ink:#eae6da;
+    --ink-soft:#a89f8c;
+    --board:#0f231c;
+    --board-dark:#0a1712;
+    --chalk:#eae6da;
+    --wood:#b48a5c;
+    --wood-dark:#c9a06e;
+    --shadow:rgba(0,0,0,0.35);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:Georgia,'Times New Roman',serif;
+    transition:background .2s,color .2s;
+  }
+  a{color:inherit;}
+
+  /* ===== Nav — bảng đen, dạng tab ===== */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--board-dark);
+    display:flex;
+    gap:2px;
+    padding:0 6px;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  nav a{
+    display:block;
+    padding:14px 14px;
+    color:var(--chalk);
+    text-decoration:none;
+    font-size:0.82rem;
+    white-space:nowrap;
+    border-bottom:3px solid transparent;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    opacity:0.75;
+    transition:opacity .15s, background-color .15s;
+  }
+  nav a.active{opacity:1;border-color:var(--margin);font-weight:700;background:rgba(200,90,82,0.14);}
+  nav a:hover{opacity:1;}
+  nav a:active{opacity:1;background:rgba(255,255,255,0.16);}
+
+  /* ===== tab panels ===== */
+  section{
+    max-width:820px;
+    margin:0 auto;
+    padding:40px 22px 56px;
+    display:none;
+  }
+  section.active{display:block;}
+  section:not(#trangchu){
+    background-image:repeating-linear-gradient(
+      to bottom, transparent, transparent 34px, var(--rule) 34px, var(--rule) 35px
+    );
+    padding-left:38px;
+    position:relative;
+  }
+  section:not(#trangchu)::before{
+    content:'';
+    position:absolute;left:22px;top:0;bottom:0;width:1px;
+    background:var(--margin);opacity:0.55;
+  }
+
+  .eyebrow{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.7rem;letter-spacing:0.12em;color:var(--wood-dark);margin-bottom:6px;
+  }
+  h2{font-size:1.5rem;color:var(--ink);margin:0 0 4px;font-weight:400;}
+  .sub{color:var(--ink-soft);font-size:0.9rem;margin-bottom:26px;}
+
+  /* ===== HERO ===== */
+  #trangchu{text-align:center;padding-top:52px;padding-bottom:40px;}
+
+  .notebook-label{
+    display:inline-block;position:relative;
+    background:var(--card);border:1px solid var(--rule);
+    box-shadow:0 4px 12px var(--shadow);
+    padding:12px 26px 10px;
+    transform:rotate(-2deg);
+    margin-bottom:26px;
+  }
+  .notebook-label::before{
+    content:'';position:absolute;top:-9px;left:50%;
+    width:50px;height:18px;transform:translateX(-50%) rotate(4deg);
+    background:rgba(200,90,82,0.28);
+  }
+  .nl-row{
+    display:flex;gap:8px;align-items:baseline;justify-content:center;
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.72rem;margin:3px 0;
+  }
+  .nl-k{color:var(--ink-soft);letter-spacing:0.05em;white-space:nowrap;}
+  .nl-v{
+    font-family:'Caveat','Segoe Script','Bradley Hand',cursive;
+    font-size:1rem;color:var(--margin);
+    border-bottom:1px dotted var(--wood);padding:0 3px 1px;
+  }
+
+  h1{
+    font-size:2.6rem;color:var(--ink);margin:0 0 6px;font-weight:400;
+    font-family:'Caveat','Segoe Script','Bradley Hand','Comic Sans MS',Georgia,cursive;
+  }
+  .tagline{
+    max-width:460px;margin:0 auto 24px;color:var(--ink-soft);
+    font-size:1rem;line-height:1.75;font-style:italic;
+  }
+  .bday-banner{
+    display:inline-flex;align-items:center;gap:8px;
+    margin:0 auto 24px;padding:9px 16px;
+    border:1px dashed var(--margin);color:var(--ink);
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;
+    max-width:100%;
+  }
+  .bday-banner b{color:var(--margin);}
+  .bday-banner.empty{border-style:solid;border-color:var(--rule);color:var(--ink-soft);}
+
+  /* ===== Widget sinh nhật: lịch + quỹ đạo + timeline ===== */
+  .bday-widget{
+    display:flex;align-items:center;gap:18px;
+    max-width:520px;margin:0 auto 22px;
+    padding:16px 20px;
+    border:1px solid var(--rule);background:var(--card);
+    text-align:left;
+  }
+  .cal-page{
+    flex:0 0 60px;border:1px solid var(--rule);border-radius:4px;
+    overflow:hidden;text-align:center;box-shadow:0 2px 6px var(--shadow);
+  }
+  .cal-month{background:var(--margin-strong);color:#fff;font-size:0.58rem;padding:3px 0;
+    letter-spacing:0.05em;font-family:'Helvetica Neue',Arial,sans-serif;}
+  .cal-day{font-size:1.5rem;font-weight:700;padding:5px 0;font-family:Georgia,serif;color:var(--ink);}
+
+  .orbit{flex:0 0 56px;width:56px;height:56px;position:relative;}
+  .orbit-ring{position:absolute;inset:0;border:1px dashed var(--rule);border-radius:50%;}
+  .sun{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.1rem;}
+  .earth-pivot{position:absolute;inset:0;animation:orbitspin 7s linear infinite;}
+  .earth-pivot span{position:absolute;top:-3px;left:50%;transform:translateX(-50%);font-size:0.85rem;}
+  @keyframes orbitspin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+  .bday-info{flex:1;min-width:0;}
+  .bday-info .name{font-weight:700;color:var(--margin);font-size:1rem;margin-bottom:2px;}
+  .bday-info .when{font-size:0.78rem;color:var(--ink-soft);margin-bottom:8px;font-family:'Helvetica Neue',Arial,sans-serif;}
+  .bt-track{height:5px;background:var(--rule);border-radius:3px;position:relative;}
+  .bt-fill{height:100%;background:var(--margin);border-radius:3px;transition:width .3s;}
+  .bt-dot{position:absolute;top:50%;width:9px;height:9px;background:var(--margin);
+    border:2px solid var(--card);border-radius:50%;transform:translate(-50%,-50%);}
+  .bt-labels{display:flex;justify-content:space-between;font-size:0.65rem;color:var(--ink-soft);
+    margin-top:4px;font-family:'Helvetica Neue',Arial,sans-serif;}
+
+  /* ===== Khối gộp trang chủ: Sự kiện + Thành viên + Sinh nhật ===== */
+  .home-panel{
+    max-width:560px;margin:0 auto 22px;
+    border:1px solid var(--rule);background:var(--card);
+    overflow:hidden;
+  }
+  .home-panel .next-event{
+    max-width:none;margin:0;border:none;border-bottom:1px dashed var(--rule);
+    border-radius:0;padding:14px 18px;
+  }
+  .home-panel .today-strip{
+    max-width:none;margin:0;border:none;border-bottom:1px solid var(--rule);
+    border-radius:0;
+  }
+  .home-panel #birthday-banner .bday-widget{
+    border:none;background:transparent;margin:0;max-width:none;
+  }
+  .home-panel #birthday-banner .bday-banner.empty{
+    border:none;margin:0;max-width:none;padding:16px 20px;text-align:center;
+  }
+
+  .next-event{
+    max-width:520px;margin:0 auto 22px;padding:12px 18px;
+    border:1px dashed var(--margin);text-align:left;
+    display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;
+  }
+  .next-event .tag{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.62rem;
+    letter-spacing:0.08em;color:var(--margin);flex:0 0 auto;
+  }
+  .next-event .ttl{font-size:0.9rem;color:var(--ink);}
+  .next-event:hover{background:rgba(200,90,82,0.06);}
+
+  /* ===== Hôm nay ở lớp mình ===== */
+  .today-strip{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:0;border:1px solid var(--rule);
+    max-width:560px;margin:0 auto 22px;
+  }
+  .today-item{
+    padding:16px 10px;text-align:center;cursor:pointer;
+    border-right:1px dashed var(--rule);
+    background:var(--card);
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-decoration:none;color:inherit;display:block;
+  }
+  .today-item:last-child{border-right:none;}
+  .today-item:hover{background:rgba(200,90,82,0.07);}
+  .today-item .num{font-size:1.3rem;color:var(--margin);font-weight:700;font-family:Georgia,serif;}
+  .today-item .lbl{font-size:0.66rem;color:var(--ink-soft);letter-spacing:0.04em;margin-top:4px;}
+
+  .featured-quote{
+    max-width:480px;margin:0 auto 8px;padding:18px 22px;
+    border-left:3px solid var(--margin);background:var(--card);
+    text-align:left;
+  }
+  .featured-quote p{margin:0 0 6px;font-style:italic;color:var(--ink);font-size:0.96rem;line-height:1.65;white-space:pre-line;}
+  .featured-quote .who{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.74rem;
+    color:var(--margin);font-weight:700;font-style:normal;
+  }
+
+  /* ===== Stat row (chỉ trong Quỹ lớp) ===== */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:10px;}
+  .stat{text-align:left;}
+  .stat .label{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.66rem;
+    color:var(--ink-soft);letter-spacing:0.05em;margin-bottom:4px;
+  }
+  .stat .val{font-size:1.2rem;color:var(--ink);}
+  .stat.ton .val{color:var(--margin);font-weight:700;}
+  .fund-note{color:var(--ink-soft);font-size:0.88rem;margin-top:20px;}
+  .fund-note em{font-style:normal;color:var(--ink);border-bottom:1px dashed var(--wood);}
+
+  /* ===== Toolbar + table ===== */
+  .toolbar{display:flex;gap:10px;align-items:center;margin-bottom:14px;font-family:'Helvetica Neue',Arial,sans-serif;}
+  .toolbar input{
+    flex:1;min-width:0;padding:11px 12px;border:none;border-bottom:1.5px solid var(--wood);
+    font-family:inherit;font-size:0.9rem;background:transparent;color:var(--ink);
+  }
+  .toolbar input:focus{outline:none;border-color:var(--margin);}
+  .count{font-size:0.72rem;color:var(--ink-soft);white-space:nowrap;font-family:'Helvetica Neue',Arial,sans-serif;}
+  .tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--rule);padding:6px 2px;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:0.82rem;min-width:560px;font-family:'Helvetica Neue',Arial,sans-serif;}
+  thead th{
+    text-align:left;padding:9px 10px;font-size:0.68rem;letter-spacing:0.04em;
+    color:var(--ink-soft);border-bottom:2px solid var(--ink);font-weight:600;
+  }
+  th.num,td.num{text-align:right;}
+  th.center,td.center{text-align:center;}
+  tbody tr{border-bottom:1px solid var(--rule);}
+  tbody tr:hover{background:rgba(200,90,82,0.08);}
+  td{padding:9px 10px;color:var(--ink);}
+  /* Nickname = điểm nhấn chính, tên thật là phụ */
+  td.nick{font-weight:700;color:var(--margin);white-space:nowrap;font-size:0.92rem;}
+  td.ten{color:var(--ink-soft);font-style:italic;font-size:0.8rem;}
+  .paid{color:var(--board);font-weight:700;}
+  [data-theme="dark"] .paid{color:#7fd4b0;}
+  .unpaid{color:#b7ac93;}
+  tfoot td{padding:10px 10px;font-weight:700;border-top:2px solid var(--ink);background:var(--card);}
+
+  /* ===== Ngày ấy - Bây giờ ===== */
+  .thennow{display:flex;flex-direction:column;gap:14px;}
+  .tn-card{
+    display:grid;grid-template-columns:1fr 1fr;
+    border:1px solid var(--rule);background:var(--card);
+  }
+  .tn-then,.tn-now{padding:16px 18px;}
+  .tn-then{border-right:1px dashed var(--rule);}
+  .tn-label{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.62rem;
+    letter-spacing:0.1em;color:var(--wood-dark);margin-bottom:6px;
+  }
+  .tn-name{font-weight:700;color:var(--margin);}
+
+  /* ===== Kỷ niệm ===== */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;}
+  .gallery-label{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;
+    color:var(--wood-dark);font-weight:700;margin-bottom:12px;
+  }
+  .photo{
+    aspect-ratio:1/1;background:var(--card);border:1px solid var(--rule);
+    box-shadow:0 2px 6px var(--shadow);
+    position:relative;overflow:hidden;padding:0;
+    transform:rotate(-1deg);
+  }
+  .photo:nth-child(even){transform:rotate(1deg);}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo .yr-badge{
+    position:absolute;bottom:6px;right:6px;
+    background:rgba(20,17,12,0.62);color:#fff;
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.7rem;
+    padding:2px 9px;border-radius:10px;
+  }
+  .photo .yr{font-family:'Caveat','Segoe Script','Bradley Hand',cursive;color:var(--margin);font-size:1rem;margin-top:6px;}
+  .photo img{cursor:zoom-in;}
+  .album-note{color:var(--ink-soft);font-size:0.86rem;margin:-4px 0 14px;line-height:1.6;}
+  .video-wrap{margin-bottom:18px;border:1px solid var(--rule);background:#000;box-shadow:0 2px 6px var(--shadow);}
+  .video-wrap video{display:block;width:100%;aspect-ratio:16/9;}
+
+  /* ===== Lightbox xem ảnh phóng to ===== */
+  #lightbox{
+    position:fixed;inset:0;z-index:200;
+    background:rgba(10,8,6,0.9);
+    display:none;align-items:center;justify-content:center;
+    padding:24px;cursor:zoom-out;
+  }
+  #lightbox.open{display:flex;}
+  #lightbox img{max-width:100%;max-height:90vh;box-shadow:0 10px 40px rgba(0,0,0,0.5);}
+  #lightbox .lb-close{
+    position:absolute;top:16px;right:20px;
+    color:#fff;font-size:2rem;line-height:1;
+    background:none;border:none;cursor:pointer;
+  }
+  #lightbox .lb-nav{
+    position:absolute;top:50%;transform:translateY(-50%);
+    width:44px;height:64px;border:none;cursor:pointer;
+    background:rgba(255,255,255,0.12);color:#fff;font-size:1.8rem;line-height:1;
+  }
+  #lightbox .lb-prev{left:8px;}
+  #lightbox .lb-next{right:8px;}
+  #lightbox .lb-count{
+    position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+    color:#ddd;font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;
+  }
+  #lightbox img{touch-action:pan-y;}
+
+  /* ===== Sự kiện ===== */
+  .events{list-style:none;margin:0;padding:0;}
+  .events li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--rule);align-items:flex-start;}
+  .events li:last-child{border-bottom:none;}
+  .events li.highlight{background:rgba(200,90,82,0.07);padding:14px 12px;border-bottom:none;border:1px dashed var(--margin);margin-bottom:10px;}
+  .ev-dot{flex:0 0 10px;height:10px;border-radius:50%;background:var(--margin);margin-top:8px;}
+  .ev-body h3{margin:0 0 4px;font-size:1rem;color:var(--ink);font-weight:700;}
+  .ev-body p{margin:0;color:var(--ink-soft);font-size:0.86rem;}
+
+  .empty-state{border:1px dashed var(--rule);padding:20px 18px;background:var(--card);}
+  .empty-state p{margin:0 0 8px;color:var(--ink-soft);font-size:0.9rem;}
+  .empty-state p.hint{margin:0;font-size:0.82rem;font-style:italic;}
+
+  /* ===== Menu con trong tab gộp ===== */
+  .subnav{display:flex;gap:6px;margin-bottom:22px;flex-wrap:wrap;}
+  .subnav-btn{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.78rem;
+    border:1px solid var(--rule);background:var(--card);color:var(--ink-soft);
+    padding:8px 14px;cursor:pointer;
+  }
+  .subnav-btn.active{border-color:var(--margin);color:var(--margin);font-weight:700;}
+  .subpanel{display:none;}
+  .subpanel.active{display:block;}
+
+  /* ===== Bản đồ (khung chờ dữ liệu) ===== */
+  .map-frame{
+    border:1px dashed var(--rule);background:var(--card);
+    padding:36px 20px;text-align:center;position:relative;
+    min-height:180px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:10px;
+  }
+  .map-frame .pins{font-size:1.4rem;letter-spacing:18px;opacity:0.55;margin-bottom:4px;}
+  .map-frame p{margin:0;color:var(--ink-soft);font-size:0.9rem;}
+  .map-frame p.hint{font-size:0.82rem;font-style:italic;margin-top:4px;}
+
+  /* ===== Kỷ lục vui ===== */
+  .kyluc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;}
+  .kyluc-card{
+    border:1px solid var(--rule);background:var(--card);
+    padding:18px 16px;text-align:center;
+  }
+  .kyluc-card .medal{font-size:1.6rem;margin-bottom:8px;}
+  .kyluc-card .title{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.72rem;
+    letter-spacing:0.04em;color:var(--wood-dark);margin-bottom:8px;
+  }
+  .kyluc-card .winner{
+    font-family:'Caveat','Segoe Script','Bradley Hand',cursive;
+    font-size:1.1rem;color:var(--ink-soft);opacity:0.6;
+  }
+
+  .luubut-page{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+    gap:22px 18px;
+    padding:6px 2px;
+  }
+  .msg{
+    position:relative;
+    background:var(--note-color, #fff3b0);
+    padding:18px 16px 14px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.18);
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    color:#33291a;
+    transition:transform .15s, box-shadow .15s;
+  }
+  .msg:hover{transform:rotate(0deg) translateY(-4px) !important;box-shadow:0 8px 16px rgba(0,0,0,0.24);}
+  .msg::before{
+    content:'📌';
+    position:absolute;top:-12px;left:50%;
+    transform:translateX(-50%);
+    font-size:1.1rem;
+  }
+  .msg:nth-child(4n+1){--note-color:#fff3b0;transform:rotate(-1.6deg);}
+  .msg:nth-child(4n+2){--note-color:#ffd6e0;transform:rotate(1.3deg);}
+  .msg:nth-child(4n+3){--note-color:#c9f2e0;transform:rotate(-0.8deg);}
+  .msg:nth-child(4n)  {--note-color:#cfe3ff;transform:rotate(1.8deg);}
+  .msg p{margin:0 0 10px;font-size:0.92rem;line-height:1.55;color:#33291a;}
+  .msg .who{
+    text-align:right;font-size:0.88rem;color:#5a4a2e;
+    font-family:'Caveat','Segoe Script','Bradley Hand','Comic Sans MS',Georgia,cursive;
+    font-style:italic;
+  }
+  #messages-list .empty-state{grid-column:1/-1;}
+  .pinned-wrap{margin-bottom:22px;}
+  .msg.pinned{
+    --note-color:#ffe8b0;
+    transform:none !important;
+    grid-column:1/-1;
+    border:2px solid #e0a83c;
+    max-width:420px;
+  }
+  .msg.pinned::before{content:none;}
+  .msg.pinned .pin-tag{
+    position:absolute;top:-11px;left:14px;
+    background:#e0a83c;color:#fff;font-size:0.68rem;
+    padding:2px 10px;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;
+  }
+  .msg.pinned p{margin-top:6px;}
+
+  .msg-form{
+    border:1px solid var(--rule);background:var(--card);
+    padding:16px 18px;margin-bottom:22px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+  }
+  .msg-form input,.msg-form textarea{
+    width:100%;padding:10px 12px;border:1px solid var(--rule);
+    background:transparent;color:var(--ink);font-family:inherit;font-size:0.9rem;
+    margin-bottom:10px;resize:vertical;
+  }
+  .msg-form input:focus,.msg-form textarea:focus{outline:none;border-color:var(--margin);}
+  .msg-formrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .msg-status{font-size:0.8rem;color:var(--ink-soft);}
+  .msg-status.ok{color:var(--board);}
+  [data-theme="dark"] .msg-status.ok{color:#7fd4b0;}
+  .msg-status.err{color:var(--margin);}
+
+  /* ===== Quản trị ===== */
+  .admin-login{
+    max-width:320px;margin:0 auto;text-align:center;
+    border:1px solid var(--rule);background:var(--card);padding:24px 20px;
+  }
+  .admin-login input{
+    width:100%;padding:10px 12px;border:1px solid var(--rule);
+    background:transparent;color:var(--ink);font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.9rem;margin-bottom:12px;
+  }
+  .admin-login input:focus{outline:none;border-color:var(--margin);}
+  .admin-subtitle{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;
+    font-weight:700;color:var(--wood-dark);margin-bottom:10px;
+  }
+  .pending-item{
+    border:1px solid var(--rule);background:var(--card);
+    padding:14px 16px;margin-bottom:12px;
+  }
+  .pending-item p{margin:0 0 4px;color:var(--ink);font-size:0.9rem;}
+  .pending-item .who{font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.72rem;color:var(--ink-soft);margin-bottom:10px;}
+  .pending-actions{display:flex;gap:8px;}
+  .pending-actions button{
+    flex:1;padding:8px;border:none;cursor:pointer;
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;font-weight:700;
+  }
+  .btn-approve{background:var(--board);color:#fff;}
+  .btn-delete{background:var(--margin-strong);color:#fff;}
+  .footer-link{
+    background:none;border:none;color:var(--ink-soft);
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.72rem;
+    text-decoration:underline;cursor:pointer;margin-top:8px;
+  }
+
+  footer{text-align:center;padding:26px 20px 90px;color:var(--ink-soft);font-size:0.76rem;font-family:'Helvetica Neue',Arial,sans-serif;}
+
+  /* ===== Điểm danh (modal chào khi vào trang) ===== */
+  #rollcall-overlay{
+    position:fixed;inset:0;z-index:100;
+    background:rgba(20,17,12,0.68);
+    display:flex;align-items:center;justify-content:center;
+    padding:20px;
+  }
+  #rollcall-overlay.hidden{display:none;}
+  .rollcall-card{
+    background:var(--card);border:1px solid var(--rule);
+    max-width:360px;width:100%;padding:26px 24px 22px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    position:relative;
+  }
+  .rollcall-card::before{
+    content:'';position:absolute;top:-8px;left:50%;
+    width:50px;height:16px;transform:translateX(-50%) rotate(-3deg);
+    background:rgba(200,90,82,0.28);
+  }
+  .rollcall-title{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.7rem;letter-spacing:0.14em;color:var(--wood-dark);
+    text-align:center;margin-bottom:4px;
+  }
+  .rollcall-card h3{
+    text-align:center;margin:0 0 6px;font-weight:400;font-size:1.4rem;color:var(--ink);
+  }
+  .rollcall-card .rc-sub{
+    text-align:center;color:var(--ink-soft);font-size:0.84rem;margin-bottom:20px;
+  }
+  .rc-field{margin-bottom:14px;font-family:'Helvetica Neue',Arial,sans-serif;}
+  .rc-field label{display:block;font-size:0.72rem;color:var(--ink-soft);margin-bottom:5px;letter-spacing:0.03em;}
+  .rc-field input{
+    width:100%;padding:10px 12px;border:1px solid var(--rule);
+    background:transparent;color:var(--ink);font-family:inherit;font-size:0.92rem;
+  }
+  .rc-field input:focus{outline:none;border-color:var(--margin);}
+  .rc-row{display:flex;gap:10px;}
+  .rc-row .rc-field{flex:1;}
+  .rc-msg{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.78rem;
+    color:var(--margin);margin:-6px 0 12px;min-height:1em;
+  }
+  .rc-actions{display:flex;flex-direction:column;gap:8px;margin-top:4px;}
+  .rc-btn{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;
+    font-size:0.86rem;padding:11px;border:none;cursor:pointer;
+    background:var(--board-dark);color:var(--chalk);letter-spacing:0.02em;
+  }
+  .rc-btn:active{opacity:0.85;}
+  body.locked > nav, body.locked section, body.locked footer, body.locked .fab-group{display:none !important;}
+  .rc-skip{
+    background:none;border:none;color:var(--ink-soft);
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.78rem;
+    text-decoration:underline;cursor:pointer;padding:4px;
+  }
+  .greeting-hero{text-align:center;margin:0 auto;}
+  .greeting-hero .g-line{
+    font-family:'Caveat','Segoe Script','Bradley Hand','Comic Sans MS',Georgia,cursive;
+    font-size:1.7rem;color:var(--ink);line-height:1.3;
+  }
+  .greeting-hero .g-line b{color:var(--margin);}
+  .greeting-hero .g-wish{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:0.84rem;color:var(--ink-soft);font-style:italic;margin-top:4px;
+  }
+
+  .identity-block{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:18px;}
+
+  /* ===== Floating controls ===== */
+  .fab-group{
+    position:fixed;right:16px;bottom:16px;z-index:60;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .fab{
+    width:46px;height:46px;border-radius:50%;
+    background:var(--board-dark);color:var(--chalk);
+    border:1px solid var(--wood);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.15rem;cursor:pointer;
+    box-shadow:0 3px 10px var(--shadow);
+  }
+  .fab:active{transform:scale(0.94);}
+
+  /* ===== Mobile / portrait ===== */
+  @media (max-width:600px){
+    nav a{padding:13px 11px;font-size:0.76rem;}
+    section{padding:30px 16px 48px;}
+    section:not(#trangchu){padding-left:26px;}
+    section:not(#trangchu)::before{left:14px;}
+    h1{font-size:1.9rem;}
+    .greeting-hero .g-line{font-size:1.35rem;}
+    .tagline{font-size:0.92rem;}
+    .stats{grid-template-columns:repeat(2,1fr);gap:14px;}
+    .tn-card{grid-template-columns:1fr;}
+    .tn-then{border-right:none;border-bottom:1px dashed var(--rule);}
+    .toolbar{flex-wrap:wrap;}
+    .count{width:100%;text-align:right;}
+    .today-strip{max-width:100%;}
+    .today-item{padding:12px 6px;}
+    .today-item .num{font-size:1.05rem;}
+    .featured-quote{padding:14px 16px;}
+    .home-panel{max-width:100%;}
+    .bday-widget{flex-wrap:wrap;justify-content:center;text-align:center;padding:14px 16px;}
+    .subnav-btn{font-size:0.74rem;padding:7px 11px;}
+    .bday-info{flex:1 1 100%;text-align:left;}
+    .next-event{flex-wrap:wrap;}
+    .rollcall-card{padding:22px 18px 18px;}
+  }
+</style>
+</head>
+<body class="locked">
+
+<nav id="tabnav">
+  <a href="#trangchu" data-tab="trangchu">Trang chủ</a>
+  <a href="#danhsach" data-tab="danhsach">Danh sách lớp</a>
+  <a href="#kyniem" data-tab="kyniem">Kỷ niệm</a>
+  <a href="#luubut" data-tab="luubut">Lưu bút</a>
+  <a href="#quy" data-tab="quy">Quỹ lớp</a>
+  <a href="#khac" data-tab="khac">Khác</a>
+</nav>
+
+<!-- ===== TRANG CHỦ ===== -->
+<section id="trangchu">
+  <div class="notebook-label">
+    <div class="nl-row"><span class="nl-k">Trường:</span><span class="nl-v">THCS Nguyên Khê</span></div>
+    <div class="nl-row"><span class="nl-k">Niên khóa:</span><span class="nl-v">1999 – 2002</span></div>
+  </div>
+  <h1>Lớp A</h1>
+  <div id="greeting-toast" class="identity-block"></div>
+  <p class="tagline">Một góc nhỏ lưu giữ một thời áo trắng, những kỷ niệm thân thương và những người bạn năm nào — giờ đã đi khắp bốn phương.</p>
+
+  <div class="home-panel">
+    <a href="#khac" data-tab="khac" data-subtab="sukien" class="next-event" id="next-event"></a>
+
+    <div class="today-strip">
+      <a href="#danhsach" data-tab="danhsach" class="today-item">
+        <div class="num" id="today-count">–</div>
+        <div class="lbl">THÀNH VIÊN</div>
+      </a>
+      <a href="#luubut" data-tab="luubut" class="today-item">
+        <div class="num">💬</div>
+        <div class="lbl">LƯU BÚT</div>
+      </a>
+      <a href="#kyniem" data-tab="kyniem" class="today-item">
+        <div class="num">📷</div>
+        <div class="lbl">XEM KỶ NIỆM</div>
+      </a>
+    </div>
+
+    <div id="birthday-banner"></div>
+  </div>
+
+  <div class="featured-quote" id="featured-quote"></div>
+</section>
+
+<!-- ===== DANH SÁCH LỚP ===== -->
+<section id="danhsach">
+  <div class="eyebrow">Thành viên</div>
+  <h2>Danh sách lớp</h2>
+  <p class="sub" id="ds-sub"></p>
+  <div class="toolbar">
+    <input type="text" id="search" placeholder="Tìm theo tên, biệt danh, địa chỉ, số điện thoại…">
+    <span class="count" id="count"></span>
+  </div>
+  <div class="tablewrap">
+    <table id="tbl">
+      <thead>
+        <tr>
+          <th class="center">STT</th>
+          <th>Biệt danh</th>
+          <th>Họ &amp; tên</th>
+          <th>Ngày sinh</th>
+          <th>Địa chỉ</th>
+          <th>SĐT</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== QUỸ LỚP (ẩn cho đến khi bấm vào thẻ) ===== -->
+<section id="quy">
+  <div class="eyebrow">Minh bạch</div>
+  <h2>Quỹ lớp</h2>
+  <p class="sub">Thu – chi công khai, cập nhật mỗi khi có biến động.</p>
+  <div class="stats">
+    <div class="stat"><div class="label">Tổng thu 2025</div><div class="val" id="stat-2025">—</div></div>
+    <div class="stat"><div class="label">Tổng thu 2026</div><div class="val" id="stat-2026">—</div></div>
+    <div class="stat"><div class="label">Đã chi</div><div class="val" id="stat-chi">—</div></div>
+    <div class="stat ton"><div class="label">Tồn quỹ</div><div class="val" id="stat-ton">—</div></div>
+  </div>
+  <p class="fund-note" id="chi-note"></p>
+  <p class="fund-note" style="margin-top:8px;" id="quy-note2"></p>
+
+  <div class="toolbar" style="margin-top:28px;">
+    <input type="text" id="search2" placeholder="Tìm theo tên, biệt danh…">
+    <span class="count" id="count2"></span>
+  </div>
+  <div class="tablewrap">
+    <table id="tbl2">
+      <thead>
+        <tr>
+          <th class="center">STT</th>
+          <th>Biệt danh</th>
+          <th>Họ &amp; tên</th>
+          <th class="num">Quỹ 2025</th>
+          <th class="num">Quỹ 2026</th>
+        </tr>
+      </thead>
+      <tbody id="tbody2"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="center">Tổng cộng</td>
+          <td class="num" id="tfoot-2025">—</td>
+          <td class="num" id="tfoot-2026">—</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</section>
+
+<!-- ===== KHÁC (gộp: Ngày ấy-Bây giờ, Bản đồ, Kỷ lục vui) ===== -->
+<section id="khac">
+  <div class="eyebrow">Thêm nữa</div>
+  <h2>Khác</h2>
+  <div class="subnav">
+    <button class="subnav-btn active" data-subtab="nganay">Ngày ấy – Bây giờ</button>
+    <button class="subnav-btn" data-subtab="bando">Bản đồ</button>
+    <button class="subnav-btn" data-subtab="kyluc">Kỷ lục vui</button>
+    <button class="subnav-btn" data-subtab="sukien">Sự kiện</button>
+  </div>
+
+  <div class="subpanel active" id="sub-nganay">
+    <p class="sub">Ngày xưa ngồi cùng lớp, giờ mỗi người một phương.</p>
+    <div class="thennow" id="thennow">
+      <div class="empty-state">
+        <p>Mục này đang được cập nhật.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="subpanel" id="sub-bando">
+    <p class="sub">Mỗi người một phương — ghim vị trí hiện tại của từng thành viên lên đây.</p>
+    <div class="map-frame">
+      <div class="pins">📍 📍 📍</div>
+      <p>Bản đồ đang được cập nhật.</p>
+    </div>
+  </div>
+
+  <div class="subpanel" id="sub-kyluc">
+    <p class="sub">Những danh hiệu tự phong dí dỏm — không ai chấm điểm, chỉ để cười với nhau.</p>
+    <div class="kyluc-grid">
+      <div class="kyluc-card"><div class="medal">🏆</div><div class="title">ĐI XA NHẤT</div><div class="winner">đang chờ đề cử…</div></div>
+      <div class="kyluc-card"><div class="medal">👶</div><div class="title">ĐÔNG CON NHẤT</div><div class="winner">đang chờ đề cử…</div></div>
+      <div class="kyluc-card"><div class="medal">✨</div><div class="title">ÍT ĐỔI NGOẠI HÌNH NHẤT</div><div class="winner">đang chờ đề cử…</div></div>
+      <div class="kyluc-card"><div class="medal">📞</div><div class="title">HAY LIÊN LẠC LỚP NHẤT</div><div class="winner">đang chờ đề cử…</div></div>
+      <div class="kyluc-card"><div class="medal">😴</div><div class="title">HAY NGỦ GẬT TRONG LỚP NGÀY XƯA</div><div class="winner">đang chờ đề cử…</div></div>
+      <div class="kyluc-card"><div class="medal">🎤</div><div class="title">HÁT HAY NHẤT LỚP</div><div class="winner">đang chờ đề cử…</div></div>
+    </div>
+  </div>
+
+  <div class="subpanel" id="sub-sukien">
+    <p class="sub">Họp lớp, ngày lễ, ngày đóng góp quỹ của lớp mình.</p>
+    <ul class="events" id="events-list"></ul>
+  </div>
+</section>
+
+<!-- ===== KỶ NIỆM ===== -->
+<section id="kyniem">
+  <div class="eyebrow">Album</div>
+  <h2>Kỷ niệm</h2>
+  <p class="sub">Ảnh các lần họp lớp, thăm cô và mốc 20 năm ra trường — sẽ cập nhật thêm dần.</p>
+
+  <div class="gallery-label">💐 Thăm cô Nhung · Chủ nhật 15/11/2026</div>
+  <p class="album-note">Lần đầu tiên lớp mình cùng về thăm cô chủ nhiệm nhân ngày 20/11 — tặng hoa, giỏ quả, thiệp chúc của cả lớp và ngồi hàn huyên chuyện xưa.</p>
+  <div class="video-wrap">
+    <video controls playsinline preload="none" poster="images/thamco-2026-poster.jpg">
+      <source src="videos/thamco-2026.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="gallery">
+    <div class="photo"><img src="images/thamco-2026-ca-lop.jpg" width="1400" height="1050" alt="Cả lớp chụp cùng cô Nhung" loading="lazy"></div>
+    <div class="photo"><img src="images/thamco-2026-tha-tim.jpg" width="1400" height="1050" alt="Cả lớp thả tim cùng cô" loading="lazy"></div>
+    <div class="photo"><img src="images/thamco-2026-lop-truong-tang-hoa.jpg" width="1050" height="1400" alt="Lớp trưởng tặng hoa cô" loading="lazy"></div>
+    <div class="photo"><img src="images/thamco-2026-han-huyen.jpg" width="1400" height="1050" alt="Ngồi hàn huyên cùng cô" loading="lazy"></div>
+    <div class="photo"><img src="images/thamco-2026-thiep-chuc.jpg" width="1400" height="1050" alt="Thiệp chúc của cả lớp" loading="lazy"></div>
+    <div class="photo"><img src="images/thamco-2026-mam-qua.jpg" width="1400" height="1050" alt="Mâm quả bánh hôm thăm cô" loading="lazy"></div>
+    <div class="photo"><img src="images/thamco-2026-selfie-1.jpg" width="1400" height="587" alt="Ảnh tự sướng cả nhóm" loading="lazy"></div>
+    <div class="photo"><img src="images/thamco-2026-selfie-2.jpg" width="1050" height="1400" alt="Ảnh tự sướng vui vẻ" loading="lazy"></div>
+  </div>
+
+  <div class="gallery-label" style="margin-top:26px;">🎓 Kỷ niệm 20 năm ra trường</div>
+  <div class="gallery">
+    <div class="photo"><img src="images/kyniem-20nam-1.jpg" width="1000" height="666" alt="Kỷ niệm 20 năm ra trường" loading="lazy"></div>
+    <div class="photo"><img src="images/kyniem-20nam-2.jpg" width="1000" height="666" alt="Kỷ niệm 20 năm ra trường" loading="lazy"></div>
+    <div class="photo"><img src="images/kyniem-20nam-3.jpg" width="1000" height="666" alt="Kỷ niệm 20 năm ra trường" loading="lazy"></div>
+  </div>
+
+  <div class="gallery-label" style="margin-top:26px;">📅 Họp lớp thường niên</div>
+  <div class="gallery">
+    <div class="photo"><img src="images/kyniem-hoplop-2023.jpg" width="1000" height="750" alt="Họp lớp 2023" loading="lazy"><div class="yr-badge">2023</div></div>
+    <div class="photo"><img src="images/kyniem-hoplop-2024.jpg" width="750" height="1000" alt="Họp lớp 2024" loading="lazy"><div class="yr-badge">2024</div></div>
+    <div class="photo"><img src="images/kyniem-hoplop-2026.jpg" width="562" height="1000" alt="Họp lớp 2026" loading="lazy"><div class="yr-badge">2026</div></div>
+  </div>
+</section>
+
+<!-- ===== LƯU BÚT ===== -->
+<section id="luubut">
+  <div class="eyebrow">Trang lưu bút</div>
+  <h2>Lưu bút</h2>
+  <p class="sub">Viết vài dòng cho lớp — như ngày xưa truyền tay nhau cuốn lưu bút cuối năm.</p>
+
+  <div class="msg-form">
+    <input type="text" id="msg-name" placeholder="Tên hoặc biệt danh của bạn">
+    <textarea id="msg-content" rows="3" placeholder="Viết lời nhắn... (tối đa 500 ký tự)" maxlength="500"></textarea>
+    <input type="text" id="msg-website" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;" aria-hidden="true">
+    <div class="msg-formrow">
+      <button class="rc-btn" id="msg-submit" style="flex:0 0 auto;">Gửi lời nhắn</button>
+      <span class="msg-status" id="msg-status"></span>
+    </div>
+  </div>
+
+  <div class="luubut-page pinned-wrap">
+    <div class="msg pinned">
+      <div class="pin-tag">📌 Ghim</div>
+      <p><b>9A · 1999–2002</b><br>
+      Một thời chung lớp, một đời nhớ mãi.<br>
+      Năm tháng có thể đổi thay,<br>
+      nhưng 9A và những ngày tháng ấy — mãi là thanh xuân.</p>
+      <div class="who">— Hùng Lớp Trưởng</div>
+    </div>
+  </div>
+
+  <div class="luubut-page" id="messages-list">
+    <div class="empty-state"><p>Đang tải lời nhắn…</p></div>
+  </div>
+</section>
+
+<div id="rollcall-overlay">
+  <div class="rollcall-card">
+    <div class="rollcall-title">📋 ĐIỂM DANH</div>
+    <h3>Bạn là ai trong lớp?</h3>
+    <p class="rc-sub">Trang chỉ dành cho các bạn Lớp A. Nhập tên hoặc biệt danh + ngày, tháng sinh để vào.</p>
+    <div class="rc-field">
+      <label>Tên hoặc biệt danh</label>
+      <input type="text" id="rc-name">
+    </div>
+    <div class="rc-row">
+      <div class="rc-field">
+        <label>Ngày sinh (dương lịch)</label>
+        <input type="text" id="rc-day" placeholder="Ngày" inputmode="numeric" maxlength="2">
+      </div>
+      <div class="rc-field">
+        <label>&nbsp;</label>
+        <input type="text" id="rc-month" placeholder="Tháng" inputmode="numeric" maxlength="2">
+      </div>
+    </div>
+    <div class="rc-msg" id="rc-msg"></div>
+    <div class="rc-actions">
+      <button class="rc-btn" id="rc-submit">Có mặt! 🙋</button>
+    </div>
+  </div>
+</div>
+
+<section id="quantri">
+  <div class="eyebrow">Chỉ dành cho admin</div>
+  <h2>Quản trị lời nhắn</h2>
+  <p class="sub">Duyệt hoặc xoá lời nhắn chờ xử lý.</p>
+
+  <div class="admin-login" id="admin-login">
+    <input type="password" id="admin-pass" placeholder="Mật khẩu quản trị">
+    <button class="rc-btn" id="admin-login-btn" style="width:100%;">Đăng nhập</button>
+    <p class="rc-msg" id="admin-login-msg" style="margin-top:10px;"></p>
+  </div>
+
+  <div id="admin-panel" style="display:none;">
+    <div class="admin-subtitle">🕓 Đang chờ duyệt</div>
+    <div id="pending-list"></div>
+
+    <div class="admin-subtitle" style="margin-top:28px;">✅ Đã đăng công khai</div>
+    <div id="approved-list"></div>
+  </div>
+</section>
+
+<div id="lightbox">
+  <button class="lb-close" aria-label="Đóng">✕</button>
+  <button class="lb-nav lb-prev" aria-label="Ảnh trước">‹</button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="lb-nav lb-next" aria-label="Ảnh sau">›</button>
+  <div class="lb-count" id="lb-count"></div>
+</div>
+
+<footer>
+  Lớp A · Niên khóa 1999–2002 · Trang do Lớp trưởng quản lý
+  <div><button class="footer-link" data-tab="quantri">Quản trị</button></div>
+</footer>
+
+<div class="fab-group">
+  <button class="fab" id="identityToggle" title="Điểm danh">🙋</button>
+  <button class="fab" id="themeToggle" title="Chuyển sáng/tối">🌙</button>
+  <button class="fab" id="musicToggle" title="Bật/tắt nhạc">♪</button>
+</div>
+
+<!-- Nhạc nền — thay src bằng link bài hát khi có -->
+<audio id="bgm" loop preload="none">
+  <source src="tinhtho.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let data = [];
+/* Nội dung đã mã hoá — tạo bằng tools/ma-hoa.py, đừng sửa tay */
+const ENC = /*ENC-START*/{"v":1,"iter":200000,"salt":"w6nWOzWenwibWERauyn5WQ==","iv":"5GCcET5H7Gn1dJWg","ct":"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","keys":{"cf532c1c8e9bb73a5531c27c50f0eb57":["WVlv5oaOtC+TWG3Z","uthiwYkg5uYDM2wLj2JkxAq7dAmm8KGBIb2Ed/3B9JDLgDZOtBUBkNjQOJikA021vjMpjiKWk10TziuAQz1L0jT0oRhIZz6jQ7WD6TI="],"4f9f5b097f65050310d09627283bc543":["aMJPnCcr5pMOYxhv","xv7wOpWTs1UxGS0chtBWnNXz9GVjjpYHFbH725GRdrBIw/cWIZM1uu6WINHtoTFmn0OIeUAfOYfHh+jiE7qHg3ueJOQpwMvQSaO8NVs="],"fa90ef216b69967eb20c25686e0dd74e":["YNqrskYkooq+CRN6","3qv2L6g+bU8pNKJUlYYVI6uxqoSVnh41GJ5pds7hodOAhpJSrjESDHgJ7W5mDMrynXb7WOUjJsyi0fi1lHgidqthUdy4iiES+zVA8jE="],"7c1e5f8da26576719daaadff24f82012":["NvGIjfQBrNwvKF9W","ybckXklV7KYNHbgFnLI5lNUTb+W78mAv6BlU/00mPM1vh4Zp6mL8HBQLIuT53dHTxlWuehi63ajBhsYgZWwzoeAoIHoh3L/7xM8PvKY="],"eb7c53b9b1a19b760bb64f62326601b4":["cHKogxLnD+8NpRk7","IFILDtMojt+7m1NoXp6k5aeDjomVJVUcbV3rNGJ+qvlQXrzat1QJsPPrlhjVaRij+MNqdNnW7iJ6Ny+HHGXhy6xuDmtOM8GwTZ/Gm1c="],"b00f915d0cbe21e101f455af629b4443":["EqIyQlZuIka80m4q","rxwj1W7/IDysw/1JMUJfB3BX4f9pSYnsxX+RMKJWiklj1Qv6nUQd5y9dCNv7hVQVUKWqxSZb8qq0mMNS6BBIixeWa9upCYztLUZ/IWY="],"3fe986681433cd1dc5414fda4ad17823":["tnLekOupVTlWura5","EpSx0u6ep6DaVKE3H++NqahAE5FzwGSX2jm4I09pzrwsm/I7hx6dAhcP8xOSoTWeiEXGSCkQev8zFkJ7KZyTaO1IgMCpf//T5DY4COM="],"76684a22245dac969d1bb9fa4b79f49a":["irmn8u/o16PogV52","4orGSUVFST0u15tIgXbbjjmzKvFmBC8JtX0gX6OCoDblvxoD4tIltJRauqCF+JaIyRFVyA0TRC4g7W2pW2dkqDidqlbocVh5TX0Epi4="],"49554e919cc4bdf11f2ae1f4e4620a6f":["nzIInQjIHN6l/LZP","1atckcx9ppjY6F4owW6xgl8/4QW5OczuJuLB7/0jkXiAyaHzXpcoy2mIdnyRPv6MQFbfxLkvJWa9jfhByxqo5UMGQChFcfpFCUKP7g4="],"3d80d7d7a6d2248d529ddea5db7d364a":["MCvX1RrZUaPb7wSg","GU0MsRj77zZJukGJWPFSPjelCG1JdOkbCtNkE4MiwROFLlQnCYN+PbkwopduC4F3t0dM977uy9KVVorAvu3jn2YCr9dudQBvWyAEnHw="],"a4e01662a74267f12df0d9e12cae0f71":["GoeMwW/wLrBtyaRP","3t8oDVd0XRF1UNFvalbl9LAhNq44ZeRr0Zbjzt/ZlzBhcxpksZeEXMkoZGdQgOrmnIh97srclnKT6ZLam5XlEKQxkQ2xZdqutX7ew5A="],"b0056769988e8ba4d20658a1c0ec32da":["QhpKAz+ZtQmNtJgM","yzoNBrvzH209dXnKRaJXj6qfOV9HXcUowBLqyg5HvysYKDResuZf0jvXdSqserxZ8DizY9RT7uaTyJjK57b3Ka6nR1dyA6iY0SVVpuo="],"cb52355eb7af90553a36590526ff6379":["Yw6DsscEPWzzd2TH","Flc5JIjGbHGM7tMxbzzlqw13QM4QXQ8h2EJ7rMR8EYO/PVVwBCJ3Cr3juJ9UthqjcGPE9nn/DhlweVyqebiNqD8pFRgV00bjjz2UMsQ="],"2b40f64c540fa948f40885abbccf7861":["or4/dXzziWSdeRKk","G4YL2dMgKFnPy4VRYkYb94hs0CdYKILMf30+p/In11YoaLEpgpnBplgFUXhtI4JAZPnL9DsLnHc+uk5zIV3XIbBstaqmBnmSzs1Fq7o="],"ee2b923f815e3b455e519010b898d6e0":["7ZH6nYYg96RRbanx","ValexNzRnarVHx81dKDq+yYkJdeascO4FIeiCdYdlmzGHY08DWm1jZGvd3WvCbmJZqcVtBoj3zgv7NscqhPr6WPdyU2zuApBp42iw0M="],"f90da4897c4ee1bb43ed7bcb211cb06c":["H3q1Stzkq0ZfygUt","FACML/OsHe1eyUzTvzqPEBSXWDdNL8JhkWAziuIvnmVv5qS0Z2UYPKN6ARnKr7ljwFYgqA+nCr1YAdlwMPH5UxVgbSPmUkBUOyY7kkc="],"4d9fa02067bc02f28128443f1270e36b":["6VCWr6wbXLuXm6YM","DOrCrvdC4apuILEtgSo1Ov4At1DYl0hIJlVuSfvuc6uG5qZq1oK4YDyhVsOUvQuoDFRlX/SRqT9JDUFPIH1O0ISGjoydq9QL+c6PtfA="],"0622aa86dc4af42926ae262a173401a7":["NI/EttzNQkl9HcUz","t5jV7GCXxutUxpYLl9DGCsqPhVZ5Oy+B6OegJraK2zK7Z64KKP2+YSrl5thp3rmunRHOr1bLSqyA+T3swrnI2N80jqMC4L08aKMiV6c="],"c0e3280944e208485c53e2ce62ead29d":["H3Qm0sXiFtAnypxP","A8qA7HuG8viMKzPHZMT/P2dOujG5Tv4rBfcucChOM1tAWc1Ym83TWmyl/2NwuTHvNZRW7RldUp0ALvXv7XRgX3ntas9bJirq3XCSNUs="],"da0657f8fbadecacfa8f5b2623d67436":["KnjL5FmCLu8CW7VN","ztK9ekKMqVxnfIIbw+6qiWuqGqntr5Q9Q0xt0eyOcmfeGVPZ2OEmwfRGet6ELC4Lam9Wq/5cRbSNlBM3Zea51NrvuoJq9XVIeGXpykE="],"5564ebfeeae3c689f8cdd3404782fee7":["0eAd7iTW/yGMjzr1","NqET3IPbkOPvvYw8jb1ScYur/ckIcPkvP/itmNupDUPIOG+3i87BgINvFW5DD9DHyz/dpwY08ch/kTNnBhdnRXq0oD6cKGOKncOUe6w="],"78d6562f86345bc1454efb1e3eb6765c":["A/B9zcWuXYjPb6UI","Z6YBPBQyQcvgGiOV7TyoabC9gTm81ekkz2NNHD9n5VknmoG5wTuuB1/DFzuV2MlmsgvPGPOl1p79AHxs8uO4huX5nHhhWFK5UoUw4fY="],"4e9e52b75467464b1e5fa9f57d29dda6":["D5+5Jf6vXOB+WwGY","XamthS6zCvxJQRkcNkorG0EcW2t4vUsW8HA/K67uIF0T++GUXoq2eXSJcSuwvGgVAupkR4KG7NvfwFXBpGG3XOiXJahfCh8gdNtrsdg="],"ee2ce1530901eea99c6c33e48df24bbd":["TEQv08g9PLkQUYz/","WGMSW/VvdES5nbPYucrVIDSZ919CuPuHiKEuYTZRfRY1A1no1WjKglPWmxmoRsiWb0uat4lYeWWNg+S1tGp4cAq2CmuPBl4rU4xmayw="],"a2f6b3abbb01463e0756a50c1d06f7a7":["fKQ+/2oyR22vXdHK","lzuZZUZHOq31EcGHkJ0nZX3IKfHpr3X6mHEuXKqagGf/ZtVeLbGymS7jabNFNu6il39NzU5964qXqvljHsvuNgYRCkzohFEZNkgR95s="],"a6d9d53b371fa661024e780514a3b622":["ifm/zF3fUaDOQJiO","qnxSAy7C5YNYuzQ9mVWZbOFRuMH9LfEpiFjx6Peuz/Y2mtVweVMksve6/BiRSUDWoW945YQEf5lr9+AAK7J2FxpcAy4NfTreGdvmmCg="],"46ffc2691949d6ff4410ef64e42a38cf":["vmBY/UQF1d7+dCkZ","3FZgZpwkAP8E2cHMlMErCVxdxtGs4V8DHGhv1KESZelJgSllh9f2/oVYSxAiMNBX6HBIIktQSCgB50JObhNcT9+6sfuLXunEY7hQxnty"],"d0688d8c878b88fbb295f9377e970f4a":["Ivso1hde8Or99VHw","Kp8dsyE+WyiR+tIFGV8jlDaDiQSYFG4kST0ZJ4Fb6kkqBso2cCYANJb6OS/DikO3lcC9tX+22hCl+usSdBoquxK9pP71Fx6POyZp9Ju0"],"a43aa013477c264f424da912c4777d7d":["l6GkA2epLwZvp2z5","HpXb3P7ASTo2K5W8zuuzptfqn7qz0gnTN4xxLsLTPrCGj2kcK1cHOvi5AMIuZnFGQg53X5G6RLaesSewnj1QGWm7YMhDMiQLL7ubaKUd"],"b59db974441ccd0827e22f1661f4293a":["9jegNGDM/WyW7bmF","66oVHVOVT133IsOZmIl5RVU/PUBHJR9UfICipJw+dP4tEXKW/UIWOpu4+J85UheyjKoEJ6Y4ocJ8oZzlQnwcet+Dh3dsyLSQpQwqnbwz"],"7b591b7c97bde8722ff7757e5d5324d0":["Z1nlPBKxNw6piXWh","GlZxeN3YLs3yYgnW0DKx4GBx25PHhJIydagW8iJet1hGXd90l7nv8BWRkhi4PyVkAC05FGM2H7pzRVTD06cwqT30uzI56MmIRIFN6mHM"],"8357208a227a9f0969c06eaf9541ddee":["gs7ot9jjPMAUBIIz","6k9fq6mk6WxqcThW02X/iTNFCGOm3xR+CjaWpkqN0btXCYMWOZGzneQS2xHD3+oWr/Xl6Ft4RjnHx3IRhuE5I316X9T/onQHeDmsutv9"],"6247a53928a215ae3d091d446dc06d8c":["jMJeFXdF3AvDXYGb","wYWTyCjktjNhEq8r+bECEWRZEXHhvljkIRKbohgYiJHr9lIDOfuRTszxyp0j3Mig8NUjAzulQNRnHt6c7a0GN6rXM28OOToSsWGVHAB4"],"018fca122d27b020eaa39c2fd6688453":["XuxRrdZYFXMDwQql","7JrcrBnFuJu+C46Utp4nubIWxs1l+YfVzbXEIjocH/QTTze7v2aJfMI1zZ1/usUCOJ+uanJ63iROMr1CD43LmxzHU+j57vIxGWeP0ifw"],"5ce83b4fb6777a02c10d798119f689a1":["NrcoT9ih2kUyqw4d","iUXt0EU4xxD4gYnS7d0tLDvcF5APNKR1d8TCLkcXWdaqGNpYndxwbswRsNP2CliI+Avvq6MRTUtFXLmHXG6uOqOomh/SFFNgSS/3lsRa"],"0ec3be4ed5060067464b616ad60048b4":["mI0nrxtvir0de06C","Ao6uU4Ko7k1wu666r5GtlQ1fn05TVSQR46cKZL+q3BWvZ34GfI3GV4Qi8+cmKSxMwYr7Vi3ynR/11rLUqbZAQwx5zzKMKlSM1pdg8TWb"],"63cccb034301f7aaffc952f79955b5c6":["z/4hAyHiTSK60l4g","yRxFleD9MPo0PuIHkT3HudQR2gj97CgUkPLw3NPbovNU7Ihjx2jI47gMK6IVzseI3VpmihYg6hWlW3TMzJ1MfTcPRCkyyp17dGBF+YaI"],"30698c04884ef5e6c4c3eea78c230992":["uZIiwOt65wb1RTD4","8hw0NyicEG3MB1S7PFIFBJfX6l44bbiUvzcZT5oFFPsbSSKVTF4Gvn9YjtCZ6UXiXmw9dV9AN1ftTnS1J/fcZT/kRIsDl/GZ9N3GmLx9"],"7ebb91b14817301927630cd743ea8616":["tIy1Qv7FXrGTE5p2","14OYL8QgAawwnrzzmgcwdQIDyXotxZrl687IX2BCpTtMMbtF56rIFRJWvn5/PxXkpQsnrFWntkQSoZusLpiixyA3lGerwkR25sxK6tDK"],"e4657845eadf90f89c5c64d36375bfcc":["H7gx1XekBwEsj8Pm","JNJWFSh/k0TbSTW9A/Ob/39EHqFnwr0MAQ27Os1u+dpGRpXK6TTwYrcPYFcWTT3ED89/LyaMUozC41WorfgqE4Q73hrRUczbbwrMN2/8"],"8763b09ff257df3a87acdc3ac10fd368":["cG0+9Np0ewVMz1pH","aUDJDRRENkkFdoLLbJN9mxQNwaUfIRfVAbjafG/GfDj2Y/yrYH3+58lWJUJQsTiT8uRsetZSS9gMyjetZ0L0SwMCCo9oz0aeZv5gwhkS"],"4c04cfcaea0d21baa341041ccd72e724":["7vCjQRpXf6ngFDDQ","NDxpbHiZU8V/Kdba/VpAvmbybU2kh1AFnqDA9bzxrRFvo2YgF1xCzH7mnM5yTnARCi2uihWNGrBrISGt+VlVnWOP3TaMTYCCP+0AvbMZ"],"f37ffdaeff5561e44b09581a5b8d3a79":["lKHJLrFq5Q3KqwPB","o26Onhee94xAshUjiCIo76FF/byfjlr/nf7Lj9NVSkorR0LZlf5QFrMfSQ0+Tbv1IPLOFEZ2AHRjFsjU88wGWhmeauotyejWr6Pb7PEv"],"f94757a07767eabae47954cc962dc911":["kBVj+38odNhDvOvm","jA3GHd8Q4UTw9RKKQFBNT6JE2XZvBAJLOoDbnZpHTUN82UnfEccV0lko3fNA+tSQ1td32RqHf9AmWo7laWWUlLh2jLYT4CnpksCWnW2d"],"12ffc87af51ab102bc3cf4472aa31c81":["W3ADktEmi8eh24c2","jpR2kWZyrV2QVU2Kz8cyDHJtJI6OiMWz3QAwWJCbACbwh049xOqxEYfQmdklFSEjk4+O5zVNs/0aKhkUFMSsOfneLVKHykmREh7QpyJo"],"2a595a8e8f9b4e77d3f4589db0126326":["eVYrv43CRdFfRnz5","JJj1VPROxnn56R0v9pIOHgzVOfZuzVLzwauPR2pY19nYLTC7IJzICbwgTHQilWyACh0Kq7MFBfmv/4nbdijmdn1nmnyf47DUQvO0aG2/"],"06612db3793a0972e8b0f637e20d487f":["l2dJpKenc/HRWGow","nw9MrrVzZ/fgDjO6oAVWjRb8pRW1tfLivS9FgqxiIJ4uA726zj9IyRqb2BU7KWMxZA6kzqdx8lm2oUqJuwiiOHyjBRCtR3HmGBfHLdVR"],"7e4e5fac56054b0acbec7857cb57dba4":["bBJIF97O8kwqw/pi","ddhj8q/LNxe26powQelu03LIxkxMPC3Uhc/v7WB7/idgJWXLNRl5kvJetXzN9xF89YSFSNcOwwRe4JOwan1rySWjse1I2+2FLDY+4D5C"],"4c15b38fe6a21583054d99da8204319c":["2lWECmStnHk6QsKK","OjSuSZyI1DwAjD4/8Q+P4nZ6qBHjQs5YuLHTfLTY/pPW8iafqcS/NjMelKdB0nuutB9tQkg5YHRRjfpx0qdpqXqivpk9aRTB3paaxLpZ"],"a18fe76e1702e8ce5f0b2477800e29c2":["lDPau4E/XltH9XmP","RSOquKD9GRN5HfT3XUDqJgaAXxrmlKRKqPkXdCku3fiIf5rOK/rN5rLh4gYvmV+DiGCz+hWAhRDjAh8BZu/rTD8n5Q5sDzKg2e/OXiG2"],"84efdb34cd4ebf559c40497a90793779":["kIJJr+MdHS2+wK9L","OV8SCJst7u1j1vEkYkSDBiYte4DR/IRiEivCmtXwiEEjxUTd8nzfCaV7l+w3ntDDPdI7FtOEVSOTx2XVvGG5pdFKwvKb37FVn0Ygn2HS"],"2af99179e57bc25f8f5d7ea5d2aefd7a":["99MS/THYqAZGY6xh","Z7cuLVhBsYBluHBaLOX/zK6klI5ClkTBsm83AGt1ApptvRceV+7Baa93RAq+t3ZeD3dfxtYH/+Lh/NWPkkwa8M0qbf0ToJ29eZCPixcE"],"28b92755d241cc25a03fbbce072089de":["UvoWCeEWcGqmstV6","7qpx4oYjzpGSu0f5THcgxNSgeqY/P+5euMwC1o0Y3ZmiClkRqlhA9dVgxR+Nxbi+rXMMpH4yteKFdELIOrrf3JBazBzSwk/1GSlKUxMF"],"209f52695c7643040bfbee0fff1fc016":["S6zgmpOCueUtkxbH","4+CRvpAikCsYUGQPygwVUhkTolS8nD8ofe+UTzjBZ4IC3H1s9TRQZzuc2cabA3Wad07wGHJ11DYg6fCSOGMPHVAAKu4xDmMILkpfH+Mt"],"5d4c4045b086d8027c50f2c544f60a83":["MtUS4FzA7b32CkuH","/Vi41pCQwMDbrSHO01udhkNFD3tEZrwj3JatYQ4Byfhmr2y0G1dWW/iWTrmxoC2ejka9Ozir3QELvSypkQuOPg8edhqL2wdsxpr9ZbV2"],"e3da98c67ebd5744f2bb1d0d6ce56ea0":["UoQMPRbdMNhfABym","9rkeYPv8iL/O4KQrBn7u15K2JvWTgGPg7rh/FAnScjWDNXW+F+598zRtgGE5ytDhHPFxLY65xBAEIktpzs2YlYCHvwWvMRATab3sPJvN"],"e9f7ec39cff25afcc85a0a91cd01b876":["mI5ZsIXfTJW2vZNI","F/pTNhPyFPNpI2NzcgLr+/lxZlji25FFTi6JRwrORMv+doykoGTyMrh4GUc/6C+98UMWrBPdSN2G/HaPSpUzP62LC5Sa5C0O8h3f/h7N"],"4c40745863407445a356134775555582":["LtpDzGsdmmnu4Lc7","PozLW3f6Rm10L16BwWLqbYMERYT6w1adXUrKIZVxa8j3NA7sqBqlm5bBanU8kQSLuVpGAlnhgbcGB726uhn9+Ck0SXjFtZpSHhbvHTgG"],"ac76af61fbaa25b4b58e32ee2afe9e56":["8MiSkGX8mCSgVOXp","Lq2NH302xh0SHKDDmlAdxFVHBfAOREdPSSv4829ddas7PLqrzKJYLTrHnHoAt+0GWQExyvLH7QEIkVUbxxq/LJEOm/Zv67luZeRzFZC5"],"c2adc3d51529fe8acf7968575449035c":["FhKmFVmC82EwW2VR","zMi/CySpY7o/jyIP+iBOqia1CJdq+40avbSU9TaEcI4QyPTHi2f8NFd8EJ+wqi+jRsmWeWI2XMFHThujetUSosM3NEaaEqK2rY8VoiCQ"],"2addfbb5692b0960b3654465b3f82f77":["jOrfdnFUfyWlJzhG","4pLH4GylT1aN2O4C6D5QcFpECpiNgaeCsCrxqaNBSzhriEOcXKbnutW4n4gm8ZL+RepJBxxw8G16XxiKLLQUZ/heQ6qwcYxRAwLjnDUo"],"c119450e9a0f9d5953a02fe5f38b041f":["Oqm/Gni9B+nhFJi9","wePW9sfmWqWlh8aT/sa3kD4ZqfwsnEedMXj0cSDblbhegCM4YoPKps7nl52S2kWUmcPHWL4A3c7N6FyU7EfarwwJccZvlXF4wjkbJRm3"],"381811b338190868afaa159aa6b37cac":["v+TTGrMD7EvScCTR","1N8iKi+Hw0tT86awj3m+60N0QWtJIXen+Plyh3j8LGS3wifh8l2cU21iUdEC9haqppwXYQNJaIZCgGF3v7oy1vkamV3+xC2PxB1nNxNe"],"aecbc8267e19353a2556eed5af1637f3":["Wm61dZcMAFYA1nJI","L3EXhMGBNpA+UwHiCWsgTnrbIT9y5dt1YKY8zhpjPLdtTbhzs4Y9Njwy/myUmLr8KOiKoQaTdeFG6bALGezsrXviP3p9ElR6U4j0RZof"],"1e1be0ba98122195711cb9849ebf58fe":["w4zai1tnLn+dfdFW","eLnCjbkz+k4B1pRmGwp+hRs0pZVFli3cZrr4gWeoWVBYP5kQjAkAJ5beHALxGCpZNtEFMYrn/6SlOT98a0yyk2rLU43/DhvZTZCQdTCd"],"04f42246fecbe7583e0d4f63c6a3032d":["m90FPyq1Hs/+gqks","6DapVclLg21xbGLKTfjfSsKqx58M7Rj3Wk9H9qXjbupDMNaRdPtMGMePuhpy9GDGBOc8oaYwvo6PXmnzYkRTSR224+RJz0nePXqkEtQ6"],"29735aa300d94a7c566fc7e44984077c":["c5CWAhB+WAlY/BoL","lPO7j83+H/cU9XS0Vh5g63u/cqSbV4AS3rys4eWKyV1gqAMMbuk0MV+X9hhq1DhR7BpJ+SiFur8BVTuQSr1dEULFGmomgob6bMMRkE2s"],"f8ba655167bcb0c1828458110c64eccd":["RyNyJVbnzb7jWQ+B","3dXwWYmQ9cOSXdNhpXp8sgPUjQwZ+L2kJnoko6QAuXHzYoMOmqN28guLeHnfGl+GQsFmXxjDvxyq6Yfmnql5xCfvF6zCact0aheyOwip"],"1ab4d35fc86be47b92179bd32d6e0414":["s6kpTOrBqrUmXCnB","G20A3KOKuglJ1SFa17yZhq10J1nvbSGz87UnTdQ73tnLSwAucHToggt4UKXAc2qaF3AY+P4dkw/woECvJfqPocYpB2VPFq/N5RAAi+1H"],"fc692eb3c08e0ea2c44218cb4c7734dd":["8A52ryVvoReIKSSg","CLzEITsAltGVuZg3hLf2sH1ZHdBBCaUH2VM7q+memPPilOnzourLoeet0MN1TxMukLBIUfACgE3x/XEMRq3+N692GxHxbs7O1vpFkLAm"],"509dfb6a3d3e41e085c2a3a019790144":["wwW+HE8JbLdIuHBg","lcL7hQwN3LMfBeAo7uUfDZvqv5m3ofIkJrF4A6zBMoPWYpKhzrbM1ZhW3EnN/Jg2CzIpTqvH25PJ2i/u4TjAdz1n+TZQhsOQqr85WKmx"],"1f8c2696c716500b281321adf30ddf9a":["izEsLgB3B4zcsRle","2XTSTH8MM4wvQ1Ichgasi+NhX2JJd2ZGZfXfiQaUNPPNURpn9IShfulWaX/ctn4Vky7D74WBbgnxbVhvip5L3VSE/f0JM9cDBcPxpV4a"],"c435c4cc211971c2e42b727c6ec33888":["V3Rue4djHsCK32Um","vP4/rNURmDYOosp6esRfLp5kWJxH/uIaYZKlKR/pvI16uyApx1AtbuLIqg9GwCoFe5QYz4WG1qg/S34oKT/2EmSBXNytNN1Cid55Q4Aj"],"3804d5b4ddb01d38e0df60f51ab40d3b":["QV208LYXXNUeCeaq","psOr8Xp/y0aFsGsSxD0WuKlmN0pvsRUkW9QijZL9dkOYnldzODOJsXqTGhT2O7W3FyX+kxTBR7LphYooYxZhWRQ/GVHQMpKv1h6TA3jb"],"cf53158b477713b1dd8ed2d5ef5d1ca4":["4k20YFx/LNzimIPe","h7t58gimTKclI0Wh6llKPQwemgjDZ8zEkGo9osJq43sWO/DMAVrVTT0ftVrKyIswS4H/DqFd3Y4cwa9uNkrMKNQPY4soZfCHn2V18NJW"],"c815dc84875e84d4e23b112f4f1e3a21":["4l6+XmTGWORGbqkf","Msq84LUFk6Cs/6hpW0xcDUlK54O3Nx6bzS/R812TqcBpqQLsHvf044fs7TYzeT+TC4a9kRBwiidjt2+H64E0HhXIKjEjaRZrlzQnNQ7I"],"aa73945fc29a3694cdb080a1ea31d006":["Br2J81kuSj9HTvOE","SfFc2B9udTcwPAYaT6fnE4sHhbrkzGYEw0Ig02z72RgSb7tsw4Bw83KtaQG+czaTQ5h8SenKb9uxq8Qf22AN6anurYnr0K78V/hR2gaP"],"450b0dc215fee1bacb5aab12239d41e8":["YP8FI4XdGAJERF+L","QzZqWlpWh9KlQtpjrG6IEzOuxKXlLjlJ78pcasP0NZKY+4IDCxMx2AXLkmPJJQuXdtiaky6DQAlPycOL8eCRPETIabKavoN46QKK2tt8"],"a93d7aeac8f977c5594fe15a9eb7efc3":["JeZnLuzxSDiV3rmk","tVoXJ1YW/3TseE62X8PPFb9hioKlUV1IFIRjfPbokSzdcqBU8976zECErr7zNVT6YdqT41J98YVQYRGTa9lsugHDWMm1mJuw84qYwPd2"],"bb31ac142ffac11bfc43440b49dac26a":["mZaZpi0wjMZeaCpb","A+DXgpPB5UqVGow5sIc5FjDgafdB/ixVgbPGgb4osn7lfXhpCHuueq8ivnHhHfJzEmqlZM9RUG1oleSbqM9wH6yqvpHNPUO8sfONKjSU"],"9ade55d0b94187753e60ed64c0c18a98":["aQERmp4l5sdw5NFc","cRo06FSMtAJVjSPPhkR5qJ9ti5xjAfIjlnTnFQngLZ7HYraD2RZ4m2ZZKNF90imYfuRZa4tzVe5pSpeb3SptlPpwwwh3DAYcdYEGkwhT"],"195e15832c42f42ba59311e9b4b9df6c":["/P/Db3GiupZ+WTLh","uvzBi23PANTA1cBvjLrQWn0jRGpA4XzDdLGM2gauwarZipEsiRCMt1d1BcT78Mh1qSltd0PTNBlYfZxsiTH4ZAwW6Wf9PVczlrrpdyCd"],"c866d4d7eceefce95b88384a7713d928":["gDQ+m7dz2x/AK3dK","yjjrDkD/K7mFHvEISzC3Sg605kEuryDnRDU2k5LJJU8rqhX2RWAeOQmbxGvqkhfunasuTZhiJhIk67Y5RoS0i8kWTaYD+Qx+HLrX+t2E"],"b026cf94bd4ce08a939b821010e7c97c":["M74hzTT7WZXP/5Yu","2D/wBm4qeTDNEGKT3OwyLboVINj6Xw//EtD9F6Wej8YFFuWsTfUsb+Xx7fjXYq69IX8/Si1UOMw0dtUpDfXrq4TtHfvCI3KyrOqHrXRf"],"5b69bc9f5d41204298d9ce6f9b0bde0d":["zncqlOwBliHMCQek","EZSQCl00kzIQuB2JYQMp2PUoTjwSyYo3uZANbBWOlJLi7eOrPwK5jMFmCVbaRDKp0hCLRJ2BZUDHSjRCNUk26y/Xj8uBM7+uVE58UTDh"],"6e6cff8d1cd4517af178f26d64cae7a1":["oLm8Rzl/2Zltp6Dw","6gNow4MOupNEtG7+dTx7QgLccRn+5cHlnj0YJb59BPAQvPqmURJ5HLHbF3a1sjMdCt/ynFZsm1Q2AW7V2xgNGLLLjOK+3+kWQ275jfkv"],"9645e302e4de3859b362b47bb7e13c16":["bGAuafr9IonJPq/f","3+oTmlWpFVJ+YKxQfVj1t7VgKqWyBjV27lqJVpAGQtWSfyx/ZyWk6DqfQzdYRMUXv3sj7TC/+VH9Swt0DciSRn8HaHuLHdNEY5K/9qQr"],"7b5951b38f6ae7a97708ea2ac9cbaf16":["N3E/cWc3yOjmyvHw","WeL2FAvpXSVd74YZln8XPf9ly6BwP9CySj021eF4IxQ2+KMWHb09UGKtHTxAAsalmJl3I/gUhTZ2OsLlU2pw/CcflubzdP2C/iav9L6w"],"8198a22f4fdd32d79c1e6e7f18577777":["HAvnIRk2HaCkZrqq","GjSMKyphSMEKTjRMzld3IZFT2FRM5ttEAVZht/Pn+6+GHT7vyvohVBT4FoKJKrQHEVAqo1GV9G/56371uvOm+Lnn4lT/x4sHJFdviCAe"],"a6da36ee5682f15980828e32362813d1":["H8vBzsEWW2INPbCd","Gy5k6DdtWj7ck2yMG11gQV5cMMqBz9HdM53+A1oLKeLNIw+YDff57utmTGYVRZv8R08qewSV5cvi3pECL98bVhwjKpfTNcntd5KrNaER"],"866c3054e08f62854f2d58c6844c5095":["r+Qq8tH/7C7Z5H0p","uNcbbWq4YfWMo2zt1DjdbP003Hhd9keqZrq3+/eRO6GP+r3uMcYd1gNW+pAt14+WJ+6gj7AOVV6JwLAM1rsymwrc9depQaTLk44TxGLH"],"9f689e5ae37c7d7c9da1e0f4bdc88155":["YPXb9xtE0ppemOXy","o+Z2zyhHetf2BRZRiDWFqd18LbfHHqnkf2wPb5dI3LSQLEDYqXJgB9UvVyeJwyBJDIXgtkY42aeVCo5bSwZTspg3dbjUK5OiKYetASap"],"bbdf0e6e605e6b5dcd08807b04036b56":["PRl2/5uJffMYVymZ","E4DqH7FSz2FzYskF4OvijKa0kr/G1HPx7UwOsygyGit2h/2ZqVCWN+zPwFXTMCkp1AtkkMTPaDcnOfuHgOugsXObSP8M6z+hyf9H82pH"],"dde3a8bad68d3c581f290de3f4bf64fb":["Me4C7ZxYmQ0wsZkk","eE4lddQf/pWyFzdKZKsKXmtHV3/fp+bQhtRcE/hAzqp/RUewSMSyHmMPcdTxxx1yCZ0EE7lizNjw7NKsYxfaNukQ96lZ5HZ9kB+jkpYy"],"552208cf832949d1e3bd4fa89f1053df":["v1XrLH02/40qhbwE","FNCo/+OMGhkTxMdO2A7b8x23Jyvatd/kSFESKByxKw9r7xF+pRj1h2+lTCc3ilmUX1QofN9lX0EcBPy7hdWSlzANSkm+jSiPz5Ax+a1A"]}}/*ENC-END*/;
+
+/* ===== Tab navigation ===== */
+const tabs = ["trangchu","danhsach","kyniem","luubut","quy","khac","quantri"];
+function showTab(id){
+  if(!tabs.includes(id)) id = "trangchu";
+  tabs.forEach(t => document.getElementById(t).classList.toggle('active', t===id));
+  document.querySelectorAll('[data-tab]').forEach(a => {
+    const isActive = a.dataset.tab===id;
+    a.classList.toggle('active', isActive);
+    if(a.tagName === 'A'){
+      if(isActive) a.setAttribute('aria-current','page');
+      else a.removeAttribute('aria-current');
+    }
+  });
+  window.scrollTo(0,0);
+}
+function showSubtab(subId){
+  document.querySelectorAll('.subpanel').forEach(p => p.classList.toggle('active', p.id === 'sub-'+subId));
+  document.querySelectorAll('.subnav-btn').forEach(b => b.classList.toggle('active', b.dataset.subtab === subId));
+}
+document.querySelectorAll('[data-tab]').forEach(a=>{
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    const id = this.dataset.tab;
+    // pushState để nút Back của điện thoại quay về tab trước
+    if(location.hash !== '#'+id) history.pushState(null,'','#'+id);
+    showTab(id);
+    if(this.dataset.subtab) showSubtab(this.dataset.subtab);
+  });
+});
+window.addEventListener('popstate', () => showTab(location.hash ? location.hash.slice(1) : 'trangchu'));
+document.querySelectorAll('.subnav-btn').forEach(btn=>{
+  btn.addEventListener('click', function(){ showSubtab(this.dataset.subtab); });
+});
+showTab(location.hash ? location.hash.slice(1) : 'trangchu');
+
+/* ===== Tables ===== */
+function fmt(v){
+  if(!v) return '<span class="unpaid">–</span>';
+  return '<span class="paid">'+v.toLocaleString('vi-VN')+'đ</span>';
+}
+function maskDay(dob){
+  const m = /^(\d{2})\/(\d{2})(?:\/(\d{4}))?$/.exec(dob);
+  if(!m) return dob || '';
+  return `**/${m[2]}` + (m[3] ? `/${m[3]}` : '');
+}
+function renderList(rows){
+  document.getElementById('tbody').innerHTML = rows.map(r => `
+    <tr>
+      <td class="center">${r[0]}</td>
+      <td class="nick">${r[5]}</td>
+      <td class="ten">${r[1]}</td>
+      <td>${maskDay(r[2])}</td>
+      <td>${r[3]}</td>
+      <td>${r[4]}</td>
+    </tr>`).join('');
+  document.getElementById('count').textContent = rows.length + ' người';
+}
+document.getElementById('search').addEventListener('input', function(){
+  const q = this.value.trim().toLowerCase();
+  renderList(q ? data.filter(r => r.slice(1,6).join(' ').toLowerCase().includes(q)) : data);
+});
+
+function renderFund(rows){
+  document.getElementById('tbody2').innerHTML = rows.map(r => `
+    <tr>
+      <td class="center">${r[0]}</td>
+      <td class="nick">${r[5]}</td>
+      <td class="ten">${r[1]}</td>
+      <td class="num">${fmt(r[6])}</td>
+      <td class="num">${fmt(r[7])}</td>
+    </tr>`).join('');
+  document.getElementById('count2').textContent = rows.length + ' người';
+}
+
+/* ===== Tính quỹ tự động từ data (không hardcode) ===== */
+/* Các khoản đã chi — chỉ sửa ở đây, tổng "Đã chi" và "Tồn quỹ" tự tính */
+let khoanChi = [];
+function renderQuySummary(){
+  const fmtVnd = n => n.toLocaleString('vi-VN') + 'đ';
+  const CHI_DA_CHI = khoanChi.reduce((s,k) => s + k.soLan*k.donGia, 0);
+  const tong2025 = data.reduce((s,r) => s + (r[6]||0), 0);
+  const tong2026 = data.reduce((s,r) => s + (r[7]||0), 0);
+  const ton = tong2025 + tong2026 - CHI_DA_CHI;
+  document.getElementById('stat-chi').textContent = fmtVnd(CHI_DA_CHI);
+  document.getElementById('chi-note').innerHTML = 'Chi tiết khoản đã chi: ' + khoanChi.map(k =>
+    `<em>${k.noiDung} — ${k.soLan} lần × ${fmtVnd(k.donGia)} = ${fmtVnd(k.soLan*k.donGia)}</em>`).join(' · ');
+  document.getElementById('stat-2025').textContent = fmtVnd(tong2025);
+  document.getElementById('stat-2026').textContent = fmtVnd(tong2026);
+  document.getElementById('stat-ton').textContent = fmtVnd(ton);
+  document.getElementById('tfoot-2025').textContent = fmtVnd(tong2025);
+  document.getElementById('tfoot-2026').textContent = fmtVnd(tong2026);
+}
+document.getElementById('search2').addEventListener('input', function(){
+  const q = this.value.trim().toLowerCase();
+  renderFund(q ? data.filter(r => (r[1]+' '+r[5]).toLowerCase().includes(q)) : data);
+});
+
+/* ===== Câu nói về tuổi học trò — đổi ngẫu nhiên mỗi lần vào trang ===== */
+const quotes = [
+  { text:"Hàng ghế đá xanh tàng cây góc sân trường\nHành lang ấy xa dần xa bước chân người\nBạn thân hỡi ta khắc ghi trong lòng\nNhững ước mơ hồng ngày tháng chờ mong", who:'Trích "Tình thơ" — Hoài An' },
+  { text:"Dòng lưu bút chưa kịp ghi đã ướt nhòe\nNhành hoa thắm chưa kịp trao tay một lần\nKỷ niệm đó trong chiều mưa tan trường\nHai đứa chung trường sao nghe vấn vương", who:'Trích "Tình thơ" — Hoài An' },
+  { text:"Bao yêu thương trong ta tìm về\nMột thoáng trường xưa đã nghe thời gian thoi đưa\nNghe bâng khuâng trong ta một thời\nTìm bước ngày xưa ước mơ người còn đâu nữa", who:'Trích "Tình thơ" — Hoài An' },
+  { text:"Ai thương ai quen ai giận hờn\nBuồn cánh phượng rơi khi ta chờ người không tới\nCho hôm nay miên man bồi hồi\nNhặt lá vàng mơ khi xưa một mối tình thơ", who:'Trích "Tình thơ" — Hoài An' },
+];
+function renderQuote(){
+  const q = quotes[Math.floor(Math.random()*quotes.length)];
+  document.getElementById('featured-quote').innerHTML =
+    `<p>"${q.text}"</p><div class="who">— ${q.who || 'Lớp A, 1999–2002'}</div>`;
+}
+renderQuote();
+
+/* ===== Điểm danh ===== */
+function normalizeName(s){
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/đ/g,'d').replace(/Đ/g,'D')
+    .toLowerCase().trim().replace(/\s+/g,' ');
+}
+/* ===== Mở khoá nội dung (AES-GCM, khoá = tên/biệt danh + ngày/tháng sinh) ===== */
+const te = new TextEncoder(), td = new TextDecoder();
+const b64d = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+const hex = u => Array.from(u, x => x.toString(16).padStart(2,'0')).join('');
+async function aesOpen(keyBytes, iv, ct){
+  const k = await crypto.subtle.importKey('raw', keyBytes, 'AES-GCM', false, ['decrypt']);
+  return new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM', iv:b64d(iv)}, k, b64d(ct)));
+}
+async function tryUnlock(name, day, month){
+  const pw = normalizeName(name) + '|' + String(day).padStart(2,'0') + String(month).padStart(2,'0');
+  const base = await crypto.subtle.importKey('raw', te.encode(pw), 'PBKDF2', false, ['deriveBits']);
+  const bits = new Uint8Array(await crypto.subtle.deriveBits(
+    {name:'PBKDF2', hash:'SHA-256', salt:b64d(ENC.salt), iterations:ENC.iter}, base, 384));
+  const entry = ENC.keys[hex(bits.slice(32,48))];
+  if(!entry) return null;
+  return JSON.parse(td.decode(await aesOpen(bits.slice(0,32), entry[0], entry[1]))); // {k, i}
+}
+async function openPayload(kB64){
+  return JSON.parse(td.decode(await aesOpen(b64d(kB64), ENC.iv, ENC.ct)));
+}
+
+const overlay = document.getElementById('rollcall-overlay');
+const rcMsg = document.getElementById('rc-msg');
+
+function timeGreeting(){
+  const h = new Date().getHours();
+  if (h >= 5 && h < 11)  return { label:"Chào buổi sáng", wish:"Chúc cậu một ngày mới tràn đầy năng lượng!" };
+  if (h >= 11 && h < 13) return { label:"Chào buổi trưa", wish:"Nhớ nghỉ ngơi một chút nhé!" };
+  if (h >= 13 && h < 18) return { label:"Chào buổi chiều", wish:"Chúc buổi chiều nhẹ nhàng, vui vẻ!" };
+  if (h >= 18 && h < 22) return { label:"Chào buổi tối", wish:"Chúc cậu buổi tối thư giãn bên người thân!" };
+  return { label:"Khuya rồi đó", wish:"Đừng thức khuya quá, giữ sức khỏe nhé!" };
+}
+function showGreeting(nick){
+  const g = timeGreeting();
+  document.getElementById('greeting-toast').innerHTML = `
+    <div class="greeting-hero">
+      <div class="g-line">${g.label}, <b>${nick}</b> 👋</div>
+      <div class="g-wish">${g.wish}</div>
+    </div>`;
+}
+function signOut(){
+  ['lopA-key','lopA-whoami','lopA-skip'].forEach(k => localStorage.removeItem(k));
+  location.reload();
+}
+const identityBtn = document.getElementById('identityToggle');
+function updateIdentityBtn(nick){
+  if(nick){
+    identityBtn.textContent = '🚪';
+    identityBtn.title = `Đăng xuất (${nick})`;
+  } else {
+    identityBtn.textContent = '🙋';
+    identityBtn.title = 'Điểm danh';
+  }
+}
+identityBtn.addEventListener('click', function(){
+  if(confirm('Đăng xuất khỏi trang lớp trên máy này?')) signOut();
+});
+
+function initApp(payload, idx){
+  data = payload.members; khoanChi = payload.khoanChi; events = payload.events;
+  document.getElementById('ds-sub').textContent = payload.dsSub;
+  document.getElementById('quy-note2').innerHTML = payload.quyNote2;
+  document.getElementById('today-count').textContent = data.length;
+  renderList(data); renderFund(data); renderQuySummary(); renderEvents(); renderBirthdays(); loadMessages();
+  const me = data[idx][5];
+  showGreeting(me); updateIdentityBtn(me);
+  const nameField = document.getElementById('msg-name');
+  if(nameField) nameField.value = me;
+  overlay.classList.add('hidden');
+  document.body.classList.remove('locked');
+}
+localStorage.removeItem('lopA-whoami'); localStorage.removeItem('lopA-skip'); // dọn dữ liệu bản cũ
+(async function(){
+  let saved = null;
+  try{ saved = JSON.parse(localStorage.getItem('lopA-key')); }catch(e){}
+  if(saved && saved.k){
+    try{ initApp(await openPayload(saved.k), saved.i); return; }
+    catch(e){ localStorage.removeItem('lopA-key'); } // nội dung đã mã hoá lại → điểm danh lại
+  }
+  overlay.classList.remove('hidden');
+})();
+
+const rcBtn = document.getElementById('rc-submit');
+async function doRollcall(){
+  const name = document.getElementById('rc-name').value.trim();
+  const day = parseInt(document.getElementById('rc-day').value,10);
+  const month = parseInt(document.getElementById('rc-month').value,10);
+  if(!name || !day || !month || day>31 || month>12){
+    rcMsg.textContent = 'Cậu nhập tên và ngày, tháng sinh giúp tớ nhé!';
+    return;
+  }
+  rcBtn.disabled = true; rcMsg.textContent = 'Đang kiểm tra…';
+  try{
+    const r = await tryUnlock(name, day, month);
+    if(!r){ rcMsg.textContent = 'Chưa đúng rồi — kiểm tra lại tên/biệt danh và ngày, tháng sinh nhé.'; return; }
+    const payload = await openPayload(r.k);
+    localStorage.setItem('lopA-key', JSON.stringify(r));
+    rcMsg.textContent = '';
+    initApp(payload, r.i);
+  }catch(e){
+    rcMsg.textContent = 'Có lỗi khi mở trang — thử lại hoặc dùng trình duyệt khác nhé.';
+  }finally{ rcBtn.disabled = false; }
+}
+rcBtn.addEventListener('click', doRollcall);
+['rc-name','rc-day','rc-month'].forEach(id => document.getElementById(id).addEventListener('keydown', e => { if(e.key === 'Enter') doRollcall(); }));
+
+/* ===== Lời nhắn — kết nối Google Sheet qua Apps Script ===== */
+const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyq2D0khetRuAIK3zrZBORzvNqzllB61yxAUgYnoz6EdRzU2nrfbSnjLhdvmkC2xWFR9Q/exec';
+
+function escapeHtml(s){
+  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function loadMessages(){
+  const box = document.getElementById('messages-list');
+  fetch(WEBAPP_URL)
+    .then(r => r.json())
+    .then(data => {
+      if(!data.success || !data.messages || data.messages.length === 0){
+        box.innerHTML = '<div class="empty-state"><p>Chưa có lời nhắn nào được duyệt.</p><p class="hint">Viết lời nhắn ở khung trên — sau khi admin duyệt sẽ hiện ở đây.</p></div>';
+        return;
+      }
+      box.innerHTML = data.messages.map(m => `
+        <div class="msg">
+          <p>${escapeHtml(m.content)}</p>
+          <div class="who">— ${escapeHtml(m.name)}</div>
+        </div>`).join('');
+    })
+    .catch(() => {
+      box.innerHTML = '<div class="empty-state"><p>Không tải được lời nhắn lúc này — thử lại sau.</p></div>';
+    });
+}
+
+document.getElementById('msg-submit').addEventListener('click', function(){
+  const name = document.getElementById('msg-name').value.trim();
+  const content = document.getElementById('msg-content').value.trim();
+  const status = document.getElementById('msg-status');
+  const btn = this;
+
+  // Honeypot — bot thường tự điền hết mọi ô kể cả ô ẩn, người thật thì không thấy nên bỏ trống
+  if(document.getElementById('msg-website').value.trim()){
+    status.textContent = 'Đã gửi! Chờ admin duyệt là hiện lên nhé 🙏';
+    status.className = 'msg-status ok';
+    document.getElementById('msg-content').value = '';
+    return; // âm thầm không gửi thật, tránh bot biết bị chặn
+  }
+
+  if(!name || !content){
+    status.textContent = 'Nhập đủ tên và nội dung nhé.';
+    status.className = 'msg-status err';
+    return;
+  }
+  btn.disabled = true;
+  status.textContent = 'Đang gửi…';
+  status.className = 'msg-status';
+
+  const params = new URLSearchParams();
+  params.append('name', name);
+  params.append('content', content);
+
+  fetch(WEBAPP_URL, { method:'POST', body:params })
+    .then(r => r.json())
+    .then(res => {
+      btn.disabled = false;
+      if(res.success){
+        status.textContent = 'Đã gửi! Chờ admin duyệt là hiện lên nhé 🙏';
+        status.className = 'msg-status ok';
+        document.getElementById('msg-content').value = '';
+      } else {
+        status.textContent = res.error || 'Có lỗi, thử lại nhé.';
+        status.className = 'msg-status err';
+      }
+    })
+    .catch(() => {
+      btn.disabled = false;
+      status.textContent = 'Không gửi được — kiểm tra mạng và thử lại.';
+      status.className = 'msg-status err';
+    });
+});
+
+/* ===== Quản trị ===== */
+let adminPass = sessionStorage.getItem('lopA-admin') || '';
+
+function loadPending(){
+  const params = new URLSearchParams();
+  params.append('action','pending');
+  params.append('password', adminPass);
+  fetch(WEBAPP_URL, { method:'POST', body:params })
+    .then(r => r.json())
+    .then(res => {
+      if(!res.success){
+        sessionStorage.removeItem('lopA-admin');
+        adminPass = '';
+        document.getElementById('admin-panel').style.display = 'none';
+        document.getElementById('admin-login').style.display = 'block';
+        document.getElementById('admin-login-msg').textContent = res.error || 'Sai mật khẩu';
+        return;
+      }
+      document.getElementById('admin-login').style.display = 'none';
+      document.getElementById('admin-panel').style.display = 'block';
+      const box = document.getElementById('pending-list');
+      if(res.pending.length === 0){
+        box.innerHTML = '<div class="empty-state"><p>Không có lời nhắn nào đang chờ duyệt 🎉</p></div>';
+      } else {
+      box.innerHTML = res.pending.map(m => `
+        <div class="pending-item">
+          <p>${escapeHtml(m.content)}</p>
+          <div class="who">— ${escapeHtml(m.name)} · ${escapeHtml(m.time)}</div>
+          <div class="pending-actions">
+            <button class="btn-approve" data-action="approve" data-time="${escapeHtml(m.time)}">✓ Duyệt</button>
+            <button class="btn-delete" data-action="delete" data-time="${escapeHtml(m.time)}">✕ Xoá</button>
+          </div>
+        </div>`).join('');
+      }
+
+      const approvedBox = document.getElementById('approved-list');
+      if(!res.approved || res.approved.length === 0){
+        approvedBox.innerHTML = '<div class="empty-state"><p>Chưa có lời nhắn nào được đăng.</p></div>';
+      } else {
+        approvedBox.innerHTML = res.approved.map(m => `
+          <div class="pending-item">
+            <p>${escapeHtml(m.content)}</p>
+            <div class="who">— ${escapeHtml(m.name)} · ${escapeHtml(m.time)}</div>
+            <div class="pending-actions">
+              <button class="btn-delete" style="flex:1;" data-action="delete" data-time="${escapeHtml(m.time)}">✕ Xoá</button>
+            </div>
+          </div>`).join('');
+      }
+    })
+    .catch(() => {
+      document.getElementById('admin-login-msg').textContent = 'Không kết nối được, thử lại.';
+    });
+}
+
+function adminAction(action, time){
+  const params = new URLSearchParams();
+  params.append('action', action);
+  params.append('password', adminPass);
+  params.append('time', time);
+  fetch(WEBAPP_URL, { method:'POST', body:params })
+    .then(r => r.json())
+    .then(res => {
+      if(res && res.success === false) alert(res.error || 'Thao tác không thành công, thử lại nhé.');
+      loadPending(); loadMessages();
+    })
+    .catch(() => { alert('Không kết nối được, thử lại nhé.'); loadPending(); });
+}
+
+// Event delegation cho nút Duyệt/Xoá trong Quản trị (thay cho inline onclick)
+document.getElementById('admin-panel').addEventListener('click', function(e){
+  const btn = e.target.closest('[data-action]');
+  if(!btn) return;
+  if(btn.dataset.action === 'delete' && !confirm('Xoá hẳn lời nhắn này? Không khôi phục được.')) return;
+  btn.disabled = true;
+  adminAction(btn.dataset.action, btn.dataset.time);
+});
+
+document.getElementById('admin-login-btn').addEventListener('click', function(){
+  adminPass = document.getElementById('admin-pass').value.trim();
+  if(!adminPass) return;
+  sessionStorage.setItem('lopA-admin', adminPass);
+  document.getElementById('admin-login-msg').textContent = 'Đang kiểm tra…';
+  loadPending();
+});
+
+if(adminPass) loadPending();
+
+/* ===== Lightbox xem ảnh phóng to ===== */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const galleryImgs = Array.from(document.querySelectorAll('.gallery img'));
+let lbIndex = 0;
+function lbShow(i){
+  lbIndex = (i + galleryImgs.length) % galleryImgs.length;
+  const img = galleryImgs[lbIndex];
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  document.getElementById('lb-count').textContent = (lbIndex+1) + ' / ' + galleryImgs.length;
+}
+function lbClose(){ lightbox.classList.remove('open'); }
+galleryImgs.forEach((img, i) => {
+  img.addEventListener('click', function(){ lbShow(i); lightbox.classList.add('open'); });
+});
+lightbox.addEventListener('click', function(e){
+  if(e.target.closest('.lb-prev')){ lbShow(lbIndex-1); return; }
+  if(e.target.closest('.lb-next')){ lbShow(lbIndex+1); return; }
+  if(e.target === lightboxImg) return; // chạm vào ảnh không đóng (tránh đóng nhầm khi vuốt)
+  lbClose();
+});
+document.addEventListener('keydown', function(e){
+  if(!lightbox.classList.contains('open')) return;
+  if(e.key === 'Escape') lbClose();
+  else if(e.key === 'ArrowLeft') lbShow(lbIndex-1);
+  else if(e.key === 'ArrowRight') lbShow(lbIndex+1);
+});
+// Vuốt trái/phải trên điện thoại
+let touchX = null;
+lightbox.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, {passive:true});
+lightbox.addEventListener('touchend', e => {
+  if(touchX === null) return;
+  const dx = e.changedTouches[0].clientX - touchX;
+  touchX = null;
+  if(Math.abs(dx) > 50) lbShow(lbIndex + (dx < 0 ? 1 : -1));
+});
+
+let events = [];
+
+function renderEvents(){
+  document.getElementById('events-list').innerHTML = events.map(e => `
+    <li class="${e.highlight ? 'highlight' : ''}">
+      ${e.highlight ? '' : '<div class="ev-dot"></div>'}
+      <div class="ev-body">
+        <h3>${e.emoji ? e.emoji+' ' : ''}${e.title}</h3>
+        <p>${e.note}</p>
+      </div>
+    </li>`).join('');
+
+  const nx = document.getElementById('next-event');
+  const first = events[0];
+  nx.innerHTML = `<span class="tag">SỰ KIỆN SẮP TỚI</span><span class="ttl">${first.emoji ? first.emoji+' ' : ''}${first.title}</span>`;
+}
+
+/* ===== Widget sinh nhật: lịch + quỹ đạo trái đất + timeline ===== */
+const MONTHS = ["THG 1","THG 2","THG 3","THG 4","THG 5","THG 6","THG 7","THG 8","THG 9","THG 10","THG 11","THG 12"];
+function renderBirthdays(){
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const windowDays = 45;
+
+  const upcoming = [];
+  data.forEach(r => {
+    const m = /^(\d{2})\/(\d{2})(?:\/\d{4})?$/.exec(r[2]);
+    if(!m) return;
+    const day = parseInt(m[1],10), month = parseInt(m[2],10);
+    let next = new Date(today.getFullYear(), month-1, day);
+    if(next < today) next = new Date(today.getFullYear()+1, month-1, day);
+    const diff = Math.round((next-today)/86400000);
+    if(diff <= windowDays) upcoming.push({nick:r[5], day, month, diff});
+  });
+  upcoming.sort((a,b)=>a.diff-b.diff);
+
+  const el = document.getElementById('birthday-banner');
+  if(upcoming.length === 0){
+    el.innerHTML = `<div class="bday-banner empty">Không có sinh nhật nào trong ${windowDays} ngày tới.</div>`;
+    return;
+  }
+  const u = upcoming[0];
+  const when = u.diff === 0 ? 'Hôm nay 🎉' : (u.diff === 1 ? 'Ngày mai' : `Còn ${u.diff} ngày`);
+  const progress = Math.max(0, Math.min(100, Math.round((windowDays - u.diff) / windowDays * 100)));
+  const more = upcoming.length > 1 ? `<br><span style="font-size:0.72rem;">và ${upcoming.length-1} bạn khác sắp tới sinh nhật</span>` : '';
+
+  el.innerHTML = `
+    <div class="bday-widget">
+      <div class="cal-page">
+        <div class="cal-month">${MONTHS[u.month-1]}</div>
+        <div class="cal-day">${String(u.day).padStart(2,'0')}</div>
+      </div>
+      <div class="orbit">
+        <div class="orbit-ring"></div>
+        <div class="sun">☀️</div>
+        <div class="earth-pivot"><span>🌍</span></div>
+      </div>
+      <div class="bday-info">
+        <div class="name">🎂 ${u.nick}</div>
+        <div class="when">${when}${more}</div>
+        <div class="bt-track">
+          <div class="bt-fill" style="width:${progress}%"></div>
+          <div class="bt-dot" style="left:${progress}%"></div>
+        </div>
+        <div class="bt-labels"><span>Hôm nay</span><span>Sinh nhật</span></div>
+      </div>
+    </div>`;
+}
+
+/* ===== Dark mode ===== */
+const root = document.documentElement;
+const themeBtn = document.getElementById('themeToggle');
+function applyTheme(t){
+  if(t === 'dark'){ root.setAttribute('data-theme','dark'); themeBtn.textContent='☀️'; }
+  else { root.removeAttribute('data-theme'); themeBtn.textContent='🌙'; }
+}
+applyTheme(localStorage.getItem('lopA-theme') || 'light');
+themeBtn.addEventListener('click', function(){
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('lopA-theme', next);
+  applyTheme(next);
+});
+
+/* ===== Nhạc nền ===== */
+const bgm = document.getElementById('bgm');
+const musicBtn = document.getElementById('musicToggle');
+let playing = false;
+musicBtn.addEventListener('click', function(){
+  if(!bgm.querySelector('source') || !bgm.querySelector('source').getAttribute('src')){
+    musicBtn.textContent = '⚠️';
+    setTimeout(()=>musicBtn.textContent = playing ? '⏸' : '♪', 1200);
+    return;
+  }
+  if(playing){ bgm.pause(); musicBtn.textContent='♪'; }
+  else { bgm.play().catch(()=>{}); musicBtn.textContent='⏸'; }
+  playing = !playing;
+});
+</script>
+</body>
+</html>

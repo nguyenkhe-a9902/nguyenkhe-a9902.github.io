@@ -1,0 +1,16 @@
+{
+  "name": "Lớp A - Niên khóa 1999-2002",
+  "short_name": "Lớp A",
+  "description": "Trang lưu giữ kỷ niệm, danh sách và kết nối của Lớp A - THCS Nguyên Khê",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fbf9f2",
+  "theme_color": "#c85a52",
+  "icons": [
+    {
+      "src": "images/kyniem-20nam-2.jpg",
+      "sizes": "1000x666",
+      "type": "image/jpeg"
+    }
+  ]
+}
