@@ -41,6 +41,7 @@ def seal(key, obj):
 def main(src, html='index.html'):
     goc = json.load(open(src, encoding='utf-8'))
     payload = {k: goc[k] for k in ('members', 'khoanChi', 'events', 'dsSub', 'quyNote2')}
+    payload['matLienLac'] = goc.get('matLienLac', [])  # STT các bạn đang mất liên lạc (mục Tìm bạn cũ)
     if goc.get('_khoaChung'):
         K = base64.b64decode(goc['_khoaChung'])
     else:
