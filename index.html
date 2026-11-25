@@ -432,7 +432,6 @@ try{ if(localStorage.getItem('lopA-theme')==='dark') document.documentElement.se
   #me-chip .mc-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700;}
   #me-chip:hover .mc-name{text-decoration:underline;}
   #identityToggle{display:none !important;}
-  @media (max-width:640px){ #me-chip{max-width:32vw;padding:0 10px;font-size:0.74rem;gap:4px;} #me-chip .mc-ic{display:none;} }
   #since-box{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--margin);padding:14px 16px;margin:0 0 22px;box-shadow:0 2px 6px var(--shadow);}
   .since-hi{font-size:1.15rem;margin-bottom:4px;} .since-hi b{color:var(--margin);}
   .since-ask{font-style:italic;font-size:1rem;color:var(--ink);margin:2px 0 10px;}
@@ -816,17 +815,31 @@ try{ if(localStorage.getItem('lopA-theme')==='dark') document.documentElement.se
     .fab-group{right:10px;bottom:12px;gap:8px;}
     .fab{width:38px;height:38px;font-size:0.95rem;opacity:0.88;}
   }
+
+  /* ===== Thanh tab trên điện thoại: hiện đủ 6 mục ===== */
+  nav .ni, nav .nl-short{display:none;}
+  @media (max-width:640px){
+    nav{display:grid;grid-template-columns:repeat(6,1fr);gap:0;padding:0;overflow:visible;}
+    nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:7px 1px 6px;
+      font-size:0.64rem;line-height:1.15;text-align:center;white-space:nowrap;border-bottom-width:3px;}
+    nav .ni{display:block;font-size:1.15rem;line-height:1;}
+    nav .nl-full{display:none;} nav .nl-short{display:block;}
+    #me-chip{grid-column:1 / -1;order:-1;position:static;max-width:none;width:100%;justify-content:center;margin:0;
+      padding:5px 10px;font-size:0.74rem;box-shadow:none;border-left:none;border-bottom:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.18);}
+    #me-chip .mc-ic{display:inline;}
+    #me-chip::after{content:'· Đăng xuất';opacity:.6;font-weight:400;margin-left:2px;}
+  }
 </style>
 </head>
 <body class="locked">
 
 <nav id="tabnav">
-  <a href="#trangchu" data-tab="trangchu">Trang chủ</a>
-  <a href="#danhsach" data-tab="danhsach">Danh sách lớp</a>
-  <a href="#kyniem" data-tab="kyniem">Kỷ niệm</a>
-  <a href="#luubut" data-tab="luubut">Lưu bút</a>
-  <a href="#quy" data-tab="quy">Quỹ lớp</a>
-  <a href="#khac" data-tab="khac">Khác</a>
+  <a href="#trangchu" data-tab="trangchu"><span class="ni">🏠</span><span class="nl-full">Trang chủ</span><span class="nl-short">Trang chủ</span></a>
+  <a href="#danhsach" data-tab="danhsach"><span class="ni">👥</span><span class="nl-full">Danh sách lớp</span><span class="nl-short">Danh sách</span></a>
+  <a href="#kyniem" data-tab="kyniem"><span class="ni">📷</span><span class="nl-full">Kỷ niệm</span><span class="nl-short">Kỷ niệm</span></a>
+  <a href="#luubut" data-tab="luubut"><span class="ni">✍️</span><span class="nl-full">Lưu bút</span><span class="nl-short">Lưu bút</span></a>
+  <a href="#quy" data-tab="quy"><span class="ni">💰</span><span class="nl-full">Quỹ lớp</span><span class="nl-short">Quỹ lớp</span></a>
+  <a href="#khac" data-tab="khac"><span class="ni">✨</span><span class="nl-full">Khác</span><span class="nl-short">Khác</span></a>
 </nav>
 
 <!-- ===== TRANG CHỦ ===== -->
