@@ -376,6 +376,24 @@ try{ if(localStorage.getItem('lopA-theme')==='dark') document.documentElement.se
   .xn-cap{font-size:0.86rem;color:var(--ink-soft);margin-bottom:20px;}
   .adm-table{width:100%;border-collapse:collapse;font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;}
   .adm-table td,.adm-table th{border-bottom:1px solid var(--rule);padding:5px 4px;text-align:left;}
+  /* ===== Cá nhân hoá ===== */
+  #me-chip{position:sticky;right:0;margin-left:auto;flex:0 0 auto;display:flex;align-items:center;gap:6px;max-width:46vw;
+    background:var(--board-dark);border:none;border-left:1px solid rgba(255,255,255,.12);color:var(--chalk);cursor:pointer;
+    padding:0 12px 0 14px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;box-shadow:-10px 0 12px var(--board-dark);}
+  #me-chip .mc-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700;}
+  #me-chip:hover .mc-name{text-decoration:underline;}
+  #identityToggle{display:none !important;}
+  @media (max-width:640px){ #me-chip{max-width:32vw;padding:0 10px;font-size:0.74rem;gap:4px;} #me-chip .mc-ic{display:none;} }
+  #since-box{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--margin);padding:14px 16px;margin:0 0 22px;box-shadow:0 2px 6px var(--shadow);}
+  .since-hi{font-size:1.15rem;margin-bottom:4px;} .since-hi b{color:var(--margin);}
+  .since-head{font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;color:var(--ink-soft);}
+  .since-list{list-style:none;margin:10px 0 0;padding:0;}
+  .since-list li{padding:7px 0;border-top:1px dashed var(--rule);font-size:0.93rem;}
+  .since-list a{color:var(--ink);text-decoration:none;} .since-list a:hover{color:var(--margin);}
+  tr.me-row td{background:rgba(200,90,82,0.10);} tr.me-row .me-tag{font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.68rem;color:var(--margin);font-weight:700;margin-left:4px;white-space:nowrap;}
+  #lb-me{background:rgba(255,232,176,0.35);border:1px dashed var(--wood);padding:10px 14px;margin:0 0 16px;font-size:0.92rem;}
+  #tn-invite{border:2px dashed var(--margin);background:rgba(200,90,82,0.05);padding:16px;text-align:center;margin-bottom:22px;}
+  #tn-invite p{margin:0 0 10px;}
   /* ===== Tab Khác — giao diện mới ===== */
   #khac .subnav{flex-wrap:nowrap;overflow-x:auto;gap:0;margin:0 -4px 24px;padding:0 4px;border-bottom:2px solid var(--rule);
     scrollbar-width:none;-webkit-overflow-scrolling:touch;}
@@ -896,6 +914,8 @@ try{ if(localStorage.getItem('lopA-theme')==='dark') document.documentElement.se
       <div class="v2-row"><button class="rc-btn" id="cn-send" style="flex:0 0 auto;">Gửi</button><span class="v2-status" id="cn-status"></span></div>
       <p class="v2-status" style="margin-top:8px;">Lớp trưởng duyệt xong sẽ hiện ở đây và trên Bản đồ. Muốn gửi ảnh "ngày ấy – bây giờ" thì gửi Zalo cho Lớp trưởng nhé.</p>
     </div>
+    <div id="tn-invite" style="display:none;"><p>📮 Lớp mình đang chờ thẻ <b>"Ngày ấy – Bây giờ"</b> của cậu đấy!</p>
+      <button class="v2-btn" onclick="document.getElementById('cn-form').classList.add('open');document.getElementById('cn-noi').focus();">Viết ngay</button></div>
     <div class="thennow" id="thennow">
       <div class="empty-state">
         <p>Chưa có bạn nào cập nhật — cậu làm người đầu tiên nhé!</p>
@@ -946,6 +966,7 @@ try{ if(localStorage.getItem('lopA-theme')==='dark') document.documentElement.se
 <section id="kyniem">
   <div class="eyebrow">Album</div>
   <h2>Kỷ niệm</h2>
+  <div id="since-box" style="display:none;"></div>
   <p class="sub">Ảnh các lần họp lớp, thăm cô và mốc 20 năm ra trường — sẽ cập nhật thêm dần.</p>
 
   <div id="xuanay-box" style="display:none;">
@@ -1009,6 +1030,7 @@ try{ if(localStorage.getItem('lopA-theme')==='dark') document.documentElement.se
   <div class="eyebrow">Trang lưu bút</div>
   <h2>Lưu bút</h2>
   <p class="sub">Viết vài dòng cho lớp — như ngày xưa truyền tay nhau cuốn lưu bút cuối năm.</p>
+  <div id="lb-me" style="display:none;"></div>
 
   <div class="msg-form">
     <input type="text" id="msg-name" placeholder="Tên hoặc biệt danh của bạn">
@@ -1167,9 +1189,9 @@ function maskDay(dob){
 }
 function renderList(rows){
   document.getElementById('tbody').innerHTML = rows.map(r => `
-    <tr>
+    <tr${r[0] === ME.stt ? ' class="me-row"' : ''}>
       <td class="center">${r[0]}</td>
-      <td class="nick">${r[5]}</td>
+      <td class="nick">${r[5]}${r[0] === ME.stt ? '<span class="me-tag">← cậu đây</span>' : ''}</td>
       <td class="ten">${r[1]}</td>
       <td>${maskDay(r[2])}</td>
       <td>${r[3]}</td>
@@ -1301,6 +1323,7 @@ function goKyNiem(){
 }
 function initApp(payload, idx, kB64){
   data = payload.members; khoanChi = payload.khoanChi; events = payload.events;
+  ME.idx = idx; ME.stt = data[idx][0]; ME.nick = data[idx][5];
   document.getElementById('ds-sub').textContent = payload.dsSub;
   document.getElementById('quy-note2').innerHTML = payload.quyNote2;
   document.getElementById('today-count').textContent = data.length;
@@ -1312,6 +1335,7 @@ function initApp(payload, idx, kB64){
   overlay.classList.add('hidden');
   document.body.classList.remove('locked');
   v2Init(payload, idx, kB64);
+  renderMeChip(); renderSince();
 }
 localStorage.removeItem('lopA-whoami'); localStorage.removeItem('lopA-skip'); // dọn dữ liệu bản cũ
 (async function(){
@@ -1362,9 +1386,11 @@ function loadMessages(){
     .then(r => r.json())
     .then(data => {
       if(!data.success || !data.messages || data.messages.length === 0){
+        MSGS = []; renderLbMe();
         box.innerHTML = '<div class="empty-state"><p>Chưa có lời nhắn nào được duyệt.</p><p class="hint">Viết lời nhắn ở khung trên — sau khi admin duyệt sẽ hiện ở đây.</p></div>';
         return;
       }
+      MSGS = data.messages; renderLbMe(); renderSince();
       box.innerHTML = data.messages.map(m => `
         <div class="msg">
           <p>${escapeHtml(String(m.content))}</p>
@@ -1725,7 +1751,9 @@ document.getElementById('cn-send').addEventListener('click', function(){
 function loadThongTin(){
   if(!API2) return;
   api2({action:'thongtin'}, 'GET').then(r => {
-    if(!r.success || !r.items || !r.items.length) return;
+    if(!r.success) return;
+    TN_ITEMS = r.items || []; renderTnMe(); renderSince();
+    if(!TN_ITEMS.length) return;
     const nickOf = stt => { const m = data.find(x => x[0] === String(stt)); return m ? m[5] : ''; };
     document.getElementById('thennow').innerHTML = r.items.map(it => {
       const nick = nickOf(it.stt) || String(it.name||'');
@@ -1815,7 +1843,7 @@ function refreshHearts(){
 }
 function loadHearts(){
   if(!API2) return;
-  api2({action:'hearts'}, 'GET').then(r => { if(r.success){ HEARTS = r.hearts || {}; refreshHearts(); } }).catch(()=>{});
+  api2({action:'hearts'}, 'GET').then(r => { if(r.success){ HEARTS = r.hearts || {}; refreshHearts(); renderLbMe(); } }).catch(()=>{});
 }
 document.getElementById('messages-list').addEventListener('click', e => {
   const b = e.target.closest('[data-heart]'); if(!b) return;
@@ -1877,6 +1905,98 @@ document.getElementById('adm-capnhat').addEventListener('click', e => {
   b.disabled = true;
   api2({action:'duyet', password: adminPass, id: b.dataset.duyet, ok: b.dataset.ok}).then(() => { loadAdmin2(); loadThongTin(); }).catch(()=>{ b.disabled = false; });
 });
+
+/* ===================== CÁ NHÂN HOÁ ===================== */
+let MSGS = [], TN_ITEMS = null;
+const PREV_SEEN = { msg: null, tn: null };
+function lsGet(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } }
+function lsSet(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+PREV_SEEN.msg = lsGet('lopA-seen-msg'); PREV_SEEN.tn = lsGet('lopA-seen-tn');
+const isMine = name => ME.nick && normalizeName(String(name||'')) === normalizeName(ME.nick);
+
+/* Nhãn tên trên thanh tab */
+function renderMeChip(){
+  let chip = document.getElementById('me-chip');
+  if(!chip){
+    chip = document.createElement('button'); chip.id = 'me-chip'; chip.type = 'button';
+    document.getElementById('tabnav').appendChild(chip);
+    chip.addEventListener('click', () => { if(confirm(`Cậu đang vào với tên ${ME.nick}.\nĐăng xuất khỏi trang lớp trên máy này?`)) signOut(); });
+  }
+  chip.innerHTML = `<span class="mc-ic">🙋</span><span class="mc-name">${escapeHtml(ME.nick)}</span>`;
+  chip.title = 'Bấm để đăng xuất';
+}
+
+/* "Từ lần trước cậu ghé" — đầu tab Kỷ niệm */
+function upcomingBirthdays(days){
+  const today = new Date(); today.setHours(0,0,0,0); const out = [];
+  data.forEach(r => {
+    const m = /^(\d{2})\/(\d{2})/.exec(r[2] || ''); if(!m) return;
+    let next = new Date(today.getFullYear(), +m[2]-1, +m[1]);
+    if(next < today) next = new Date(today.getFullYear()+1, +m[2]-1, +m[1]);
+    const diff = Math.round((next - today)/86400000);
+    if(diff <= days) out.push({nick: r[5], diff, me: r[0] === ME.stt});
+  });
+  return out.sort((a,b) => a.diff - b.diff);
+}
+function renderSince(){
+  const box = document.getElementById('since-box'); if(!box) return;
+  const g = timeGreeting();
+  const firstTime = PREV_SEEN.msg === null && PREV_SEEN.tn === null;
+  const lines = [];
+  if(MSGS.length && PREV_SEEN.msg){
+    const n = MSGS.filter(m => !PREV_SEEN.msg.includes(msgId(m)) && !isMine(m.name)).length;
+    if(n) lines.push(`<a href="#luubut" data-tab="luubut">💬 <b>${n}</b> lời nhắn mới trong Lưu bút</a>`);
+  }
+  if(TN_ITEMS && PREV_SEEN.tn){
+    const nw = TN_ITEMS.filter(it => !PREV_SEEN.tn.includes(String(it.stt)) && String(it.stt) !== ME.stt);
+    if(nw.length){
+      const names = nw.slice(0,3).map(it => { const r = data.find(x => x[0] === String(it.stt)); return r ? r[5] : it.name; });
+      lines.push(`<a href="#khac" data-tab="khac" data-subtab="nganay">📮 ${names.map(n => `<b>${escapeHtml(String(n))}</b>`).join(', ')}${nw.length > 3 ? ` và ${nw.length-3} bạn khác` : ''} vừa kể chuyện "Ngày ấy – Bây giờ"</a>`);
+    }
+  }
+  const bd = upcomingBirthdays(14);
+  const mine = bd.find(b => b.me);
+  if(mine) lines.unshift(mine.diff === 0 ? `🎂 <b>Hôm nay sinh nhật cậu!</b> Cả lớp chúc cậu tuổi mới thật vui 🎉` : `🎂 Còn <b>${mine.diff} ngày</b> nữa là sinh nhật cậu đấy!`);
+  bd.filter(b => !b.me).slice(0,2).forEach(b => lines.push(b.diff === 0 ? `🎂 Hôm nay sinh nhật <b>${escapeHtml(b.nick)}</b> — vào Lưu bút chúc bạn ấy nhé` : `🎂 <b>${escapeHtml(b.nick)}</b> sắp sinh nhật (còn ${b.diff} ngày)`));
+  const head = firstTime ? 'Lần đầu cậu ghé trang lớp — chào mừng về nhà!' : (lines.length ? 'Từ lần trước cậu ghé:' : 'Chưa có gì mới từ lần trước cậu ghé — xem lại kỷ niệm nhé.');
+  box.innerHTML = `<div class="since-hi">${g.label}, <b>${escapeHtml(ME.nick)}</b> 👋</div>
+    <div class="since-head">${head}</div>${lines.length ? `<ul class="since-list">${lines.map(l => `<li>${l}</li>`).join('')}</ul>` : ''}`;
+  box.querySelectorAll('[data-tab]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); history.pushState(null,'','#'+a.dataset.tab); showTab(a.dataset.tab);
+    if(a.dataset.subtab) showSubtab(a.dataset.subtab);
+  }));
+  box.style.display = '';
+}
+/* Ghi nhận đã xem — để lần sau so sánh */
+function markSeen(){
+  if(MSGS.length) lsSet('lopA-seen-msg', MSGS.map(msgId));
+  else if(PREV_SEEN.msg === null) lsSet('lopA-seen-msg', []);
+  if(TN_ITEMS) lsSet('lopA-seen-tn', TN_ITEMS.map(it => String(it.stt)));
+  else if(PREV_SEEN.tn === null) lsSet('lopA-seen-tn', []);
+}
+setTimeout(markSeen, 8000);
+
+/* Lưu bút: nhắc nhẹ / báo tim */
+function renderLbMe(){
+  const box = document.getElementById('lb-me'); if(!box || !ME.nick) return;
+  const mine = MSGS.filter(m => isMine(m.name));
+  if(!mine.length){
+    box.innerHTML = `✍️ Cậu chưa để lại dòng nào trong lưu bút lớp mình — viết một câu thôi cũng được!`;
+  } else {
+    const t = mine.reduce((s,m) => s + (HEARTS[msgId(m)] || 0), 0);
+    box.innerHTML = `📖 Cậu đã viết <b>${mine.length}</b> lời nhắn${t ? `, được <b>${t}</b> ❤️ từ các bạn` : ''}. Cảm ơn cậu!`;
+  }
+  box.style.display = '';
+}
+
+/* Ngày ấy – Bây giờ: mời / sửa thẻ của tớ */
+function renderTnMe(){
+  if(!TN_ITEMS || !ME.stt) return;
+  const has = TN_ITEMS.some(it => String(it.stt) === ME.stt);
+  document.getElementById('cn-open').textContent = has ? '✏️ Sửa thẻ của tớ' : '✏️ Viết thẻ của tớ';
+  const inv = document.getElementById('tn-invite');
+  if(inv) inv.style.display = has ? 'none' : '';
+}
 </script>
 </body>
 </html>
