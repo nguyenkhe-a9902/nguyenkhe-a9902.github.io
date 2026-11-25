@@ -35,6 +35,8 @@ function sheet_(name) {
 const prop_ = k => PropertiesService.getScriptProperties().getProperty(k) || '';
 const json_ = o => ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON);
 const clip_ = (s, n) => String(s || '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, n);
+/* Giữ xuống dòng (thơ, nhiều đoạn) cho các ô văn bản dài */
+const clipText_ = (s, n) => String(s || '').replace(/\r\n?/g, '\n').replace(/[\u0000-\u0009\u000b-\u001f]/g, ' ').replace(/\n{3,}/g, '\n\n').trim().slice(0, n);
 const okToken_ = p => p.token && prop_('LOP_TOKEN') && p.token === prop_('LOP_TOKEN');
 const okAdmin_ = p => p.password && prop_('ADMIN_PASS') && p.password === prop_('ADMIN_PASS');
 const rows_ = name => { const v = sheet_(name).getDataRange().getValues(); v.shift(); return v; };
@@ -99,7 +101,7 @@ function capnhat_(p) {
   if (!okToken_(p)) return json_({ success: false, error: 'token' });
   const id = Utilities.getUuid().slice(0, 8);
   sheet_('CapNhat').appendRow([id, new Date(), clip_(p.stt, 4), clip_(p.name, 60), clip_(p.noi, 60),
-    clip_(p.viec, 120), clip_(p.ngayay, 500), clip_(p.baygio, 500), 'cho']);
+    clip_(p.viec, 120), clipText_(p.ngayay, 500), clipText_(p.baygio, 500), 'cho']);
   return json_({ success: true });
 }
 /* Thông tin đã duyệt — mỗi bạn lấy bản mới nhất */
@@ -116,7 +118,7 @@ function thongtin_(p) {
 /* Tìm lại bạn cũ: ai biết tin thì báo */
 function timban_(p) {
   if (!okToken_(p)) return json_({ success: false, error: 'token' });
-  sheet_('TimBan').appendRow([new Date(), clip_(p.stt, 4), clip_(p.name, 60), clip_(p.target, 60), clip_(p.info, 500), '']);
+  sheet_('TimBan').appendRow([new Date(), clip_(p.stt, 4), clip_(p.name, 60), clip_(p.target, 60), clipText_(p.info, 500), '']);
   return json_({ success: true });
 }
 
