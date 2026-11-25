@@ -376,6 +376,91 @@ try{ if(localStorage.getItem('lopA-theme')==='dark') document.documentElement.se
   .xn-cap{font-size:0.86rem;color:var(--ink-soft);margin-bottom:20px;}
   .adm-table{width:100%;border-collapse:collapse;font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;}
   .adm-table td,.adm-table th{border-bottom:1px solid var(--rule);padding:5px 4px;text-align:left;}
+  /* ===== Tab Khác — giao diện mới ===== */
+  #khac .subnav{flex-wrap:nowrap;overflow-x:auto;gap:0;margin:0 -4px 24px;padding:0 4px;border-bottom:2px solid var(--rule);
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  #khac .subnav::-webkit-scrollbar{display:none;}
+  #khac .subnav-btn{flex:0 0 auto;border:none;background:transparent;border-radius:0;padding:10px 14px 9px;margin-bottom:-2px;
+    font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.84rem;color:var(--ink-soft);border-bottom:2px solid transparent;white-space:nowrap;}
+  #khac .subnav-btn .ic{margin-right:5px;}
+  #khac .subnav-btn:hover{color:var(--ink);}
+  #khac .subnav-btn.active{color:var(--margin);border-bottom-color:var(--margin);font-weight:700;}
+  #khac .sub{font-style:italic;}
+  .k-avatar{flex:0 0 auto;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:0.95rem;color:#fff;box-shadow:0 1px 3px var(--shadow);}
+  .k-toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;}
+  .k-search{flex:1 1 200px;padding:9px 12px;border:1px solid var(--rule);background:var(--card);color:var(--ink);font:inherit;font-size:0.92rem;}
+  .k-count{font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.78rem;color:var(--ink-soft);}
+
+  /* Ngày ấy – Bây giờ */
+  #thennow{gap:22px;}
+  .tn2-card{position:relative;background:var(--card);border:1px solid var(--rule);padding:18px 18px 16px;box-shadow:0 3px 10px var(--shadow);}
+  .tn2-card::before{content:'';position:absolute;top:-9px;left:50%;width:82px;height:20px;transform:translateX(-50%) rotate(-2deg);
+    background:rgba(200,90,82,0.18);border-left:1px dashed rgba(200,90,82,.35);border-right:1px dashed rgba(200,90,82,.35);}
+  .tn2-card:nth-child(even)::before{transform:translateX(-50%) rotate(2deg);background:rgba(40,69,58,0.16);}
+  .tn2-head{display:flex;gap:12px;align-items:center;margin-bottom:12px;}
+  .tn2-card .tn-name{font-size:1.1rem;font-weight:bold;color:var(--margin);}
+  .tn2-card .tn-meta{font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.78rem;color:var(--ink-soft);margin-top:2px;}
+  .tn2-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .tn2-col{padding:10px 12px;font-size:0.93rem;line-height:1.6;}
+  .tn2-col.then{background:rgba(138,98,64,0.09);border-left:3px solid var(--wood);font-style:italic;}
+  .tn2-col.now{background:rgba(40,69,58,0.07);border-left:3px solid var(--board);}
+  .tn2-col b{display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-style:normal;font-size:0.66rem;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--ink-soft);margin-bottom:3px;}
+  .tn2-col.solo{grid-column:1 / -1;}
+
+  /* Bản đồ */
+  .map-sum{display:flex;gap:10px;margin-bottom:16px;}
+  .map-sum div{flex:1;text-align:center;background:var(--board);color:var(--chalk);padding:12px 8px;box-shadow:0 2px 6px var(--shadow);}
+  .map-sum b{display:block;font-size:1.5rem;font-family:Georgia,serif;}
+  .map-sum span{font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;opacity:.85;}
+  .place{border:1px solid var(--rule);border-left:4px solid var(--margin);padding:12px 14px;margin-bottom:12px;background:var(--card);box-shadow:0 1px 4px var(--shadow);}
+  .place .pl-name{display:flex;justify-content:space-between;align-items:center;font-weight:bold;font-size:1rem;}
+  .place .pl-badge{font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.72rem;font-weight:700;color:#fff;background:var(--margin);padding:2px 9px;border-radius:10px;}
+  .place .pl-who{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;}
+  .chip{font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.78rem;padding:3px 10px;border-radius:12px;background:rgba(44,58,94,0.07);border:1px solid var(--rule);color:var(--ink);}
+
+  /* Kỷ lục vui */
+  #khac .kyluc-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;}
+  #khac .kyluc-card{position:relative;padding:18px 12px 14px;text-align:center;background:var(--card);border:1px solid var(--rule);
+    box-shadow:0 2px 6px var(--shadow);}
+  #khac .kyluc-card::after{content:'';position:absolute;left:50%;top:0;width:34px;height:6px;transform:translateX(-50%);background:var(--margin);}
+  #khac .kyluc-card .medal{font-size:1.9rem;margin:2px 0 8px;}
+  #khac .kyluc-card .title{font-size:0.68rem;line-height:1.35;min-height:2.7em;}
+  #khac .kyluc-card .winner{font-size:0.88rem;margin-top:6px;}
+
+  /* Sự kiện — dòng thời gian */
+  #khac .events{position:relative;padding-left:22px;}
+  #khac .events::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--rule);}
+  #khac .events li{position:relative;border-bottom:none;padding:0 0 18px;display:block;}
+  #khac .events li::before{content:'';position:absolute;left:-20px;top:6px;width:12px;height:12px;border-radius:50%;
+    background:var(--card);border:2px solid var(--margin);}
+  #khac .events li .ev-dot{display:none;}
+  #khac .events li.highlight{border:none;background:none;padding:0 0 18px;margin:0;}
+  #khac .events li.highlight::before{background:var(--margin);box-shadow:0 0 0 4px rgba(200,90,82,0.18);}
+  #khac .events li.highlight .ev-body{background:rgba(200,90,82,0.08);border:1px dashed var(--margin);padding:12px 14px;}
+  #khac .events li .ev-body{background:var(--card);border:1px solid var(--rule);padding:12px 14px;box-shadow:0 1px 4px var(--shadow);}
+  #khac .events li h3{margin:0 0 4px;font-size:1rem;}
+  #khac .events li p{margin:0;font-size:0.88rem;color:var(--ink-soft);}
+
+  /* Tìm bạn cũ */
+  .find-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:10px;}
+  .findcard{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--rule);padding:10px 12px;box-shadow:0 1px 3px var(--shadow);}
+  .findcard.lost{border-color:var(--margin);border-style:dashed;}
+  .findcard .fc-text{flex:1;min-width:0;}
+  .findcard .fc-name{font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .findcard .fc-full{font-size:0.8rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .findcard .fc-tag{display:inline-block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:.05em;
+    color:var(--margin);text-transform:uppercase;margin-top:2px;}
+  .findcard .v2-btn{padding:6px 10px;font-size:0.76rem;white-space:nowrap;}
+  #tb-form{position:sticky;bottom:10px;z-index:5;}
+
+  @media (max-width:640px){
+    .tn2-cols{grid-template-columns:1fr;}
+    #khac .kyluc-grid{grid-template-columns:1fr 1fr;gap:10px;}
+    #khac .kyluc-card{padding:16px 8px 12px;}
+    .find-grid{grid-template-columns:1fr;}
+  }
   .video-wrap.video-doc{max-width:340px;margin-left:auto;margin-right:auto;}
   .video-wrap.video-doc video{aspect-ratio:9/16;}
 
@@ -789,11 +874,11 @@ try{ if(localStorage.getItem('lopA-theme')==='dark') document.documentElement.se
   <div class="eyebrow">Thêm nữa</div>
   <h2>Khác</h2>
   <div class="subnav">
-    <button class="subnav-btn active" data-subtab="nganay">Ngày ấy – Bây giờ</button>
-    <button class="subnav-btn" data-subtab="bando">Bản đồ</button>
-    <button class="subnav-btn" data-subtab="kyluc">Kỷ lục vui</button>
-    <button class="subnav-btn" data-subtab="sukien">Sự kiện</button>
-    <button class="subnav-btn" data-subtab="timban">Tìm bạn cũ</button>
+    <button class="subnav-btn active" data-subtab="nganay"><span class="ic">📮</span>Ngày ấy – Bây giờ</button>
+    <button class="subnav-btn" data-subtab="bando"><span class="ic">🗺️</span>Bản đồ</button>
+    <button class="subnav-btn" data-subtab="kyluc"><span class="ic">🏅</span>Kỷ lục vui</button>
+    <button class="subnav-btn" data-subtab="sukien"><span class="ic">📅</span>Sự kiện</button>
+    <button class="subnav-btn" data-subtab="timban"><span class="ic">🔎</span>Tìm bạn cũ</button>
   </div>
 
   <div class="subpanel active" id="sub-nganay">
@@ -824,6 +909,7 @@ try{ if(localStorage.getItem('lopA-theme')==='dark') document.documentElement.se
       <div class="pins">📍 📍 📍</div>
       <p>Bản đồ đang được cập nhật.</p>
     </div>
+    <div class="map-sum" id="map-sum" style="display:none;"></div>
     <div id="places"></div>
   </div>
 
@@ -845,7 +931,8 @@ try{ if(localStorage.getItem('lopA-theme')==='dark') document.documentElement.se
   </div>
 
   <div class="subpanel" id="sub-timban">
-    <p class="sub">Những bạn lớp mình đang thất lạc. Ai biết tin (số điện thoại, Zalo, đang ở đâu…) thì bấm báo cho Lớp trưởng nhé — chỉ Lớp trưởng đọc được.</p>
+    <p class="sub">Cậu biết tin bạn nào — số điện thoại mới, Zalo, đang ở đâu, làm gì… thì bấm "Tớ biết tin" báo cho Lớp trưởng nhé. Chỉ Lớp trưởng đọc được.</p>
+    <div class="k-toolbar"><input class="k-search" id="tb-search" placeholder="Tìm tên hoặc biệt danh…"><span class="k-count" id="tb-count"></span></div>
     <div id="timban-list"></div>
     <div class="v2-form" id="tb-form">
       <div class="v2-status">Cậu biết tin về <b id="tb-target"></b>:</div>
@@ -1640,22 +1727,27 @@ function loadThongTin(){
   api2({action:'thongtin'}, 'GET').then(r => {
     if(!r.success || !r.items || !r.items.length) return;
     const nickOf = stt => { const m = data.find(x => x[0] === String(stt)); return m ? m[5] : ''; };
-    document.getElementById('thennow').innerHTML = r.items.map(it => `
-      <div class="tn2-card">
-        <div class="tn-name">${escapeHtml(nickOf(it.stt) || String(it.name||''))}</div>
-        <div class="tn-meta">${[it.noi, it.viec].filter(Boolean).map(x => escapeHtml(String(x))).join(' · ')}</div>
-        ${it.ngayay ? `<div class="tn-col"><b>Ngày ấy</b>${escapeHtml(String(it.ngayay))}</div>` : ''}
-        ${it.baygio ? `<div class="tn-col"><b>Bây giờ</b>${escapeHtml(String(it.baygio))}</div>` : ''}
-      </div>`).join('');
+    document.getElementById('thennow').innerHTML = r.items.map(it => {
+      const nick = nickOf(it.stt) || String(it.name||'');
+      const cols = [it.ngayay ? `<div class="tn2-col then"><b>Ngày ấy</b>${escapeHtml(String(it.ngayay))}</div>` : '',
+                    it.baygio ? `<div class="tn2-col now"><b>Bây giờ</b>${escapeHtml(String(it.baygio))}</div>` : ''].filter(Boolean);
+      return `<div class="tn2-card">
+        <div class="tn2-head">${avatarHtml(nick, it.stt)}<div><div class="tn-name">${escapeHtml(nick)}</div>
+        <div class="tn-meta">${[it.noi ? '📍 '+it.noi : '', it.viec ? '💼 '+it.viec : ''].filter(Boolean).map(x => escapeHtml(String(x))).join(' · ')}</div></div></div>
+        ${cols.length ? `<div class="tn2-cols">${cols.length === 1 ? cols[0].replace('tn2-col ','tn2-col solo ') : cols.join('')}</div>` : ''}
+      </div>`; }).join('');
     // Bản đồ: gom theo nơi ở
     const groups = {};
     r.items.forEach(it => { const k = String(it.noi||'').trim(); if(!k) return; (groups[k] = groups[k] || []).push(nickOf(it.stt) || it.name); });
     const keys = Object.keys(groups).sort((a,b) => groups[b].length - groups[a].length);
     if(keys.length){
       document.querySelector('#sub-bando .map-frame').style.display = 'none';
+      const total = keys.reduce((n,k) => n + groups[k].length, 0);
+      const sum = document.getElementById('map-sum'); sum.style.display = '';
+      sum.innerHTML = `<div><b>${total}</b><span>bạn đã ghim</span></div><div><b>${keys.length}</b><span>nơi ở</span></div>`;
       document.getElementById('places').innerHTML = keys.map(k => `
-        <div class="place"><div class="pl-name">📍 ${escapeHtml(k)} · ${groups[k].length} bạn</div>
-        <div class="pl-who">${groups[k].map(n => escapeHtml(String(n))).join(', ')}</div></div>`).join('');
+        <div class="place"><div class="pl-name"><span>📍 ${escapeHtml(k)}</span><span class="pl-badge">${groups[k].length}</span></div>
+        <div class="pl-who">${groups[k].map(n => `<span class="chip">${escapeHtml(String(n))}</span>`).join('')}</div></div>`).join('');
     }
   }).catch(()=>{});
 }
@@ -1664,11 +1756,25 @@ function loadThongTin(){
 let tbTarget = '';
 function renderTimBan(){
   const box = document.getElementById('timban-list');
-  const list = data.filter(r => MAT_LIEN_LAC.includes(r[0]));
-  if(!list.length){ box.innerHTML = '<div class="empty-state"><p>Lớp trưởng đang cập nhật danh sách các bạn cần tìm.</p></div>'; return; }
-  box.innerHTML = list.map(r => `
-    <div class="findcard"><div><div class="fc-name">${escapeHtml(r[5])}</div><div class="fc-full">${escapeHtml(r[1])}</div></div>
-    <button class="v2-btn" data-find="${escapeHtml(r[5])}">Tớ biết tin</button></div>`).join('');
+  const q = normalizeName(document.getElementById('tb-search').value || '');
+  const lost = r => MAT_LIEN_LAC.includes(r[0]);
+  const list = data.filter(r => r[0] !== ME.stt)
+    .filter(r => !q || normalizeName(r[1] + ' ' + r[5]).includes(q))
+    .sort((a,b) => (lost(b) - lost(a)) || (Number(a[0]) - Number(b[0])));
+  document.getElementById('tb-count').textContent = list.length + ' bạn';
+  box.innerHTML = list.length ? `<div class="find-grid">${list.map(r => `
+    <div class="findcard${lost(r) ? ' lost' : ''}">${avatarHtml(r[5], r[0])}
+      <div class="fc-text"><div class="fc-name">${escapeHtml(r[5])}</div><div class="fc-full">${escapeHtml(r[1])}</div>
+      ${lost(r) ? '<span class="fc-tag">Đang thất lạc</span>' : ''}</div>
+      <button class="v2-btn" data-find="${escapeHtml(r[5])}">Tớ biết tin</button></div>`).join('')}</div>`
+    : '<div class="empty-state"><p>Không thấy bạn nào khớp.</p></div>';
+}
+document.getElementById('tb-search').addEventListener('input', renderTimBan);
+const AV_COLORS = ['#c85a52','#28453a','#8a6240','#2c3a5e','#7a5c8e','#3f7d6e','#b07a2a','#5c6478'];
+function avatarHtml(nick, stt){
+  const w = String(nick || '?').trim().split(/\s+/);
+  const ini = (w[0] ? w[0][0] : '?') + (w[1] ? w[1][0] : '');
+  return `<span class="k-avatar" style="background:${AV_COLORS[(Number(stt)||0) % AV_COLORS.length]}">${escapeHtml(ini.toUpperCase())}</span>`;
 }
 document.getElementById('timban-list').addEventListener('click', e => {
   const b = e.target.closest('[data-find]'); if(!b) return;
